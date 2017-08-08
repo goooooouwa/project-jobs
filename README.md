@@ -2,7 +2,7 @@
 - 开源项目：codingirlsclub
 - 源码在develop分支下
 - [开源代码](https://github.com/CodingGirlsClub/codingirlsclub/tree/develop)
-> css在vendor/assets/stylesheets目录下，公用的文件直接在这个目录下，前端私有的文件在frontend目录下; js文件vendor/assets/javascripts目录下，公用的文件直接在这个目录下，前端私有的文件在frontend目录下； 字体文件在 app/assets/fonts目录下
+> 开源代码关键位置：css在vendor/assets/stylesheets目录下，公用的文件直接在这个目录下，前端私有的文件在frontend目录下; js文件vendor/assets/javascripts目录下，公用的文件直接在这个目录下，前端私有的文件在frontend目录下； 字体文件在 app/assets/fonts目录下
 ## 前端
 在src文件夹下有：html、css、js文件夹
 ## 后端
