@@ -4,9 +4,9 @@
 - [开源代码](https://github.com/CodingGirlsClub/codingirlsclub/tree/develop)
 > 开源代码关键位置：css在vendor/assets/stylesheets目录下，公用的文件直接在这个目录下，前端私有的文件在frontend目录下; js文件vendor/assets/javascripts目录下，公用的文件直接在这个目录下，前端私有的文件在frontend目录下； 字体文件在 app/assets/fonts目录下
 ## 前端
-在src文件夹下有：html、css、js文件夹
-公用的css代码如bootstrap.css,放在相应类型文件夹之下:src/css/static，
-公用的js代码如bootstrap.js,放在相应类型文件夹之下：src/js/static
+- 在src文件夹下有：html、css、js文件夹
+- 公用的css代码如bootstrap.css,放在相应类型文件夹之下:src/css/static，
+- 公用的js代码如bootstrap.js,放在相应类型文件夹之下：src/js/static
 ## 后端
 在server文件夹下
 ## 一开始步骤上:
