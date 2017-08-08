@@ -1,0 +1,19 @@
+{
+  "name": "project-jobs",
+  "version": "1.0.0",
+  "description": "- 开源项目：codingirlsclub - 源码在develop分支下 ## 前端 在src文件夹下有：html、css、js文件夹 ## 后端 在server文件夹下 ## 步骤上:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashuihui/project-jobs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashuihui/project-jobs/issues"
+  },
+  "homepage": "https://github.com/ashuihui/project-jobs#readme"
+}
