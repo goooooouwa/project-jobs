@@ -159,7 +159,7 @@
 #### 验收标准: 
 
 - 导航栏显示LOGOUT
-- 点击LOGOUT，退出登录，并跳转到首页（http://www.codingirls.club/）
+- 点击LOGOUT，退出登录，并跳转到首页（[http://www.codingirls.club/](http://www.codingirls.club/)）
 
 ## 14 支持微信支付的付费职位发布（可选加分功能）
 作为已注册并登陆的用户（招聘者)，我想付费发布一个招聘工作的详细信息，以便网站游客可以看到该招聘的详细信息。
