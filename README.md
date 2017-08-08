@@ -5,7 +5,7 @@
 在src文件夹下有：html、css、js文件夹
 ## 后端
 在server文件夹下
-## 步骤上:
+## 一开始步骤上:
 
 1. **git checkout -b another** (创建本地another分支并进入another分支)
 
@@ -39,7 +39,7 @@
 总代码在master分支上，每天早上pull更新master，再rebase master 。保证我们自己的分支每天代码总起点一致。
 写完部分功能或下午离开，push自己分支到远程仓库，用pull request合并到总分支上。
 每个人在自己分支的相应目录下建立自己的文件。
-####每天早上
+#### 每天早上
 4. **git checkout master**(从another分支退出进入本地master分支)
 
 5. **git pull origin master**(将远程master分支内容拉到本地master分支)
@@ -49,7 +49,7 @@
 7. **git rebase master**(将第5步拉下来的代码和本地master分支以复位基底的方式融合)
 
 8. **手动解决冲突**
-####每天下午
+#### 每天下午
 9. **git push origin another**(将本地的another分支推到远程的another分支上)
 
 	*（完整写法：git push origin another:another 不用担心你远程分支还没创建，github会自动帮你创建）*
