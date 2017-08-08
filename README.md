@@ -36,7 +36,7 @@
 **回到第一步**
 * * *
 #### 解释步骤
-总代码在master分支上，每天早上pull更新master，再rebase master 。保证我们的每天代码总起点一致。
+总代码在master分支上，每天早上pull更新master，再rebase master 。保证我们自己的分支每天代码总起点一致。
 写完部分功能或下午离开，push自己分支到远程仓库，用pull request合并到总分支上。
 每个人在自己分支的相应目录下建立自己的文件。
 
