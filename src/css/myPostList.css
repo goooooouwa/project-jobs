@@ -1,41 +1,8 @@
-header {
-  position: fixed;
-  left: 0px;
-  top: 5px;
-  width: 100%; }
-
-header .home {
-  height: 25px;
-  background: #388E3C; }
-  header .home p {
-    color: #FFFFFF; }
-  header .home + div {
-    height: 75px;
-    background: #4CAF50; }
-    header .home + div div {
-      max-width: 300px;
-      margin-left: auto;
-      margin-right: auto; }
-      header .home + div div > ul {
-        display: inline-block;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        -ms-flex-line-pack: center;
-            align-content: center; }
-        header .home + div div > ul a {
-          color: #FFFFFF;
-          font-size: 33px; }
-      header .home + div div div {
-        position: Absolute;
-        right: 100px;
-        top: 60px; }
-        header .home + div div div ul a {
-          color: #757575;
-          font-size: 15px; }
-
-.detail {
-  margin-top: 140px;
-  width: 70%;
-  margin-left: auto;
+#postTable {
+  width: 95%;
+  margin-top: 30px;
+  margin-left: 5px;
   margin-right: auto; }
+
+thead {
+  font-size: large; }
