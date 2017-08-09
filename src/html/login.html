@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>SendPulse: Member's Area</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" media=screen>
+
+    <link href="../css/template.css" rel="stylesheet" media=screen>
+
+    <link href="../css/login.css" rel="stylesheet" media=screen>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="../css/spIcons.min.css" rel="stylesheet" media=screen>
+    <script src="../js/static/jquery.min.js"></script>
+    <!-- SendPulse AB website tests -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '304832899913845'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=304832899913845&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+
+
+</head>
+<body>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NQT4SH"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NQT4SH');</script>
+<!-- End Google Tag Manager -->
+<!--[if lte IE 8]><div class="unsuported-warning"><h4>Sorry, your browser is not supported!</h4></div><![endif]-->
+<div class="loginpage">
+
+    <div class="modal">
+        <div class="modal-dialog login-header">
+            <a class="logo-link" href="//sendpulse.com/?lang=en" target="_blank">
+                <img src="https://login.sendpulse.com/img/sendpulse-black-logo1.png" width="175" alt="SendPulse">
+            </a>
+            <div class="dropdown lang-dropdown pull-right" style="display: none;" >
+                <a data-toggle="dropdown" class="btn btn-sm btn-outlined btn-outlined-w animate" role="button" href="#">EN <b class="caret"></b></a>
+                <ul id="lang-selector" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" onclick="changeLang('ua:Українська');" href="javascript:void(0)"><img src="/img/flags/ua.gif"> UA</a></li><li role="presentation"><a role="menuitem" tabindex="-1" onclick="changeLang('ru:Русский');" href="javascript:void(0)"><img src="/img/flags/ru.gif"> RU</a></li><li role="presentation"><a role="menuitem" tabindex="-1" onclick="changeLang('pt-br:Português do Brasil');" href="javascript:void(0)"><img src="/img/flags/pt-br.gif"> PT-BR</a></li><li role="presentation"><a role="menuitem" tabindex="-1" onclick="changeLang('tr:Türkçe');" href="javascript:void(0)"><img src="/img/flags/tr.gif"> TR</a></li>                </ul>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+        </div>
+        <script type="text/javascript">
+            var RecaptchaOptions = {lang: 'en'};
+            var social_services = '';
+        </script>
+        <script type="text/javascript"> //#16815
+        maxmind_user_id = "111557";
+        (function() {
+            var loadDeviceJs = function() {
+                var element = document.createElement('script');
+                element.src = ('https:' == document.location.protocol ? 'https:' : 'http:')
+                    + '//device.maxmind.com/js/device.js';
+                document.body.appendChild(element);
+            };
+            if (window.addEventListener) {
+                window.addEventListener('load', loadDeviceJs, false);
+            } else if (window.attachEvent) {
+                window.attachEvent('onload', loadDeviceJs);
+            }
+        })();
+        </script>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2>My Account</h2>
+                    <form role="form" class="form-horizontal" action="/login/" method="post">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Your email:</label>
+                            <div class="col-sm-8">
+                                <input type="email" value="" class="form-control" id="login" name="login" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Your password:</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                                <p>
+                                    <small><a href="/forgot/">Forgot password?</a></small>
+                                </p>
+
+                                <div class="login-options">
+                                    <div class="checkbox hidden">
+                                        <label for="sc">
+                                            <input type="checkbox" name="sc" id="sc" checked="checked"> Secure connection                                </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="small" for="rm">
+                                            <input type="checkbox" name="rm" id="rm" checked="checked">  Remember me on this computer                                </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <p class="pull-left padding-top-5">
+                        <em class="small light-grey">
+                            Don't have an account?                <a class="bold" href="/registration">Register</a>
+                        </em>
+                    </p>
+
+                    <input type="submit" name="submit" class="btn btn-green" value="Login">
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-dialog">
+            <div class="social-signup text-center">
+                <p class="social-signup-title">
+                    <small>Or login with:</small>
+                </p>
+                <a href="#" class="btn btn-primary btn-social btn-fb" id="faceebook_btn">
+                    <span class="social-icon icon-facebook" title="facebook"></span>&nbsp;
+                    Facebook
+                </a>
+                <a href="#" class="btn btn-social btn-default btn-google" id="google_btn"> <span class="social-icon icon-gplus" title="Google Plus"></span>&nbsp; Google+ </a>
+            </div>
+            <p class="clearfix">&nbsp;</p>
+            <div class="login-support small">
+                Problems logging in? <a href="https://sendpulse.com/support/" target="_blank">Technical support</a>
+            </div>
+        </div>
+    </div></div>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="/js/my/bootstrap.min.js"></script>
+<script src="/js/my/matchMedia.js"></script>
+<script src="/js/my/jquery.mobile.custom.min.js"></script>
+<script src="/js/my/general.js"></script>
+<script src="../js/login.js"></script>
+<script src="../js/social.js"></script>
+</body>
+</html>
