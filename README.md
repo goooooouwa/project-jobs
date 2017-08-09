@@ -17,18 +17,17 @@ bootstrap
 
 [express-session](http://www.xgllseo.com/?p=5162)
 
-## 一.目录结构
+## 目录结构
 - bin/www : 服务器启动文件
 - db : 数据库文件
 - src : 服务器静态文件
     - html:服务器模板文件
     - css : 样式表本件
-        * static:公共css文件夹
     - js : 自定义js文件
-        * static:公共js文件夹
         * main.js : 入口文件(主页面js)
         * app.js : 前端服务url管理模块
         * pageControl/ : 页面控制器
+    - public:公共库
 - routes : 路由文件
     - 对每个类建立独立的路由文件：user.js示例
     - URL前后端约定好后编写实现
