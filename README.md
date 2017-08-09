@@ -26,19 +26,18 @@ bootstrap
         * static:公共css文件夹
     - js : 自定义js文件
         * static:公共js文件夹
-        * master.js : 入口文件(主页面js)
-        * service.js : 前端服务url管理模块
+        * main.js : 入口文件(主页面js)
+        * app.js : 前端服务url管理模块
         * pageControl/ : 页面控制器
 - routes : 路由文件
     - 对每个类建立独立的路由文件：user.js示例
-    - API编写符合restful规范
     - URL前后端约定好后编写实现
 - package.json : npm包管理文件
 ## 前端
 1. 页面视图
 	- html代码放于script标签=======>`<script type='text/html'>...</script>`
 	- 模板代码尽量做到0重复
-	- [模板字符串语法]()请自行阅读文档
+	- [模板字符串语法]()
 	- 示例：
 ```
 <script type='text/html'>
@@ -250,6 +249,7 @@ app.delete('/somewhere',function(req,res)){
 ## 数据库的名称 twsjob
 
 ### 用户表 T_user
+//后端两位参考修改后划掉这行
 
 |ID|用户主键|
 |---|---|
