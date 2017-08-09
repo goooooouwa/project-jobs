@@ -1,10 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
+    <link rel="stylesheet" type="text/css" href="../../201609081635/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/postjob.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
+    <link href="../../201609081635/css/themes/quill.snow.css" rel="stylesheet">
+    <script src="../js/postjob.js"></script>
+    <style type="text/css">
+        #editor-container {
+            height: 80%
+        }
+        .container{
+            padding: 1.5em 0;
+        }
+        .custom-input {
+            position: relative;
+            padding-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .custom-input input {
+            padding-left: 15px;
+        }
+
+        .custom-input label {
+            cursor: text;
+            margin-left:20%;
+            padding: 0;
+            left: 15px;
+            top: 27px;
+            position: absolute;
+            font-size: 14px;
+            color: #ccc;
+            font-weight: normal;
+            transition: all .3s ease;
+        }
+
+        .custom-input label.active {
+            top: 0;
+            left: 0;
+            font-size: 12px;
+        }
+
+        .custom-input label.active.focusIn {
+            color: #66afe9;
+        }
+    </style>
+
 </head>
 <body>
+<div class="userbox">
+    用户
+</div>
 
+<div class="htmleaf-container">
+    <div class="container">
+        <div class="row">
+            <div class="custom-input" >
+                <label for="Title"><b><span style="color:red">*</span>Title</b></label>
+                <input type="text" class="form-controlcommon" id="Title" >
+            </div>
+
+            <div class="custom-input">
+                <label for="company"><b><span style="color:red">*</span>Company</b></label>
+                <input type="text" class="form-controlcommon" id="company">
+            </div>
+
+
+            <div class="custom-input">
+                <label for="apply"><b><span style="color:red">*</span>Apply</b></label>
+                <input type="text" class="form-controlcommon"id="apply">
+            </div>
+
+            <div class="custom-input">
+                <label for="Tags"><b>Tags</b></label>
+                <input type="text" class="form-controlcommon" id="Tags">
+            </div>
+
+            <div>
+                <label for="category" class="Xialabox"><b><span style="color:red">*</span>Category</b></label>
+                <input type="text" class="form-controlcommon" id="category"disabled>
+                <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
+                    <option value="Development">Development</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Product Manager">Product Manager</option>
+                </select>
+            </div>
+
+            <div >
+                <label for="job-type"  class="Xialabox"><b><span style="color:red">*</span>Job Type</b></label>
+                <input type="text" class="form-controlcommon" id="job-type"disabled>
+                <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Product Manager">Product Manager</option>
+                </select>
+            </div>
+
+
+            <div class="custom-input">
+                <label for="city"><b><span style="color:red">*</span>City</b></label>
+                <input type="text" class="form-controlcommon" id="city">
+            </div>
+
+            <div >
+                <label for="country"  class="Xialabox"><b><span style="color:red">*</span>Country</b></label>
+                <input type="text" class="form-controlcommon" id="country" disabled>
+                <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
+                    <option value="China">China</option>
+                    <option value="America">America</option>
+                    <option value="Japan">Japan</option>
+                    <option value="England">England</option>
+                </select>
+            </div>
+
+            <div style="position:relative;">
+                <label for="expiry-date" class="Xialabox"><b><span style="color:red">*</span>Expiry Date</b></label>
+                <input type="date" name="expiry-date" id="expiry-date" class="form-controlcommon">
+                <h2></h2>
+            </div>
+
+            <div >
+                <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
+                <div class="htmleaf-container">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt50">
+                                <div id="standalone-container">
+                                    <div id="toolbar-container">
+					<span class="ql-formats">
+					<select class="ql-font"></select>
+					<select class="ql-size"></select>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-bold"></button>
+					<button class="ql-italic"></button>
+					<button class="ql-underline"></button>
+					<button class="ql-strike"></button>
+					</span>
+                                        <span class="ql-formats">
+					<select class="ql-color"></select>
+					<select class="ql-background"></select>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-script" value="sub"></button>
+					<button class="ql-script" value="super"></button>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-header" value="1"></button>
+					<button class="ql-header" value="2"></button>
+					<button class="ql-blockquote"></button>
+					<button class="ql-code-block"></button>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-list" value="ordered"></button>
+					<button class="ql-list" value="bullet"></button>
+					<button class="ql-indent" value="-1"></button>
+					<button class="ql-indent" value="+1"></button>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-direction" value="rtl"></button>
+					<select class="ql-align"></select>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-link"></button>
+					<button class="ql-image"></button>
+					<button class="ql-video"></button>
+					<button class="ql-formula"></button>
+					</span>
+                                        <span class="ql-formats">
+					<button class="ql-clean"></button>
+					</span>
+                                    </div>
+                                    <div id="editor-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="../../201609081635/dist/quill.js"></script>
+                <!-- Initialize Quill editor -->
+                <script>
+                    var quill = new Quill('#editor-container', {
+                        modules: {
+                            formula: true,
+                            syntax: true,
+                            toolbar: '#toolbar-container'
+                        },
+                        placeholder: 'Compose an epic...',
+                        theme: 'snow'
+                    });
+                </script>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="buttonbox">
+    <button style="height: 35px;width: 10%;margin-left: 70%;margin-bottom: 5%; color:black; background-color: #4CAF50">创建</button>
+</div>
+
+<script>window.jQuery || document.write('<script src="../../201606291723/js/jquery-2.1.1.min.js"><\/script>')</script>
+<script type="text/javascript" src="../../201606291723/js/phanimate.jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.custom-input input').phAnim();
+    });
+</script>
 </body>
 </html>
