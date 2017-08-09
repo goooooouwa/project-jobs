@@ -34,23 +34,7 @@ bootstrap
     - URL前后端约定好后编写实现
 - package.json : npm包管理文件
 ## 前端
-1. 页面视图
-	- html代码放于script标签=======>`<script type='text/html'>...</script>`
-	- 模板代码尽量做到0重复
-	- [模板字符串语法]()
-	- 示例：
-```
-<script type='text/html'>
-$("#warning").html(`
-  <h1>小心！>/h1>
-  <p>未经授权打冰球可能受罚
-  将近${maxPenalty}分钟。</p>
-`); 
-</script>
-```
-
-
-2. 页面控制
+ 页面控制
 	- 每个pageControl/*.js文件控制一个页面的渲染
 	- 使用require.js模块化
 ## 后端
