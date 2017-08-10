@@ -5,7 +5,18 @@
   margin-right: auto; }
 
 thead {
-  font-size: large; }
+  font-size: xx-large;
+  font-weight: bold; }
+
+tbody {
+  font-weight: bolder; }
+
+.table > tbody > tr > td {
+  text-align: center;
+  vertical-align: inherit; }
+
+.table td {
+  text-align: center; }
 
 .select-controlcommon {
   width: 1%;
@@ -20,3 +31,7 @@ thead {
   border-radius: 4px;
   position: fixed;
   right: 15px; }
+
+.popover {
+  width: 800px;
+  max-width: initial; }

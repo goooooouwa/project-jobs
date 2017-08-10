@@ -183,6 +183,7 @@ function addTrs(postList) {
 function addTr(onePost) {
     let table = document.getElementById('tbody');
     let postTr = table.insertRow(table.rows.length);
+
     let jobTitleTd = postTr.insertCell(postTr.cells.length);
     let jobStatusTd = postTr.insertCell(postTr.cells.length);
     jobTitleTd.innerText = onePost.title;
@@ -191,9 +192,9 @@ function addTr(onePost) {
     let detailDiv=document.createElement("div");
     detailDiv.innerHTML=`
     <a tabindex="0" class="btn btn-lg btn-info" role="button" data-toggle="popover" data-placement="left"
-       data-trigger="focus" title="Job detail"
+       data-trigger="focus" title="Job detail" 
        data-content="
-       <table id='table' class='table table-bordered table-hover text-center'>
+       <table id='table' class='table table-bordered table-hover text-center' style='width=500px'>
     <thead>
     <tr class='body' >
         <td >属性</td>
@@ -206,8 +207,8 @@ function addTr(onePost) {
             <td >${onePost.title}</td>
         </tr>
         <tr>
-            <td >description</td>
-            <td >${onePost.job_description.slice(0,50).concat('………………')}</td>
+            <td class='text-center'>description</td>
+            <td >${onePost.job_description}</td>
         </tr>
         <tr>
             <td >tags</td>
