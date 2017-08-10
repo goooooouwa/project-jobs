@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" media=screen>
     <script src="../js/emaiIsCorrect_InLogin.js"></script>
+    <script src="../js/thisEmailIsExist.js"></script>
     <link href="../css/template.css" rel="stylesheet" media=screen>
     <link href="../css/login.css" rel="stylesheet" media=screen>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
@@ -62,6 +63,7 @@
                             </div>
                         </div>
 
+
                 </div>
                 <div class="modal-footer">
                     <p class="pull-left padding-top-5">
@@ -69,7 +71,7 @@
                             Don't have an account? <a class="bold" href="./register.html">Register</a>
                         </em>
                     </p>
-                    <input id= "login" type="submit" name="submit" class="btn btn-green" href=""  value="Login">
+                    <input onclick="return thisEmailIsExist()" id= "login" type="submit" name="submit" class="btn btn-green" value="Login">
                 </div>
                 </form>
             </div>
