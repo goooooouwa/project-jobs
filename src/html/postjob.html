@@ -11,238 +11,207 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
     <link href="../mod/201609081635/css/themes/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/postjob.js"></script>
     <style type="text/css">
         #editor-container {
-            height: 300px;
+            height: 80%
         }
         .container{
             padding: 1.5em 0;
         }
+        .custom-input {
+            position: relative;
+            padding-top: 20px;
+            margin-bottom: 10px;
+        }
+        .custom-input input {
+            padding-left: 15px;
+        }
+        .custom-input label {
+            cursor: text;
+            margin-left:20%;
+            padding: 0;
+            left: 15px;
+            top: 27px;
+            position: absolute;
+            font-size: 14px;
+            color: #ccc;
+            font-weight: normal;
+            transition: all .3s ease;
+        }
+        .custom-input label.active {
+            top: 0;
+            left: 0;
+            font-size: 12px;
+        }
+        .custom-input label.active.focusIn {
+            color: #66afe9;
+        }
     </style>
+
 </head>
 <body>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    创建
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div style="width: 80%;hight:80%; margin-left:10%;margin-right:10%">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">CreatePost</h4>
-            </div>
-            <div class="modal-body">
-                <div class="htmleaf-container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="Title" class="Xialabox"><b><span style="color:red">*</span>Title</b></label>
-                                <input type="text" class="form-controlcommon" id="Title" >
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="company" class="Xialabox"><b><span style="color:red">*</span>Company</b></label>
-                                <input type="text" class="form-controlcommon" id="company">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="adress" class="Xialabox"><b><span style="color:red">*</span>Adress</b></label>
-                                <input type="text" class="form-controlcommon" id="adress">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="apply" class="Xialabox"><b><span style="color:red">*</span>Apply</b></label>
-                                <input type="text" class="form-controlcommon"id="apply">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="Tags" class="Xialabox"><b>Tags</b></label>
-                                <input type="text" class="form-controlcommon" id="Tags">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="salary" class="Xialabox"><b>Salary</b></label>
-                                <input type="text" class="form-controlcommon" id="salary">
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div  class="col-md-4">
-                                <label for="category" class="Xialabox"><b><span style="color:red">*</span>Category</b></label>
-                                <input type="text" class="secondform-controlcommon" id="category"disabled>
-                                <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
-                                    <option value="Development">Development</option>
-                                    <option value="Designer">Designer</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <option value="Product Manager">Product Manager</option>
-                                </select>
-                            </div>
-
-                            <div  class="col-md-4">
-                                <label for="job-type"  class="Xialabox"><b><span style="color:red">*</span>Job Type</b></label>
-                                <input type="text" class="secondform-controlcommon" id="job-type"disabled>
-                                <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
-                                    <option value="Volunteer">Volunteer</option>
-                                    <option value="Permanent">Permanent</option>
-                                    <option value="Freelance">Freelance</option>
-                                    <option value="Product Manager">Product Manager</option>
-                                </select>
-                            </div>
-
-                            <div  class="col-md-4">
-                                <label for="age"  class="Xialabox"><b></b>Age</b></label>
-                                <input type="text" class="secondform-controlcommon" id="age"disabled>
-                                <select class="select-controlcommon" onchange="D()" id="agess" name="agess">
-                                    <option value="18-28">18-28</option>
-                                    <option value="28-38">28-38</option>
-                                    <option value="38-48">38-48</option>
-                                    <option value="48-58">48-58</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div  class="col-md-4">
-                                <label for="city" class="Xialabox"><b><span style="color:red">*</span>City</b></label>
-                                <input type="text" class="form-controlcommon" id="city">
-                            </div>
-
-                            <div   class="col-md-4">
-                                <label for="country"  class="Xialabox"><b><span style="color:red">*</span>Country</b></label>
-                                <input type="text" class="secondform-controlcommon" id="country" disabled>
-                                <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
-                                    <option value="China">China</option>
-                                    <option value="America">America</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="England">England</option>
-                                </select>
-                            </div>
-
-                            <div  class="col-md-4">
-                                <label for="number" class="Xialabox"><b><span style="color:red">*</span>Number</b></label>
-                                <input type="text" class="form-controlcommon" id="number">
-                            </div>
-                        </div>
-
-
-                        <div style="position:relative;" >
-                            <label for="expiry-date" class="Xialabox"><b><span style="color:red">*</span>Expiry Date</b></label>
-                            <input type="date" name="expiry-date" id="expiry-date" class="form-controlcommon">
-                            <h2></h2>
-                        </div>
-
-                        <div  >
-                            <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
-                            <input type="text" id="Description" class="secondform-controlcommon" DISABLED>
-                        </div>
-                        <button class="Edit-controlcommon" data-toggle="modal" data-target="#myModal2">编辑
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
-                <button type="button" class="btn btn-primary" id="release" onclick="Release()">Release</button>
-            </div>
-        </div>
-    </div>
+<div class="userbox">
+    用户
 </div>
 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content"style="background-color:gainsboro">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Description</h4>
+<div class="htmleaf-container">
+    <div class="container">
+        <div class="row">
+            <div class="custom-input" >
+                <label for="Title"><b><span style="color:red">*</span>Title</b></label>
+                <input type="text" class="form-controlcommon" id="Title" >
             </div>
-            <div class="modal-dialog">
-                <div class="modal-body">
-                    <div class="htmleaf-container">
-                        <div class="row">
-                            <div  class="col-md-12 mt50">
-                                <div id="standalone-container">
-                                    <div id="toolbar-container">
+
+            <div class="custom-input">
+                <label for="company"><b><span style="color:red">*</span>Company</b></label>
+                <input type="text" class="form-controlcommon" id="company">
+            </div>
+
+
+            <div class="custom-input">
+                <label for="apply"><b><span style="color:red">*</span>Apply</b></label>
+                <input type="text" class="form-controlcommon"id="apply">
+            </div>
+
+            <div class="custom-input">
+                <label for="Tags"><b>Tags</b></label>
+                <input type="text" class="form-controlcommon" id="Tags">
+            </div>
+
+            <div>
+                <label for="category" class="Xialabox"><b><span style="color:red">*</span>Category</b></label>
+                <input type="text" class="form-controlcommon" id="category"disabled>
+                <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
+                    <option value="Development">Development</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Product Manager">Product Manager</option>
+                </select>
+            </div>
+
+            <div >
+                <label for="job-type"  class="Xialabox"><b><span style="color:red">*</span>Job Type</b></label>
+                <input type="text" class="form-controlcommon" id="job-type"disabled>
+                <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Product Manager">Product Manager</option>
+                </select>
+            </div>
+
+
+            <div class="custom-input">
+                <label for="city"><b><span style="color:red">*</span>City</b></label>
+                <input type="text" class="form-controlcommon" id="city">
+            </div>
+
+            <div >
+                <label for="country"  class="Xialabox"><b><span style="color:red">*</span>Country</b></label>
+                <input type="text" class="form-controlcommon" id="country" disabled>
+                <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
+                    <option value="China">China</option>
+                    <option value="America">America</option>
+                    <option value="Japan">Japan</option>
+                    <option value="England">England</option>
+                </select>
+            </div>
+
+            <div style="position:relative;">
+                <label for="expiry-date" class="Xialabox"><b><span style="color:red">*</span>Expiry Date</b></label>
+                <input type="date" name="expiry-date" id="expiry-date" class="form-controlcommon">
+                <h2></h2>
+            </div>
+
+            <div >
+                <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
+                <div class="htmleaf-container">
+                    <div class="row">
+                        <div class="col-md-12 mt50">
+                            <div id="standalone-container">
+                                <div id="toolbar-container">
                                     <span class="ql-formats">
                                         <select class="ql-font"></select>
                                         <select class="ql-size"></select>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-bold"></button>
                                         <button class="ql-italic"></button>
                                         <button class="ql-underline"></button>
                                         <button class="ql-strike"></button>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <select class="ql-color"></select>
                                         <select class="ql-background"></select>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-script" value="sub"></button>
                                         <button class="ql-script" value="super"></button>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-header" value="1"></button>
                                         <button class="ql-header" value="2"></button>
                                         <button class="ql-blockquote"></button>
                                         <button class="ql-code-block"></button>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-list" value="ordered"></button>
                                         <button class="ql-list" value="bullet"></button>
                                         <button class="ql-indent" value="-1"></button>
                                         <button class="ql-indent" value="+1"></button>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-direction" value="rtl"></button>
                                         <select class="ql-align"></select>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-link"></button>
                                         <button class="ql-image"></button>
                                         <button class="ql-video"></button>
                                         <button class="ql-formula"></button>
                                     </span>
-                                        <span class="ql-formats">
+                                    <span class="ql-formats">
                                         <button class="ql-clean"></button>
                                     </span>
-                                    </div>
-                                    <div id="editor-container"></div>
                                 </div>
+                                <div id="editor-container"></div>
                             </div>
                         </div>
                     </div>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
-                    <script  src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
-                    <script src="../mod/201609081635/dist/quill.js"></script>
-                    <!-- Initialize Quill editor -->
-                    <script>
-                        var quill = new Quill('#editor-container', {
-                            modules: {
-                                formula: true,
-                                syntax: true,
-                                toolbar: '#toolbar-container'
-                            },
-                            placeholder: 'Compose an epic...',
-                            theme: 'snow'
-                        });
-                    </script>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="Description()">Save</button>
-                </div>
+
+                <script href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+                <script  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+                <script src="../mod/201609081635/core/quill.js"></script>
+                <!-- Initialize Quill editor -->
+                <script>
+                    var quill = new Quill('#editor-container', {
+                        modules: {
+                            formula: true,
+                            syntax: true,
+                            toolbar: '#toolbar-container'
+                        },
+                        placeholder: 'Compose an epic...',
+                        theme: 'snow'
+                    });
+                </script>
             </div>
+
         </div>
     </div>
 </div>
-<script src="../js/postjob.js"></script>
-</body>
 
+<div class="buttonbox">
+    <button style="height: 35px;width: 10%;margin-left: 70%;margin-bottom: 5%; color:black; background-color: #4CAF50">创建</button>
+</div>
+
+<script>window.jQuery || document.write('<script src="../../201606291723/js/jquery-2.1.1.min.js"><\/script>')</script>
+<script type="text/javascript" src="../mod/201606291723/js/phanimate.jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.custom-input input').phAnim();
+    });
+</script>
+</body>
 </html>
