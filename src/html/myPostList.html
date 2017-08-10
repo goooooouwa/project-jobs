@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../css/myPostList.css">
     <script type="text/javascript" src="../js/myPostList.js"></script>
+    <script src="../js/postjob.js"></script>
 
     <link rel="stylesheet" href="../public/bootstrap-table-master/dist/bootstrap-table.css"></link>
     <script type="text/javascript" src="../public/bootstrap-table-master/dist/bootstrap-table.js"></script>
@@ -17,13 +18,75 @@
 
 </head>
 <body>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">模态框</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="resetModal()">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    PostDetail
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="studentInfo">
+                    <div class="form-group">
+                        <label for="jobTitle">Title</label>
+                        <input class="form-control" id="jobTitle" placeholder="job title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCompany">Company</label>
+                        <input class="form-control" id="jobCompany" placeholder="your company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDescription">job description</label>
+                        <input class="form-control" id="jobDescription" placeholder="this job description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobApply">how to apply</label>
+                        <input class="form-control" id="jobApply" placeholder="how to apply" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDate">expiry date</label>
+                        <input class="form-control" id="jobDate" placeholder="expiry date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCategory">category</label>
+                        <input class="form-control" id="jobCategory" placeholder="job category" required>
+                        <select class="select-controlcommon" onchange="A()" id="category" name="category">
+                            <option value="Development">Development</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-type">job type</label>
+                        <input type="number" class="form-control" id="job-type" placeholder="job type">
+                    </div>
+                    <div class="form-group">
+                        <label for="programmingScore">编程成绩</label>
+                        <input type="number" class="form-control" id="programmingScore" placeholder="编程成绩">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetModal()">关闭</button>
+                <button type="submit" class="btn btn-primary" onclick="saveOrUpdateStudents()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="rightSideWindow">
     <div id="pageControl">
 
     </div>
 </div>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     showMyPostList();
-</script>
+</script>-->
 </body>
 </html>
