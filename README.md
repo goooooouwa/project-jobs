@@ -14,6 +14,8 @@
 
 ## 数据库及api
 [数据库及api](./read/数据库.md)
+### api文档
+[api文档](./read/api文档.md)
 ## 用户故事
 [用户故事](./jobs-user-stories.md)
 ## 分工
