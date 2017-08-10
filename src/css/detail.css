@@ -1,6 +1,12 @@
-.container{
+.info{
     background-color: #f2f2f2;
 }
+h4.preface {
+    color: #999999;
+    font-size: 18px;
+    line-height: 70px;
+}
+
 h2.jobTitle{
     position:relative;
     float: left;
@@ -31,10 +37,20 @@ h2.jobTitle{
     color: #999999;
 }
 
-table{
+table.basicInfo{
     margin-left: 70px;
     clear: both;
     width: 80%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 16px;
+    color: #999999;
+}
+table.companyInfo{
+    margin-left: 10px;
+    clear: both;
+    width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
     border-spacing: 0;
@@ -62,20 +78,49 @@ hr.style-two{
     height:50px;
     background-color: #999999;
 }
+hr.style-three{
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #209b60;
+    text-align: center;
+}
+hr.style-three:after {
+    content: "相关职位";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.2em;
+    padding: 0 0.25em;
+    background: #f2f2f2;
+}
 
 h3.descriptionTitle{
     margin-left: 35px;
     margin-bottom: 20px;
-    color: #999999;
+    color: #209b60;
     font-size: 20px;
 }
-
-ol.descriptionContent{
+.companyWord{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 60px;
+    color: #209b60;
+    font-size: 30px;
+}
+div.companyAndRecommend{
+    border-width: 5px 0 0 0;
+    border-style: solid;
+    border-color: #209b60;
+}
+.descriptionContent{
     margin-left: 40px;
     color: #999999;
 }
 
-li{
+ul.descriptionContent li{
+    list-style-type:disc;
     line-height: 2.5;
     font-size: 16px;
     word-break: break-all;
@@ -102,4 +147,30 @@ span.applyContents{
     line-height: 0;
     color: #999999;
     font-size: 20px;
+}
+
+.companyAndRecommend{
+    background-color: #f2f2f2;
+    height: inherit;
+}
+
+ul.companyInfo{
+    color: #999999;
+    margin-left: 30px;
+}
+.glyphicon{
+    margin-right: 10px;
+}
+
+ul.recommendJobs li{
+    line-height: 2;
+    color: #999999;
+    margin: 10px 10px;
+    font-size: 13px;
+}
+ul.recommendJobs li a{
+    color: #4c4c4c;
+}
+.QRcode{
+   padding: 25px;
 }
