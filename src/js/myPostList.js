@@ -207,7 +207,7 @@ function addTr(onePost) {
             <td >${onePost.title}</td>
         </tr>
         <tr>
-            <td class='text-center'>description</td>
+            <td >description</td>
             <td >${onePost.job_description}</td>
         </tr>
         <tr>
