@@ -21,5 +21,10 @@
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.7.0",
     "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "phantom": "^4.0.5",
+    "phantomjs-prebuilt": "^2.1.14",
+    "webpage": "^0.3.0"
   }
 }
