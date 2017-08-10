@@ -142,6 +142,7 @@ function showMyPostList(id='') {
     creatPageControl();
     //getMyPost(id);
     addTrs(test);
+    $(function() { $("[data-toggle='popover']").popover({ html : true }); });
 }
 function creatTable() {
     $("#rightSideWindow").html(``);
@@ -175,7 +176,7 @@ function getMyPost(userId) {
     })
 }
 function addTrs(postList) {
-    for (let onePost=0;onePost<8;onePost++){
+    for (let onePost=0;onePost<6;onePost++){
         addTr(postList[onePost+pageRow*8]);
     }
 }
@@ -184,10 +185,46 @@ function addTr(onePost) {
     let postTr = table.insertRow(table.rows.length);
     let jobTitleTd = postTr.insertCell(postTr.cells.length);
     let jobStatusTd = postTr.insertCell(postTr.cells.length);
-    let detailTd = postTr.insertCell(postTr.cells.length);
     jobTitleTd.innerText = onePost.title;
     jobStatusTd.innerText = onePost.status;
-    detailTd.innerHTML = `<button  class="btn btn-info" onclick="detail(${onePost.postId})">Detail</button>`;
+    let actionTd = postTr.insertCell(postTr.cells.length);
+    let detailDiv=document.createElement("div");
+    detailDiv.innerHTML=`
+    <a tabindex="0" class="btn btn-lg btn-info" role="button" data-toggle="popover" data-placement="left"
+       data-trigger="focus" title="Job detail"
+       data-content="
+       <table id='table' class='table table-bordered table-hover text-center'>
+    <thead>
+    <tr class='body' >
+        <td >属性</td>
+        <td >内容</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td >title</td>
+            <td >${onePost.title}</td>
+        </tr>
+        <tr>
+            <td >description</td>
+            <td >${onePost.job_description.slice(0,50).concat('………………')}</td>
+        </tr>
+        <tr>
+            <td >tags</td>
+            <td >${onePost.company_industry}</td>
+        </tr>
+        <tr>
+            <td >how to apply</td>
+            <td >${onePost.phone}</td>
+        </tr>
+    </tbody>
+    </table>
+    <div style='width:60px;margin-left: auto;
+            margin-right: auto;'>
+           <button  class='btn btn-danger' data-toggle='modal' data-target='#addModal'  onclick=‘alterOne(${onePost.id})’>编辑</button>
+    </div>
+    ">Detail</a>`;
+    actionTd.appendChild(detailDiv);
     if(onePost.status=='public'){
         postTr.className ="success";
     }
@@ -197,7 +234,7 @@ function addTr(onePost) {
     }
 }
 function nextPage() {
-    if(cache.length>(cache+1)*8){
+    if(cache.length>(cache+1)*6){
         pageRow++;
         return true;
     }
