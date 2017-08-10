@@ -1,3 +1,6 @@
+
+
+
 .userbox{
     background-color: #00b38a;
     margin-left: 85%;
@@ -7,8 +10,8 @@
 }
 .form-controlcommon{
      display: block;
-     width:50%;
-     height: 35px;
+     width:60%;
+     height: 30px;
      padding-top:6px;
      padding-right: 12px;
      padding-bottom:6px;
@@ -109,6 +112,7 @@
     border:1px solid #8c8c8c;
     border-radius: 4px;
 }
+
 
 
 
