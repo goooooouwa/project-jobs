@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
-    <link rel="stylesheet" type="text/css" href="../../201609081635/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../mod/201609081635/css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="../css/postjob.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
-    <link href="../../201609081635/css/themes/quill.snow.css" rel="stylesheet">
+    <link href="../mod/201609081635/css/themes/quill.snow.css" rel="stylesheet">
     <script src="../js/postjob.js"></script>
     <style type="text/css">
         #editor-container {
@@ -24,11 +24,9 @@
             padding-top: 20px;
             margin-bottom: 10px;
         }
-
         .custom-input input {
             padding-left: 15px;
         }
-
         .custom-input label {
             cursor: text;
             margin-left:20%;
@@ -41,13 +39,11 @@
             font-weight: normal;
             transition: all .3s ease;
         }
-
         .custom-input label.active {
             top: 0;
             left: 0;
             font-size: 12px;
         }
-
         .custom-input label.active.focusIn {
             color: #66afe9;
         }
@@ -131,64 +127,63 @@
             <div >
                 <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
                 <div class="htmleaf-container">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 mt50">
-                                <div id="standalone-container">
-                                    <div id="toolbar-container">
-					<span class="ql-formats">
-					<select class="ql-font"></select>
-					<select class="ql-size"></select>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-bold"></button>
-					<button class="ql-italic"></button>
-					<button class="ql-underline"></button>
-					<button class="ql-strike"></button>
-					</span>
-                                        <span class="ql-formats">
-					<select class="ql-color"></select>
-					<select class="ql-background"></select>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-script" value="sub"></button>
-					<button class="ql-script" value="super"></button>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-header" value="1"></button>
-					<button class="ql-header" value="2"></button>
-					<button class="ql-blockquote"></button>
-					<button class="ql-code-block"></button>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-list" value="ordered"></button>
-					<button class="ql-list" value="bullet"></button>
-					<button class="ql-indent" value="-1"></button>
-					<button class="ql-indent" value="+1"></button>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-direction" value="rtl"></button>
-					<select class="ql-align"></select>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-link"></button>
-					<button class="ql-image"></button>
-					<button class="ql-video"></button>
-					<button class="ql-formula"></button>
-					</span>
-                                        <span class="ql-formats">
-					<button class="ql-clean"></button>
-					</span>
-                                    </div>
-                                    <div id="editor-container"></div>
+                    <div class="row">
+                        <div class="col-md-12 mt50">
+                            <div id="standalone-container">
+                                <div id="toolbar-container">
+                                    <span class="ql-formats">
+                                        <select class="ql-font"></select>
+                                        <select class="ql-size"></select>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-bold"></button>
+                                        <button class="ql-italic"></button>
+                                        <button class="ql-underline"></button>
+                                        <button class="ql-strike"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <select class="ql-color"></select>
+                                        <select class="ql-background"></select>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-script" value="sub"></button>
+                                        <button class="ql-script" value="super"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-header" value="1"></button>
+                                        <button class="ql-header" value="2"></button>
+                                        <button class="ql-blockquote"></button>
+                                        <button class="ql-code-block"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-list" value="ordered"></button>
+                                        <button class="ql-list" value="bullet"></button>
+                                        <button class="ql-indent" value="-1"></button>
+                                        <button class="ql-indent" value="+1"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-direction" value="rtl"></button>
+                                        <select class="ql-align"></select>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-link"></button>
+                                        <button class="ql-image"></button>
+                                        <button class="ql-video"></button>
+                                        <button class="ql-formula"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-clean"></button>
+                                    </span>
                                 </div>
+                                <div id="editor-container"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <script src="../../201609081635/dist/quill.js"></script>
+                <script href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+                <script  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+                <script src="../mod/201609081635/core/quill.js"></script>
                 <!-- Initialize Quill editor -->
                 <script>
                     var quill = new Quill('#editor-container', {
@@ -212,7 +207,7 @@
 </div>
 
 <script>window.jQuery || document.write('<script src="../../201606291723/js/jquery-2.1.1.min.js"><\/script>')</script>
-<script type="text/javascript" src="../../201606291723/js/phanimate.jquery.js"></script>
+<script type="text/javascript" src="../mod/201606291723/js/phanimate.jquery.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('.custom-input input').phAnim();
