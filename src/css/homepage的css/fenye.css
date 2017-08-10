@@ -1,0 +1,27 @@
+a:link,a:visited,a:hover,.current,#info{
+    border:1px solid #DDD;
+    background:#F2F2F2;
+    display:inline-block;
+    margin:1px;
+    text-decoration:none;
+    font-size:20px;
+    width:20px;
+    height:20px;
+    text-align:center;
+    line-height:20px;
+    color:#AAA;
+    padding:1px 2px;
+}
+a:hover{
+    border:1px solid #E5E5E5;
+    background:#F9F9F9;
+}
+.current{
+    border:1px solid green;
+    background:#DFF9F8;
+    margin:1px;
+    color:green;
+}
+#info{
+    width:auto;
+}
