@@ -138,10 +138,11 @@ const test=[
 let pageRow=0;
 let cache=new Array();
 function showMyPostList(id='') {
+    cache=test;//测试
+    //getMyPost(id);//未与api接通
     creatTable();
     creatPageControl();
-    //getMyPost(id);
-    addTrs(test);
+    addTrs(test);//测试
     $(function() { $("[data-toggle='popover']").popover({ html : true }); });
 }
 function creatTable() {
@@ -163,13 +164,20 @@ function creatTable() {
     </div>`);
 }
 function creatPageControl() {
-    $("#rightSideWindow").append();
+    $("#rightSideWindow").append($(`<button  style="position: relative; left:500px;margin-left: 20px " class="btn btn-info" onclick="pastPage()">上一页</button>`));
+    if(isNextPage()){
+        $("#rightSideWindow").append($(`<button  id="next1" class="btn  btn-success" style="position: relative; left:500px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
+    }else{
+        $("#rightSideWindow").append($(`<button  id="next2" class="btn  btn-success" style="position: relative; left:500px;margin-left: 30px" disabled="disabled" onclick="nextPage()">下一页</button>`));
+    }
+    return true;
 }
 function getMyPost(userId) {
     $.ajax({
         type: 'GET',
         url:"http://127.0.0.1:8888/"+userId+'/postlist',
         success: function(postList) {
+            pageRow=0;
             cache=postList;
             addTrs(postList);
         }
@@ -234,9 +242,8 @@ function addTr(onePost) {
 
     }
 }
-function nextPage() {
-    if(cache.length>(cache+1)*6){
-        pageRow++;
+function isNextPage() {
+    if(cache.length>(pageRow+1)*6){
         return true;
     }
     else {
@@ -244,4 +251,13 @@ function nextPage() {
     }
 }
 
-
+function nextPage() {
+    if(isNextPage()){
+        pageRow++;
+    }else {
+        $("#next1").css("disabled","disabled");
+    };
+    $("tbody").empty();
+    addTrs(cache);
+    return true;
+}
