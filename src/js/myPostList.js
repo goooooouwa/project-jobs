@@ -138,10 +138,12 @@ const test=[
 let pageRow=0;
 let cache=new Array();
 function showMyPostList(id='') {
+    cache=test;//测试
+    //getMyPost(id);//未与api接通
     creatTable();
     creatPageControl();
-    //getMyPost(id);
-    addTrs(test);
+    addTrs(test);//测试
+    $(function() { $("[data-toggle='popover']").popover({ html : true }); });
 }
 function creatTable() {
     $("#rightSideWindow").html(``);
@@ -162,32 +164,76 @@ function creatTable() {
     </div>`);
 }
 function creatPageControl() {
-    $("#rightSideWindow").append();
+    $("#rightSideWindow").append($(`<button  style="position: relative; left:500px;margin-left: 20px " class="btn btn-info" onclick="pastPage()">上一页</button>`));
+    if(isNextPage()){
+        $("#rightSideWindow").append($(`<button  id="next1" class="btn  btn-success" style="position: relative; left:500px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
+    }else{
+        $("#rightSideWindow").append($(`<button  id="next2" class="btn  btn-success" style="position: relative; left:500px;margin-left: 30px" disabled="disabled" onclick="nextPage()">下一页</button>`));
+    }
+    return true;
 }
 function getMyPost(userId) {
     $.ajax({
         type: 'GET',
         url:"http://127.0.0.1:8888/"+userId+'/postlist',
         success: function(postList) {
+            pageRow=0;
             cache=postList;
             addTrs(postList);
         }
     })
 }
 function addTrs(postList) {
-    for (let onePost=0;onePost<8;onePost++){
+    for (let onePost=0;onePost<6;onePost++){
         addTr(postList[onePost+pageRow*8]);
     }
 }
 function addTr(onePost) {
     let table = document.getElementById('tbody');
     let postTr = table.insertRow(table.rows.length);
+
     let jobTitleTd = postTr.insertCell(postTr.cells.length);
     let jobStatusTd = postTr.insertCell(postTr.cells.length);
-    let detailTd = postTr.insertCell(postTr.cells.length);
     jobTitleTd.innerText = onePost.title;
     jobStatusTd.innerText = onePost.status;
-    detailTd.innerHTML = `<button  class="btn btn-info" onclick="detail(${onePost.postId})">Detail</button>`;
+    let actionTd = postTr.insertCell(postTr.cells.length);
+    let detailDiv=document.createElement("div");
+    detailDiv.innerHTML=`
+    <a tabindex="0" class="btn btn-lg btn-info" role="button" data-toggle="popover" data-placement="left"
+       data-trigger="focus" title="Job detail" 
+       data-content="
+       <table id='table' class='table table-bordered table-hover text-center' style='width=500px'>
+    <thead>
+    <tr class='body' >
+        <td >属性</td>
+        <td >内容</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td >title</td>
+            <td >${onePost.title}</td>
+        </tr>
+        <tr>
+            <td >description</td>
+            <td >${onePost.job_description}</td>
+        </tr>
+        <tr>
+            <td >tags</td>
+            <td >${onePost.company_industry}</td>
+        </tr>
+        <tr>
+            <td >how to apply</td>
+            <td >${onePost.phone}</td>
+        </tr>
+    </tbody>
+    </table>
+    <div style='width:60px;margin-left: auto;
+            margin-right: auto;'>
+           <button  class='btn btn-danger' data-toggle='modal' data-target='#addModal'  onclick=‘alterOne(${onePost.id})’>编辑</button>
+    </div>
+    ">Detail</a>`;
+    actionTd.appendChild(detailDiv);
     if(onePost.status=='public'){
         postTr.className ="success";
     }
@@ -196,9 +242,8 @@ function addTr(onePost) {
 
     }
 }
-function nextPage() {
-    if(cache.length>(cache+1)*8){
-        pageRow++;
+function isNextPage() {
+    if(cache.length>(pageRow+1)*6){
         return true;
     }
     else {
@@ -206,4 +251,13 @@ function nextPage() {
     }
 }
 
-
+function nextPage() {
+    if(isNextPage()){
+        pageRow++;
+    }else {
+        $("#next1").css("disabled","disabled");
+    };
+    $("tbody").empty();
+    addTrs(cache);
+    return true;
+}

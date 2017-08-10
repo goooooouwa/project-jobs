@@ -30,6 +30,86 @@
     </script>
 </head>
 <body>
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="resetModal()">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    PostDetail
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="postInfo">
+                    <div class="form-group">
+                        <label for="jobTitle">Title</label>
+                        <input type="text" class="form-control" id="jobTitle" placeholder="job title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCompany">Company</label>
+                        <input type="text" class="form-control" id="jobCompany" placeholder="your company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDescription">job description</label>
+                        <input type="text" class="form-control" id="jobDescription" placeholder="this job description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobApply">how to apply</label>
+                        <input type="text" class="form-control" id="jobApply" placeholder="how to apply" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDate">expiry date</label>
+                        <input type="text" class="form-control" id="jobDate" placeholder="expiry date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">category</label>
+                        <input type="text" class="form-control" id="category" placeholder="job category" required>
+                        <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
+                            <option value="Development">Development</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-type">job type</label>
+                        <input type="text" class="form-control" id="job-type" placeholder="job type" required>
+                        <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
+                            <option value="Volunteer">Volunteer</option>
+                            <option value="Permanent">Permanent</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobTags">tags</label>
+                        <input type="text" class="form-control" id="jobTags" placeholder="job tags">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCity">city</label>
+                        <input type="text" class="form-control" id="jobCity" placeholder="job City">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">job country</label>
+                        <input type="text" class="form-control" id="country" placeholder="job country">
+                        <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
+                            <option value="China">China</option>
+                            <option value="America">America</option>
+                            <option value="Japan">Japan</option>
+                            <option value="England">England</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">关闭</button>
+                <button type="submit" class="btn btn-primary" onclick="saveOrUpdatePost()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="top-bar dark">
     <div class="container">
         <div class="row">

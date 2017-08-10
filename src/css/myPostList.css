@@ -5,4 +5,33 @@
   margin-right: auto; }
 
 thead {
-  font-size: large; }
+  font-size: xx-large;
+  font-weight: bold; }
+
+tbody {
+  font-weight: bolder; }
+
+.table > tbody > tr > td {
+  text-align: center;
+  vertical-align: inherit; }
+
+.table td {
+  text-align: center; }
+
+.select-controlcommon {
+  width: 1%;
+  height: 0;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #5d6368;
+  border: 1px solid white;
+  border-radius: 4px;
+  position: fixed;
+  right: 15px; }
+
+.popover {
+  width: 800px;
+  max-width: initial; }
