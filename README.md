@@ -16,6 +16,13 @@
 [数据库及api](./read/数据库.md)
 ### api文档
 [api文档](./read/api文档.md)
+## 测试
+- 请切换到test分支之下
+- 测试库在test/lib/
+- 建立自己的测试文件在specs之下，参考：test/specs/postList.js
+- 并将自己的测试文件引入run.html的<head>标签
+- 将自己的src/js/下的私有文件引入run.html的<head>标签
+- 运行run 看测试结果
 ## 用户故事
 [用户故事](./jobs-user-stories.md)
 ## 分工
@@ -27,7 +34,7 @@
 - 后台设计完成api（两位）
 
 ## 进度
-doing
+6、7、8合并完成，待进一步改进，待api测试
 
 
 
