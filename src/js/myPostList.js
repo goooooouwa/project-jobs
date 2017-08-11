@@ -285,9 +285,8 @@ function lastPage() {
     return true;
 }
 function setInfo(onePost) {
-    var title=document.getElementById('Title').value=onePost.title;
-    var company=document.getElementById('company').value=onePost.company;
-    var adress=document.getElementById('adress').value=onePost.;
+    document.getElementById('Title').value=onePost.title;
+    document.getElementById('company').value=onePost.company;
     var apply=document.getElementById('apply').value;
     var tags=document.getElementById('Tags').value;
     var salary=document.getElementById('salary').value;
