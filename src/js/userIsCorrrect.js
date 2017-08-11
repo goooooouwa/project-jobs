@@ -1,5 +1,5 @@
 function userIsCorrect() {
-    var a =/^[a-zA-Z0-9_]{3,12}$/;
+    var a =/^[a-zA-Z0-9_]{6,18}$/;
     var b =document.getElementById("userName");
     var c =document.getElementById("email");
     var d =document.getElementById("user");
