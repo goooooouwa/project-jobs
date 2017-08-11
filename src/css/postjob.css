@@ -55,6 +55,13 @@
     margin-right: 20%;
     margin-left: 20%;
 }
+
+#editor-container {
+    height: 300px;
+}
+.container{
+    padding: 1.5em 0;
+}
 /*
 .select-controlcommon{
        width:5%;
