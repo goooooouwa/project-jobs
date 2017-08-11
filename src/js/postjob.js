@@ -54,7 +54,7 @@ function isNull(){
 function Release(){
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
-    var adress=document.getElementById('adress').value;
+    var stime=document.getElementById('stime').value;
     var apply=document.getElementById('apply').value;
     var tags=document.getElementById('Tags').value;
     var salary=document.getElementById('salary').value;
@@ -66,7 +66,7 @@ function Release(){
     var number=document.getElementById('number').value;
     var expirydate=document.getElementById('expiry-date').value;
     var description=document.getElementById('editor-container').innerText;
-    jobinfo=[title, company, adress,apply, tags, salary, category, jobtype,age, city, country, number, expirydate,description]
+    jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, expirydate,description]
     jobinformation=
         {
             Title: title,
