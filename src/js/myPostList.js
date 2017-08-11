@@ -164,7 +164,7 @@ function creatTable() {
     </div>`);
 }
 function creatPageControl() {
-    $("#rightSideWindow").append($(`<button   class="btn  btn-primary nextPage " style="position: relative; left:600px;margin-left: 30px" onclick="newPost()">创建</button>`));
+    $("#rightSideWindow").append($(`<button   class="btn  btn-primary nextPage " data-toggle="modal" data-target="#myModal" style="position: relative; left:600px;margin-left: 30px" onclick="newPost()">创建</button>`));
     if(isLastPage()){
         $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-success lastPage " onclick="lastPage()" >上一页</button>`));
     }else {
@@ -238,7 +238,7 @@ function addTr(onePost) {
     </table>
     <div style='width:60px;margin-left: auto;
             margin-right: auto;'>
-           <button  class='btn btn-danger' data-toggle='modal' data-target='#addModal'  onclick=‘alterOne(${onePost.id})’>编辑</button>
+           <button  class='btn btn-danger' data-toggle='modal' data-target='#myModal'  onclick=‘alterOne(${onePost.id})’>编辑</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
