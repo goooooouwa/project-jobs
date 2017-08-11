@@ -164,11 +164,15 @@ function creatTable() {
     </div>`);
 }
 function creatPageControl() {
-    $("#rightSideWindow").append($(`<button  style="position: relative; left:500px;margin-left: 20px " class="btn btn-info" onclick="pastPage()">上一页</button>`));
+    if(isLastPage()){
+        $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-info lastPage " onclick="lastPage()" >上一页</button>`));
+    }else {
+        $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-info lastPage  disabled" onclick="lastPage()" >上一页</button>`));
+    }
     if(isNextPage()){
-        $("#rightSideWindow").append($(`<button  id="next1" class="btn  btn-success" style="position: relative; left:500px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
+        $("#rightSideWindow").append($(`<button   class="btn  btn-success nextPage" style="position: relative; left:600px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
     }else{
-        $("#rightSideWindow").append($(`<button  id="next2" class="btn  btn-success" style="position: relative; left:500px;margin-left: 30px" disabled="disabled" onclick="nextPage()">下一页</button>`));
+        $("#rightSideWindow").append($(`<button   class="btn  btn-success nextPage disabled" style="position: relative; left:600px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
     }
     return true;
 }
@@ -185,7 +189,9 @@ function getMyPost(userId) {
 }
 function addTrs(postList) {
     for (let onePost=0;onePost<6;onePost++){
-        addTr(postList[onePost+pageRow*8]);
+        if(postList[onePost+pageRow*6]){
+            addTr(postList[onePost+pageRow*6]);
+        }
     }
 }
 function addTr(onePost) {
@@ -202,7 +208,7 @@ function addTr(onePost) {
     <a tabindex="0" class="btn btn-lg btn-info" role="button" data-toggle="popover" data-placement="left"
        data-trigger="focus" title="Job detail" 
        data-content="
-       <table id='table' class='table table-bordered table-hover text-center' style='width=500px'>
+       <table  class='table table-bordered table-hover text-center' >
     <thead>
     <tr class='body' >
         <td >属性</td>
@@ -241,6 +247,7 @@ function addTr(onePost) {
         postTr.className ="warning";
 
     }
+    return true;
 }
 function isNextPage() {
     if(cache.length>(pageRow+1)*6){
@@ -250,14 +257,28 @@ function isNextPage() {
         return false;
     }
 }
+function isLastPage() {
+    if(pageRow>0){
+        return true;
+    }else{
+        return false;
+    }
+
+}
 
 function nextPage() {
     if(isNextPage()){
         pageRow++;
-    }else {
-        $("#next1").css("disabled","disabled");
-    };
-    $("tbody").empty();
-    addTrs(cache);
+    }
+    $("#tbody").empty();
+    showMyPostList();
+    return true;
+}
+function lastPage() {
+    if(isLastPage()){
+        pageRow--;
+    }
+    $("#tbody").empty();
+    showMyPostList();
     return true;
 }
