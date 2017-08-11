@@ -134,10 +134,10 @@ const test=[
 let pageRow=0;
 let cache=new Array();
 function showMyPostList(id='') {
-    cache=test;//测试
-    //getMyPost(id);//未与api接通
     creatTable();
     creatPageControl();
+    //getMyPost(id);//未与api接通
+    cache=test;//测试
     addTrs(test);//测试
     $(function() { $("[data-toggle='popover']").popover({ html : true }); });
 }
@@ -163,17 +163,17 @@ function creatPageControl() {
 
     let $divBox=$(`<div class="container-fluid"></div>`);
     let $divRow=$(`<div class="row">`);
-    $divRow.append($(`<div class="col-md-6">`));
-    $divRow.append($(`<div class="col-md-2"><button class="btn  btn-lg btn-primary nextPage " data-toggle="modal" data-target="#myModal">创建</button></div>`));
+    $divRow.append($(`<div class="col-xs-12 col-md-6">`));
+    $divRow.append($(`<div class="col-xs-4 col-md-2"><button class="btn  btn-lg btn-primary nextPage " data-toggle="modal" data-target="#myModal">创建</button></div>`));
     if(isLastPage()){
-        $divRow.append($(`<div class="col-md-2"><button class="btn btn-lg btn-success lastPage " onclick="lastPage()" >上一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-4 col-md-2"><button class="btn btn-lg btn-success lastPage " onclick="lastPage()" >上一页</button></div>`));
     }else {
-        $divRow.append($(`<div class="col-md-2"><button class="btn btn-lg btn-success lastPage  disabled" onclick="lastPage()" >上一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-4 col-md-2"><button class="btn btn-lg btn-success lastPage  disabled" onclick="lastPage()" >上一页</button></div>`));
     }
     if(isNextPage()){
-        $divRow.append($(`<div class="col-md-2"><button   class="btn btn-lg  btn-success nextPage"  onclick="nextPage()">下一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-4 col-md-2"><button   class="btn btn-lg  btn-success nextPage"  onclick="nextPage()">下一页</button></div>`));
     }else{
-        $divRow.append($(`<div class="col-md-2"><button   class="btn btn-lg  btn-success nextPage disabled" onclick="nextPage()">下一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-4 col-md-2"><button   class="btn btn-lg  btn-success nextPage disabled" onclick="nextPage()">下一页</button></div>`));
     }
     $divBox.append($divRow)
     $("#rightSideWindow").append($divBox);
@@ -239,7 +239,7 @@ function addTr(onePost) {
     </table>
     <div style='width:60px;margin-left: auto;
             margin-right: auto;'>
-           <button  class='btn btn-danger' data-toggle='modal' data-target='#myModal'  onclick=‘alterOne(${onePost.id})’>编辑</button>
+           <button  class='btn btn-danger' data-toggle='modal' data-target='#myModal'  onclick=‘setInfo(${onePost})’>编辑</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -268,7 +268,6 @@ function isLastPage() {
     }
 
 }
-
 function nextPage() {
     if(isNextPage()){
         pageRow++;
@@ -284,4 +283,19 @@ function lastPage() {
     $("#tbody").empty();
     showMyPostList();
     return true;
+}
+function setInfo(onePost) {
+    document.getElementById('Title').value=onePost.title;
+    document.getElementById('company').value=onePost.company;
+    var apply=document.getElementById('apply').value;
+    var tags=document.getElementById('Tags').value;
+    var salary=document.getElementById('salary').value;
+    var category=document.getElementById('category').value;
+    var jobtype=document.getElementById('job-type').value;
+    var age=document.getElementById('age').value;
+    var city=document.getElementById('city').value;
+    var country=document.getElementById('country').value;
+    var number=document.getElementById('number').value;
+    var expirydate=document.getElementById('expiry-date').value;
+    var description=document.getElementById('editor-container').innerText;
 }
