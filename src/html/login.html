@@ -8,6 +8,9 @@
     <link href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" media=screen>
     <script src="../js/emaiIsCorrect_InLogin.js"></script>
     <script src="../js/thisEmailIsExist.js"></script>
+    <script src="../js/loginByEmail.js"></script>
+    <script src="../js/loginByUserName.js"></script>
+    <script src="../js/userIsCorrrect.js"></script>
     <link href="../css/template.css" rel="stylesheet" media=screen>
     <link href="../css/login.css" rel="stylesheet" media=screen>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
@@ -32,13 +35,17 @@
 
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body" >
                     <h2>My Account</h2>
-                    <form role="form" class="form-horizontal" action="/login/" method="post">
+                    <div class="btn-group" role="group" aria-label="..."style="margin-left: 110px;margin-top: -20px">
+                        <button type="button" class="btn btn-default" onclick="loginByEmail()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By email&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                        <button type="button" class="btn btn-default" onclick="loginByUserName()">By user name</button>
+                    </div>
+                    <form role="form" class="form-horizontal" action="/login/" method="post" style="margin-top: 15px" id="loginWindow" >
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your email:</label>
                             <div class="col-sm-8" id="emails">
-                                <input onchange="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="login" placeholder="Enter Email">
+                                <input onchange="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="login" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="form-group">
@@ -62,16 +69,13 @@
 
                             </div>
                         </div>
-
-
-                </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style='margin-left: -40px;margin-right: -40px;margin-bottom: -25px'>
                     <p class="pull-left padding-top-5">
                         <em class="small light-grey">
                             Don't have an account? <a class="bold" href="./register.html">Register</a>
                         </em>
                     </p>
-                    <input onclick="return thisEmailIsExist()" id= "login" type="submit" name="submit" class="btn btn-green" value="Login">
+                    <input onclick="" id= "login" type="submit" name="submit" class="btn btn-green" value="Login">
                 </div>
                 </form>
             </div>
