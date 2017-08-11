@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
     <script src="../public/jquery.min.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <script src="../js/detail.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded",function () {
              getLogOrNot(status);
@@ -21,8 +21,10 @@
     <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
     <meta charset="UTF-8">
 
+   
     <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
     <!-- global_domain FE_base... -->
+
 
     <script type="text/javascript">
 
@@ -124,8 +126,8 @@
             <div class="info">
                 <div>
                     <div class="row">
-                        <h2 class="jobTitle" id="jobTitle">资深产品经理</h2>
-                        <span class="postDate">发布时间 ：2017.08.08</span>
+                        <h2 class="jobTitle" id="jobTitle"></h2>
+                        <span class="postDate" id="postData"></span>
                     </div>
 
                     <div class="row">
@@ -137,19 +139,19 @@
                             </tr>
                             <tr>
                                 <th>catagory(职位类别) :</th>
-                                <td><span id="catagory">产品</span>-><span id="jobtype">产品策划</span></td>
+                                <td><span id="catagory"></span>-><span id="jobtype"></span></td>
                             </tr>
                             <tr>
                                 <th>salary(薪水) :</th>
-                                <td id="salary">10K-20K</td>
+                                <td id="salary"></td>
                             </tr>
                             <tr>
                                 <th>address(工作地点) :</th>
-                                <td id="address">武汉市洪山区</td>
+                                <td id="address"></td>
                             </tr>
                             <tr>
                                 <th>number(需求人数) :</th>
-                                <td id="number">5人</td>
+                                <td id="number"></td>
                             </tr>
 
                             </tbody>
@@ -160,13 +162,13 @@
                 <div class="detailInfo">
                     <h3 class="descriptionTitle"><b>description(岗位描述)</b></h3>
                     <div id="jobDescription" class="descriptionContent" >
-                        <ul class="descriptionContent" >
-                            <li>根据业务发展需求，负责严选基础促销工具的设计和营销玩法支持</li>
-                            <li>对接运营和市场营销需求，提供产品解决方案，并高效推进执行</li>
-                            <li>管理负责的需求版本规划，把控项目开发进度，保证产品的上线质量和进度</li>
-                            <li>跟踪产品上线效果，能迅速发现产品存在的问题，并提出解决方案推进优化</li>
-                            <li>研究行业竞品和零售行业营销玩法，并能够与运营一起推动新玩法的落地</li>
-                        </ul>
+                        <!--<ul class="descriptionContent" >-->
+                            <!--<li>根据业务发展需求，负责严选基础促销工具的设计和营销玩法支持</li>-->
+                            <!--<li>对接运营和市场营销需求，提供产品解决方案，并高效推进执行</li>-->
+                            <!--<li>管理负责的需求版本规划，把控项目开发进度，保证产品的上线质量和进度</li>-->
+                            <!--<li>跟踪产品上线效果，能迅速发现产品存在的问题，并提出解决方案推进优化</li>-->
+                            <!--<li>研究行业竞品和零售行业营销玩法，并能够与运营一起推动新玩法的落地</li>-->
+                        <!--</ul>-->
                     </div>
                 </div>
                 <div class="apply">
@@ -179,7 +181,7 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-sm-5">
                             <span class="applyTitle"><i>connect us(联系方式) :</i></span><br>
-                            <span class="applyContents" id="apply">abcdefg@cgc.com</span>
+                            <span class="applyContents" id="apply"></span>
                         </div>
                     </div>
                 </div>
@@ -189,8 +191,8 @@
             <div class="companyAndRecommend">
                 <span class="companyWord">company(公司) :</span>
                 <ul class="companyInfo">
-                    <li id="company"><span class="glyphicon glyphicon-home"></span>阿里发发有限公司</li>
-                    <li><span class="glyphicon glyphicon-map-marker"></span><span id="country">中国</span>-><span id="city">武汉</span></li>
+                    <li><span class="glyphicon glyphicon-home"></span><span id="company"></span></li>
+                    <li><span class="glyphicon glyphicon-map-marker"></span><span id="country"></span>-><span id="city"></span></li>
                 </ul>
                 <hr class="style-three">
                 <ul class="recommendJobs">
@@ -218,5 +220,6 @@
         </div>
     </div>
 </div>
+<script  type="" src="../js/detail.js"></script>
 </body>
 </html>
