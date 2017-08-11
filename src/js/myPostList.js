@@ -164,16 +164,18 @@ function creatTable() {
     </div>`);
 }
 function creatPageControl() {
+    $("#rightSideWindow").append($(`<button   class="btn  btn-primary nextPage " style="position: relative; left:600px;margin-left: 30px" onclick="newPost()">创建</button>`));
     if(isLastPage()){
-        $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-info lastPage " onclick="lastPage()" >上一页</button>`));
+        $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-success lastPage " onclick="lastPage()" >上一页</button>`));
     }else {
-        $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-info lastPage  disabled" onclick="lastPage()" >上一页</button>`));
+        $("#rightSideWindow").append($(`<button   style="position: relative; left:600px;margin-left: 20px " class="btn btn-success lastPage  disabled" onclick="lastPage()" >上一页</button>`));
     }
     if(isNextPage()){
         $("#rightSideWindow").append($(`<button   class="btn  btn-success nextPage" style="position: relative; left:600px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
     }else{
         $("#rightSideWindow").append($(`<button   class="btn  btn-success nextPage disabled" style="position: relative; left:600px;margin-left: 30px" onclick="nextPage()">下一页</button>`));
     }
+
     return true;
 }
 function getMyPost(userId) {
