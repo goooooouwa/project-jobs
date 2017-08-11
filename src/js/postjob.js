@@ -64,25 +64,25 @@ function Release(){
     var city=document.getElementById('city').value;
     var country=document.getElementById('country').value;
     var number=document.getElementById('number').value;
-    var expirydate=document.getElementById('expiry-date').value;
+    var etime=document.getElementById('etime').value;
     var description=document.getElementById('editor-container').innerText;
-    jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, expirydate,description]
+    jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
-            Title: title,
-            Company: company,
-            Stime: stime,
-            Apply: apply,
-            Tags: tags,
-            Salary: salary,
-            Category: category,
+            title: title,
+            company: company,
+            stime: stime,
+            apply: apply,
+            tags: tags,
+            salary: salary,
+            category: category,
             jobtype: jobtype,
-            Age: age,
-            City: city,
-            Country: country,
-            Number: number,
-            Expirydate: expirydate,
-            Description: description
+            age: age,
+            city: city,
+            country: country,
+            number: number,
+            etime: etime,
+            description: description
         };
     
     if(isNull()==false){
