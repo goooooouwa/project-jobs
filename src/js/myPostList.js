@@ -239,7 +239,7 @@ function addTr(onePost) {
     </table>
     <div style='width:60px;margin-left: auto;
             margin-right: auto;'>
-           <button  class='btn btn-danger' data-toggle='modal' data-target='#myModal'  onclick=‘alterOne(${onePost.id})’>编辑</button>
+           <button  class='btn btn-danger' data-toggle='modal' data-target='#myModal'  onclick=‘setInfo(${onePost})’>编辑</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -285,5 +285,18 @@ function lastPage() {
     return true;
 }
 function setInfo(onePost) {
-
+    var title=document.getElementById('Title').value=onePost.title;
+    var company=document.getElementById('company').value=onePost.company;
+    var adress=document.getElementById('adress').value=onePost.;
+    var apply=document.getElementById('apply').value;
+    var tags=document.getElementById('Tags').value;
+    var salary=document.getElementById('salary').value;
+    var category=document.getElementById('category').value;
+    var jobtype=document.getElementById('job-type').value;
+    var age=document.getElementById('age').value;
+    var city=document.getElementById('city').value;
+    var country=document.getElementById('country').value;
+    var number=document.getElementById('number').value;
+    var expirydate=document.getElementById('expiry-date').value;
+    var description=document.getElementById('editor-container').innerText;
 }
