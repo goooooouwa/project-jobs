@@ -35,5 +35,6 @@ tbody {
 .popover {
   width: 800px;
   max-width: initial;
-  height: 800px;
+  max-heigh: 800px;
+
   max-height: initial; }
