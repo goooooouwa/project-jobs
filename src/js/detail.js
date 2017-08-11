@@ -1,6 +1,17 @@
-$(document).ready(getJobInfoFromSQ());
+$(document).ready(getJobInfoFromSQ(123456,0));
 
-function getJobInfoFromSQ(jobId) {
+function getJobInfoFromSQ(jobId,logStatus=0) {
+    // if(logStatus==0){
+    //     debugger;
+    //     $("#judgeWhetherLog").append(`<ul class="lg_tbar_r">
+    //         <li>
+    //         <a href="login.html" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
+    //         </li>
+    //         <li>
+    //         <a href="register.html" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
+    //         </li>
+    //         </ul>`)
+    // }
  $.get(
      "localhost:9999/jobs/"+jobId,
      function (jobInfo) {
