@@ -141,6 +141,9 @@ function showMyPostList(id='') {
     creatPageControl();
     addTrs(test);//测试
     $(function() { $("[data-toggle='popover']").popover({ html : true }); });
+    $('[data-toggle="popover"]').popover({
+        container: 'body'
+    });
 }
 function creatTable() {
     $("#rightSideWindow").html(``);
@@ -228,7 +231,7 @@ function addTr(onePost) {
         </tr>
         <tr>
             <td >description</td>
-            <td >${onePost.job_description}</td>
+            <td >${onePost.job_description.slice(0,500).concat('………………')}</td>
         </tr>
         <tr>
             <td >tags</td>
@@ -300,17 +303,5 @@ function endPage() {
     return true;
 }
 function setInfo(onePost) {
-    document.getElementById('Title').value=onePost.title;
-    document.getElementById('company').value=onePost.company;
-    var apply=document.getElementById('apply').value;
-    var tags=document.getElementById('Tags').value;
-    var salary=document.getElementById('salary').value;
-    var category=document.getElementById('category').value;
-    var jobtype=document.getElementById('job-type').value;
-    var age=document.getElementById('age').value;
-    var city=document.getElementById('city').value;
-    var country=document.getElementById('country').value;
-    var number=document.getElementById('number').value;
-    var expirydate=document.getElementById('expiry-date').value;
-    var description=document.getElementById('editor-container').innerText;
+
 }
