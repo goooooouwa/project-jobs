@@ -8,6 +8,12 @@
     <script src="../public/jquery.min.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../js/detail.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function () {
+             getLogOrNot(status);
+            })
+
+    </script>
     <!--下面引用首页的导航栏-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit">
@@ -76,17 +82,8 @@
             </div>
 
            <div id="judgeWhetherLog">
-            <ul class="lg_tbar_r">
-                <li>
-                    <a href="login.html" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
-                </li>
-                <li>
-                    <a href="register.html" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
-                </li>
-            </ul>
+
            </div>
-
-
         </div>
 
     </div><!--end #lg_tbar-->
