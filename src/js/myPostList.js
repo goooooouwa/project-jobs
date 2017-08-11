@@ -141,6 +141,9 @@ function showMyPostList(id='') {
     creatPageControl();
     addTrs(test);//测试
     $(function() { $("[data-toggle='popover']").popover({ html : true }); });
+    $('[data-toggle="popover"]').popover({
+        container: 'body'
+    });
 }
 function creatTable() {
     $("#rightSideWindow").html(``);
@@ -165,19 +168,19 @@ function creatPageControl() {
     let $divBox=$(`<div class="container-fluid"></div>`);
     let $divRow=$(`<div class="row">`);
     $divRow.append($(`<div class="col-xs-12 col-md-6">`));
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-primary newPost " data-toggle="modal" data-target="#myModal">创建</button></div>`));
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-primary headPage" onclick="headPage()">首页</button></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-success newPost " data-toggle="modal" data-target="#myModal">创建</button></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-default headPage" onclick="headPage()">首页</button></div>`));
     if(isLastPage()){
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-success lastPage " onclick="lastPage()" >&#60;&#60;</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-default lastPage " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }else {
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-success lastPage  disabled " onclick="lastPage()" >&#60;&#60;</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-default lastPage  disabled " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }
     if(isNextPage()){
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-success nextPage " onclick="nextPage()">&#62;&#62;</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-default nextPage " onclick="nextPage()">&#62;&#62;</button></div>`));
     }else{
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-success nextPage disabled" onclick="nextPage()">&#62;&#62;</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-default nextPage disabled" onclick="nextPage()">&#62;&#62;</button></div>`));
     }
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-primary endPage" onclick="endPage()">尾页</button></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-default endPage" onclick="endPage()">尾页</button></div>`));
     $divBox.append($divRow)
     $("#rightSideWindow").append($divBox);
     return true;
@@ -228,7 +231,7 @@ function addTr(onePost) {
         </tr>
         <tr>
             <td >description</td>
-            <td >${onePost.job_description}</td>
+            <td >${onePost.job_description.slice(0,500).concat('………………')}</td>
         </tr>
         <tr>
             <td >tags</td>
@@ -242,7 +245,7 @@ function addTr(onePost) {
     </table>
     <div style='width:60px;margin-left: auto;
             margin-right: auto;'>
-           <button  class='btn btn-danger' data-toggle='modal' data-target='#myModal'  onclick=‘setInfo(${onePost})’>编辑</button>
+           <button  class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal'  onclick=‘setInfo(${onePost})’>编辑</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -300,17 +303,5 @@ function endPage() {
     return true;
 }
 function setInfo(onePost) {
-    document.getElementById('Title').value=onePost.title;
-    document.getElementById('company').value=onePost.company;
-    var apply=document.getElementById('apply').value;
-    var tags=document.getElementById('Tags').value;
-    var salary=document.getElementById('salary').value;
-    var category=document.getElementById('category').value;
-    var jobtype=document.getElementById('job-type').value;
-    var age=document.getElementById('age').value;
-    var city=document.getElementById('city').value;
-    var country=document.getElementById('country').value;
-    var number=document.getElementById('number').value;
-    var expirydate=document.getElementById('expiry-date').value;
-    var description=document.getElementById('editor-container').innerText;
+
 }
