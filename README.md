@@ -17,7 +17,7 @@
 ### api文档
 [api文档](./read/api文档.md)
 ## 测试
-- 在test分支之下
+- 请切换到test分支之下
 - 测试库在test/lib/
 - 建立自己的测试文件在specs之下，参考：test/specs/postList.js
 - 并将自己的测试文件引入run.html的<head>标签
