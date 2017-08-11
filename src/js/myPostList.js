@@ -133,11 +133,12 @@ const test=[
 ];
 let pageRow=0;
 let cache=new Array();
+const numberShow=8;
 function showMyPostList(id='') {
-    creatTable();
-    creatPageControl();
     //getMyPost(id);//未与api接通
     cache=test;//测试
+    creatTable();
+    creatPageControl();
     addTrs(test);//测试
     $(function() { $("[data-toggle='popover']").popover({ html : true }); });
 }
@@ -164,17 +165,19 @@ function creatPageControl() {
     let $divBox=$(`<div class="container-fluid"></div>`);
     let $divRow=$(`<div class="row">`);
     $divRow.append($(`<div class="col-xs-12 col-md-6">`));
-    $divRow.append($(`<div class="col-xs-4 col-md-2"><button class="btn  btn-lg btn-primary nextPage " data-toggle="modal" data-target="#myModal">创建</button></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-primary newPost " data-toggle="modal" data-target="#myModal">创建</button></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-primary headPage" onclick="headPage()">首页</button></div>`));
     if(isLastPage()){
-        $divRow.append($(`<div class="col-xs-4 col-md-2"><button class="btn btn-lg btn-success lastPage " onclick="lastPage()" >上一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-success lastPage " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }else {
-        $divRow.append($(`<div class="col-xs-4 col-md-2"><button class="btn btn-lg btn-success lastPage  disabled" onclick="lastPage()" >上一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-success lastPage  disabled " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }
     if(isNextPage()){
-        $divRow.append($(`<div class="col-xs-4 col-md-2"><button   class="btn btn-lg  btn-success nextPage"  onclick="nextPage()">下一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-success nextPage " onclick="nextPage()">&#62;&#62;</button></div>`));
     }else{
-        $divRow.append($(`<div class="col-xs-4 col-md-2"><button   class="btn btn-lg  btn-success nextPage disabled" onclick="nextPage()">下一页</button></div>`));
+        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-success nextPage disabled" onclick="nextPage()">&#62;&#62;</button></div>`));
     }
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-primary endPage" onclick="endPage()">尾页</button></div>`));
     $divBox.append($divRow)
     $("#rightSideWindow").append($divBox);
     return true;
@@ -191,9 +194,9 @@ function getMyPost(userId) {
     })
 }
 function addTrs(postList) {
-    for (let onePost=0;onePost<6;onePost++){
-        if(postList[onePost+pageRow*6]){
-            addTr(postList[onePost+pageRow*6]);
+    for (let onePost=0;onePost<numberShow;onePost++){
+        if(postList[onePost+pageRow*numberShow]){
+            addTr(postList[onePost+pageRow*numberShow]);
         }
     }
 }
@@ -253,7 +256,7 @@ function addTr(onePost) {
     return true;
 }
 function isNextPage() {
-    if(cache.length>(pageRow+1)*6){
+    if(cache.length>(pageRow+1)*numberShow){
         return true;
     }
     else {
@@ -280,6 +283,18 @@ function lastPage() {
     if(isLastPage()){
         pageRow--;
     }
+    $("#tbody").empty();
+    showMyPostList();
+    return true;
+}
+function headPage() {
+    pageRow=0;
+    $("#tbody").empty();
+    showMyPostList();
+    return true;
+}
+function endPage() {
+    pageRow=Math.ceil(cache.length/numberShow)-1;
     $("#tbody").empty();
     showMyPostList();
     return true;
