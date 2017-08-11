@@ -8,6 +8,7 @@
     <title>
         Coding Girls Club
     </title>
+    <link rel="stylesheet" type="text/css" href="../css/postjob.css">
     <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script src="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../js/personal information.js"></script>
@@ -25,14 +26,13 @@
     <script type="text/javascript" src="../js/myPostList.js"></script>
 
     <!--创建-->
-    <link rel="stylesheet" type="text/css" href="../css/postjob.css">
+
+
     <script src="../js/postjob.js"></script>
-    <!--<link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
-    <link rel="stylesheet" type="text/css" href="../mod/201609081635/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/postjob.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
-    <link href="../mod/201609081635/css/themes/quill.snow.css" rel="stylesheet">-->
+   <link href="../mod/201609081635/css/themes/quill.snow.css" rel="stylesheet">
 
     <script>
         $(document).ready(function () {
@@ -43,7 +43,7 @@
 <body>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div style="width: 80%;hight:80%; margin-left:10%;margin-right:10%">
+    <div style="width: 75%;hight:80%; margin-left:10%;margin-right:10%">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -53,33 +53,33 @@
                 <div class="htmleaf-container">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="Title" class="Xialabox"><b><span style="color:red">*</span>Title</b></label>
                                 <input type="text" class="form-controlcommon" id="Title" >
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="company" class="Xialabox"><b><span style="color:red">*</span>Company</b></label>
                                 <input type="text" class="form-controlcommon" id="company">
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="adress" class="Xialabox"><b><span style="color:red">*</span>Adress</b></label>
                                 <input type="text" class="form-controlcommon" id="adress">
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="apply" class="Xialabox"><b><span style="color:red">*</span>Apply</b></label>
                                 <input type="text" class="form-controlcommon"id="apply">
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="Tags" class="Xialabox"><b>Tags</b></label>
                                 <input type="text" class="form-controlcommon" id="Tags">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label for="salary" class="Xialabox"><b>Salary</b></label>
                                 <input type="text" class="form-controlcommon" id="salary">
                             </div>
@@ -87,7 +87,7 @@
 
 
                         <div class="row">
-                            <div  class="col-md-4">
+                            <div  class="col-md-3">
                                 <label for="category" class="Xialabox"><b><span style="color:red">*</span>Category</b></label>
                                 <input type="text" class="secondform-controlcommon" id="category"disabled>
                                 <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
@@ -98,7 +98,7 @@
                                 </select>
                             </div>
 
-                            <div  class="col-md-4">
+                            <div  class="col-md-3">
                                 <label for="job-type"  class="Xialabox"><b><span style="color:red">*</span>Job Type</b></label>
                                 <input type="text" class="secondform-controlcommon" id="job-type"disabled>
                                 <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
@@ -109,7 +109,7 @@
                                 </select>
                             </div>
 
-                            <div  class="col-md-4">
+                            <div  class="col-md-3">
                                 <label for="age"  class="Xialabox"><b></b>Age</b></label>
                                 <input type="text" class="secondform-controlcommon" id="age"disabled>
                                 <select class="select-controlcommon" onchange="D()" id="agess" name="agess">
@@ -122,12 +122,12 @@
                         </div>
 
                         <div class="row">
-                            <div  class="col-md-4">
+                            <div  class="col-md-3">
                                 <label for="city" class="Xialabox"><b><span style="color:red">*</span>City</b></label>
                                 <input type="text" class="form-controlcommon" id="city">
                             </div>
 
-                            <div   class="col-md-4">
+                            <div   class="col-md-3">
                                 <label for="country"  class="Xialabox"><b><span style="color:red">*</span>Country</b></label>
                                 <input type="text" class="secondform-controlcommon" id="country" disabled>
                                 <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
@@ -138,25 +138,31 @@
                                 </select>
                             </div>
 
-                            <div  class="col-md-4">
+                            <div  class="col-md-3">
                                 <label for="number" class="Xialabox"><b><span style="color:red">*</span>Number</b></label>
                                 <input type="text" class="form-controlcommon" id="number">
                             </div>
                         </div>
 
-
-                        <div style="position:relative;" >
+                        <div class="row">
+                            <div style="position:relative;" class="col-md-4" >
                             <label for="expiry-date" class="Xialabox"><b><span style="color:red">*</span>Expiry Date</b></label>
                             <input type="date" name="expiry-date" id="expiry-date" class="form-controlcommon">
                             <h2></h2>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
+                                <input type="text" id="Description" class="secondform-controlcommon" DISABLED>
+                                <button class="Edit-controlcommon" data-toggle="modal" data-target="#myModal2">编辑
+                                </button>
+                            </div>
+
+
                         </div>
 
-                        <div  >
-                            <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
-                            <input type="text" id="Description" class="secondform-controlcommon" DISABLED>
-                        </div>
-                        <button class="Edit-controlcommon" data-toggle="modal" data-target="#myModal2">编辑
-                        </button>
+
+
                     </div>
                 </div>
             </div>
