@@ -6,7 +6,7 @@
 const test=[
     {
         "id":"1",
-        "title": "title",
+        "title": "t",
         "company": "company",
         "stime": "stime",
         "apply": "apply",
@@ -24,7 +24,7 @@ const test=[
     },
     {
         "id":"2",
-        "title": "title",
+        "title": "ta",
         "company": "company",
         "stime": "stime",
         "apply": "apply",
@@ -42,7 +42,7 @@ const test=[
     },
     {
         "id":"3",
-        "title": "title",
+        "title": "ttt",
         "company": "company",
         "stime": "stime",
         "apply": "apply",
@@ -96,7 +96,7 @@ function creatPageControl() {
     let $divBox=$(`<div class="container-fluid"></div>`);
     let $divRow=$(`<div class="row">`);
     $divRow.append($(`<div class="col-xs-12 col-md-6">`));
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-success newPost " data-toggle="modal" data-target="#myModal">创建</button></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-success newPost " data-toggle="modal" data-target="#myModal" onclick="cleanForm()">创建</button></div>`));
     $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-default headPage" onclick="headPage()">首页</button></div>`));
     if(isLastPage()){
         $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-default lastPage " onclick="lastPage()" >&#60;&#60;</button></div>`));
@@ -173,7 +173,7 @@ function addTr(onePost) {
     </table>
     <div style='width:60px;margin-left: auto;
             margin-right: auto;'>
-           <button  id='${onePost.id}' class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal'  onclick=‘setInfo(${onePost})’>编辑</button>
+           <button   class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >编辑</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -184,7 +184,6 @@ function addTr(onePost) {
         postTr.className ="warning";
 
     }
-    $("#onePost.id").on("onclick",setInfo(onePost));
     return true;
 
 }
@@ -232,19 +231,41 @@ function endPage() {
     showMyPostList();
     return true;
 }
-function setInfo(onePost) {
-    document.getElementById('Title').value=onePost.title;
-    document.getElementById('company').value=onePost.company;
-    document.getElementById('stime').value=onePost.stime;
-    document.getElementById('apply').value=onePost.apply;
-    document.getElementById('Tags').value=onePost.tags;
-    document.getElementById('salary').value=onePost.salary;
-    document.getElementById('category').value=onePost.category;
-    document.getElementById('job-type').value=onePost.jobtype;
-    document.getElementById('age').value=onePost.age;
-    document.getElementById('city').value=onePost.city;
-    document.getElementById('country').value=onePost.country;
-    document.getElementById('number').value=onePost.number;
-    document.getElementById('etime').value=onePost.etime;
-    document.getElementById('editor-container').innerText=onePost.description;
+function setInfo(onePostId) {
+    let onePost=new Object();
+    for(let one of cache){
+        if(parseInt(one.id)==parseInt(onePostId)){
+            onePost=one;
+            document.getElementById('Title').value=onePost.title;
+            document.getElementById('company').value=onePost.company;
+            document.getElementById('stime').value=onePost.stime;
+            document.getElementById('apply').value=onePost.apply;
+            document.getElementById('Tags').value=onePost.tags;
+            document.getElementById('salary').value=onePost.salary;
+            document.getElementById('category').value=onePost.category;
+            document.getElementById('job-type').value=onePost.jobtype;
+            document.getElementById('age').value=onePost.age;
+            document.getElementById('city').value=onePost.city;
+            document.getElementById('country').value=onePost.country;
+            document.getElementById('number').value=onePost.number;
+            document.getElementById('etime').value=onePost.etime;
+            document.getElementsByClassName('ql-editor')[0].innerHTML=onePost.description;
+            break;
+        };
+    }
+}
+function cleanForm() {
+    document.getElementById('Title').value='';
+    document.getElementById('company').value='';
+    document.getElementById('stime').value='';
+    document.getElementById('apply').value='';
+    document.getElementById('Tags').value='';
+    document.getElementById('salary').value='';
+    document.getElementById('category').value='';
+    document.getElementById('job-type').value='';
+    document.getElementById('age').value='';
+    document.getElementById('city').value='';
+    document.getElementById('country').value='';
+    document.getElementById('number').value='';
+    document.getElementsByClassName('ql-editor')[0].innerHTML='';
 }
