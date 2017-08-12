@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src='./post.js'></script>
+        <script>
+            //进入页面。自动调用函数
+            $(document).ready(()=>{
+                intoIndex();
+            });
+        </script>
+    </head>
+    <body>
+        <div style="width:800px; height:200px; margin:0 auto; font-size:40px;" id='getuser'>
+            
+        </div>
+
+        <div class="pull-right">  <!-- 注销登录的按钮-->
+            <button class="btn btn-success" onclick="logout()">注销</button>
+        </div>
+    </body>
+</html>
