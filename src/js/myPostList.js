@@ -58,20 +58,192 @@ const test=[
         "description": "description",
         "status":"public"
     },
+    {
+        "id":"4",
+        "title": "t",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"public"
+    },
+    {
+        "id":"5",
+        "title": "ta",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"hidden"
+    },
+    {
+        "id":"6",
+        "title": "ttt",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"public"
+    },
+    {
+        "id":"7",
+        "title": "t",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"public"
+    },
+    {
+        "id":"8",
+        "title": "ta",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"hidden"
+    },
+    {
+        "id":"9",
+        "title": "ttt",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"public"
+    },
+    {
+        "id":"10",
+        "title": "t",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"public"
+    },
+    {
+        "id":"11",
+        "title": "ta",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"hidden"
+    },
+    {
+        "id":"12",
+        "title": "ttt",
+        "company": "company",
+        "stime": "stime",
+        "apply": "apply",
+        "tags": "tags",
+        "salary": "salary",
+        "category": "category",
+        "jobtype": "jobtype",
+        "age": "age",
+        "city": "city",
+        "country": "country",
+        "number": "number",
+        "etime": "etime",
+        "description": "description",
+        "status":"public"
+    },
 ];
 let pageRow=0;
 let cache=new Array();
 const numberShow=8;
+$(function () { $("[data-toggle='popover']").popover(); });
+
 function showMyPostList(id='') {
     //getMyPost(id);//未与api接通
-    cache=test;//测试
+    cache=test;//测试假数据
     creatTable();
-    creatPageControl();
-    addTrs(test);//测试
-    $(function() { $("[data-toggle='popover']").popover({ html : true }); });
-    $('[data-toggle="popover"]').popover({
-        container: 'body'
-    });
+    creatPageControl();//测试假数据
+    addTrs(test);//测试假数据
+}
+function getMyPost(userId) {
+    $.ajax({
+        type: 'GET',
+        url:"http://127.0.0.1:8888/"+userId+'/postlist',
+        success: function(postList) {
+            pageRow=0;
+            cache=postList;
+            addTrs(postList);
+            creatPageControl();
+        }
+    })
 }
 function creatTable() {
     $("#rightSideWindow").html(``);
@@ -113,18 +285,8 @@ function creatPageControl() {
     $("#rightSideWindow").append($divBox);
     return true;
 }
-function getMyPost(userId) {
-    $.ajax({
-        type: 'GET',
-        url:"http://127.0.0.1:8888/"+userId+'/postlist',
-        success: function(postList) {
-            pageRow=0;
-            cache=postList;
-            addTrs(postList);
-        }
-    })
-}
 function addTrs(postList) {
+
     for (let onePost=0;onePost<numberShow;onePost++){
         if(postList[onePost+pageRow*numberShow]){
             addTr(postList[onePost+pageRow*numberShow]);
@@ -143,7 +305,7 @@ function addTr(onePost) {
     let detailDiv=document.createElement("div");
     detailDiv.innerHTML=`
     <a tabindex="0" class="btn btn-lg btn-info" role="button" data-toggle="popover" data-placement="left"
-       data-trigger="focus" title="Job detail" 
+       data-trigger="focus" title="Job detail"  data-html="true"
        data-content="
        <table  class='table table-bordered table-hover text-center' >
     <thead>
@@ -184,6 +346,9 @@ function addTr(onePost) {
         postTr.className ="warning";
 
     }
+    $('[data-toggle="popover"]').popover({
+        container: 'body'
+    });
     return true;
 
 }
@@ -204,31 +369,49 @@ function isLastPage() {
 
 }
 function nextPage() {
-    if(isNextPage()){
+    if($("button.nextPage").hasClass("disabled")){
+
+    }else{
         pageRow++;
+        if($("button.lastPage").hasClass("disabled")){
+            $("button.lastPage").removeClass("disabled");
+        }
+        if(isNextPage()){
+        }else {
+            $("button.nextPage").addClass("disabled");
+        }
+        $("#tbody").empty();
+        addTrs(cache);
     }
-    $("#tbody").empty();
-    showMyPostList();
     return true;
 }
 function lastPage() {
-    if(isLastPage()){
+    if($("button.lastPage").hasClass("disabled")){
+
+    }else {
         pageRow--;
+        if($('button.nextPage').hasClass('disabled')) {
+            $("button.nextPage").removeClass("disabled");
+        }
+        if(isLastPage()){
+        }else {
+            $("button.lastPage").addClass("disabled");
+        }
+        $("#tbody").empty();
+        addTrs(cache);
     }
-    $("#tbody").empty();
-    showMyPostList();
     return true;
 }
 function headPage() {
     pageRow=0;
     $("#tbody").empty();
-    showMyPostList();
+    addTrs(cache);
     return true;
 }
 function endPage() {
     pageRow=Math.ceil(cache.length/numberShow)-1;
     $("#tbody").empty();
-    showMyPostList();
+    addTrs(cache);
     return true;
 }
 function setInfo(onePostId) {
@@ -269,3 +452,4 @@ function cleanForm() {
     document.getElementById('number').value='';
     document.getElementsByClassName('ql-editor')[0].innerHTML='';
 }
+
