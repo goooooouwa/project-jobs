@@ -42,7 +42,7 @@ const test=[
     },
     {
         "id":"3",
-        "title": "ttt",
+        "title": "tea",
         "company": "company",
         "stime": "stime",
         "apply": "apply",
@@ -202,33 +202,17 @@ const test=[
         "description": "description",
         "status":"hidden"
     },
-    {
-        "id":"12",
-        "title": "ttt",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
+
 ];
 let pageRow=0;
 let cache=new Array();
-const numberShow=8;
+const numberShow=6;
 $(function () { $("[data-toggle='popover']").popover(); });
 
 function showMyPostList(id='') {
     //getMyPost(id);//未与api接通
     cache=test;//测试假数据
+    creatSearchForm();
     creatTable();
     creatPageControl();//测试假数据
     addTrs(test);//测试假数据
@@ -245,8 +229,19 @@ function getMyPost(userId) {
         }
     })
 }
-function creatTable() {
+function creatSearchForm(){
     $("#rightSideWindow").html(``);
+    $("#rightSideWindow").append(`<form role="form col-md-12">
+    <div class="col-md-6"></div>
+    <div class="form-group col-md-4">
+        <input type="text" id="searchIn" class="form-control col-md-4" id="name" placeholder="搜索" style="margin-top: 20px;">
+    </div>
+    <button type="button" class="btn btn-default btn-lg" aria-label="Left Align" style="margin-top: 20px;" onclick="searchPost()">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </button>
+</form>`);
+}
+function creatTable() {
     $("#rightSideWindow").append(`    <div id="myPostList">
          <div id="postTable">
              <table id="table" class="table table-bordered table-hover text-center">
@@ -254,7 +249,7 @@ function creatTable() {
                      <tr class="body" id="menu">
                          <td >Post</td>
                          <td >Status</td>
-                         <td >Action</td>
+                         <td >Detail</td>
                      </tr>
                  </thead>
                  <tbody id="tbody">
@@ -262,6 +257,7 @@ function creatTable() {
              </table>
          </div>
     </div>`);
+    return true;
 }
 function creatPageControl() {
 
@@ -310,8 +306,8 @@ function addTr(onePost) {
        <table  class='table table-bordered table-hover text-center' >
     <thead>
     <tr class='body' >
-        <td >属性</td>
-        <td >内容</td>
+        <td >info</td>
+        <td >detail</td>
     </tr>
     </thead>
     <tbody>
@@ -335,7 +331,7 @@ function addTr(onePost) {
     </table>
     <div style='width:60px;margin-left: auto;
             margin-right: auto;'>
-           <button   class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >编辑</button>
+           <button   class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -452,4 +448,21 @@ function cleanForm() {
     document.getElementById('number').value='';
     document.getElementsByClassName('ql-editor')[0].innerHTML='';
 }
-
+function searchPost() {
+    event.preventDefault();
+    let keyWord=$("#searchIn").val();
+    let keyArr=keyWord.split("");
+    let result = [];
+    for(let post of cache){
+        for(let oneKey of keyArr){
+            if(post.title.indexOf(oneKey)>=0){
+                result.push(post);
+                break;
+            }
+        }
+    }
+    cache=result;
+    $("tbody").empty();
+    addTrs(cache);
+    return result;
+}
