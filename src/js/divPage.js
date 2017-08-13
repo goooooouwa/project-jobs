@@ -1,8 +1,9 @@
 let pageRow=0;//第几页
-let cache=new Array();//cache 是缓存数据
+let cache=new Array();//cache 是缓存数据，自己的总数据,要自己设置
 const numberShow=8;//每页显示数量
-
-function creatPageControl(id) {//参数是div的id,eg:#rightSideWindow
+//id=#tbody是内容区域
+//addTr是我的添加内容方法,自己填充区域的相应的方法要自己写
+function creatPageControl(id) {//参数是div的id,放动作按钮区域,eg:#rightSideWindow
 
     let $divBox=$(`<div class="container-fluid"></div>`);
     let $divRow=$(`<div class="row">`);
@@ -40,30 +41,48 @@ function isLastPage() {
 
 }
 function nextPage() {
-    if(isNextPage()){
+    if($("button.nextPage").hasClass("disabled")){
+
+    }else{
         pageRow++;
+        if($("button.lastPage").hasClass("disabled")){
+            $("button.lastPage").removeClass("disabled");
+        }
+        if(isNextPage()){
+        }else {
+            $("button.nextPage").addClass("disabled");
+        }
+        $("#tbody").empty();
+        addTrs(cache);
     }
-    $("#tbody").empty();//根据id相应的内容清空
-    showMyPostList();//自己的加载显示函数,函数内要调用creatPageControl(id)
     return true;
 }
 function lastPage() {
-    if(isLastPage()){
+    if($("button.lastPage").hasClass("disabled")){
+
+    }else {
         pageRow--;
+        if($('button.nextPage').hasClass('disabled')) {
+            $("button.nextPage").removeClass("disabled");
+        }
+        if(isLastPage()){
+        }else {
+            $("button.lastPage").addClass("disabled");
+        }
+        $("#tbody").empty();
+        addTrs(cache);
     }
-    $("#tbody").empty();
-    showMyPostList();
     return true;
 }
 function headPage() {
     pageRow=0;
     $("#tbody").empty();
-    showMyPostList();
+    addTrs(cache);
     return true;
 }
 function endPage() {
     pageRow=Math.ceil(cache.length/numberShow)-1;
     $("#tbody").empty();
-    showMyPostList();
+    addTrs(cache);
     return true;
 }
