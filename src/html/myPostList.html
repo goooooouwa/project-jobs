@@ -13,9 +13,6 @@
     <script type="text/javascript" src="../js/myPostList.js"></script>
     <script src="../js/postjob.js"></script>
 
-    <link rel="stylesheet" href="../public/bootstrap-table-master/dist/bootstrap-table.css"></link>
-    <script type="text/javascript" src="../public/bootstrap-table-master/dist/bootstrap-table.js"></script>
-    <script type="text/javascript" src="../public/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"></script>
 
 </head>
 <body>
@@ -152,6 +149,15 @@
     showMyPostList();
 </script>-->
 <div style="position:fixed;left:30%;top:30%;"></div>
+<form role="form col-md-12">
+    <div class="col-md-6"></div>
+    <div class="form-group col-md-4">
+        <input type="text" class="form-control col-md-4" id="name" placeholder="搜索">
+    </div>
+    <button type="button" class="btn btn-default center-block" onclick="searchPost()">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </button>
+</form>
 <script>
 
     $(function() { $("[data-toggle='popover']").popover({ html : true }); });
