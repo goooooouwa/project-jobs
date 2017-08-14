@@ -30,25 +30,25 @@ method:get
     }  
 ]  
 ## 3、添加职位
-url:47.93.200.205:8080/account/post/add 
-method:post
-示例
-\{
-        "title": "WEB前端开发工程师",
-        "company": "百度",
-        "salary": "10k-15k",
-        "catagory":"Web前端开发",
-        "duration":30,
-        "jobtype":"全职",
-        "howtoapply":"发送简历至邮箱：111@qq.com",
-        "country": "中国",
-        "city": "北京",
-        "tags":"前端",
-        "description":"熟悉html,css,js"
-}
-返回
-\{
-    "code": 0,
-    "msg": "添加成功"
-}
+url:47.93.200.205:8080/account/post/add  
+method:post  
+示例  
+{  
+        "title": "WEB前端开发工程师",  
+        "company": "百度",  
+        "salary": "10k-15k",  
+        "catagory":"Web前端开发",  
+        "duration":30,  
+        "jobtype":"全职",  
+        "howtoapply":"发送简历至邮箱：111@qq.com",  
+        "country": "中国",  
+        "city": "北京",  
+        "tags":"前端",  
+        "description":"熟悉html,css,js"  
+}  
+返回  
+{  
+    "code": 0,  
+    "msg": "添加成功"  
+}  
 
