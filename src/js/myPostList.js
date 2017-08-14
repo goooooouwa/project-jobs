@@ -461,8 +461,7 @@ function searchPost() {
             }
         }
     }
-    cache=result;
     $("tbody").empty();
-    addTrs(cache);
+    addTrs(result);
     return result;
 }

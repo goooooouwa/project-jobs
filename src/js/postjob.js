@@ -87,6 +87,23 @@ function Release(){
     
     if(isNull()==false){
         alert("Please refine your infomation!");
+    }else {
+        $.post('http://127.0.0.1:8082', {
+            data: JSON.stringify(jobinformation),
+            dataType: 'JSONP',
+            crossDomain: true
+        }, function (data) {
+            postSuccess(data);
+        }).error(function (data) {
+            postFailed(data.responseText);
+        });
     }
    console.log(jobinformation);
+    return jobinformation;
+}
+function postSuccess(data) {
+    alert(data+"成功");
+}
+function postFailed(data) {
+    alert(data+"失败");
 }
