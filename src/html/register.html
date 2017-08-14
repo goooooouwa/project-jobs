@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" media=screen>
     <script src="../js/passwordIsSame.js"></script>
-    <script src="../js/userIsCorrrect.js"></script>
+    <script src="../js/userIsCorrectInRegister.js"></script>
     <script src="../js/passwordIsCorrect.js"></script>
     <script src="../js/emailIsCorrect_InRegister.js"></script>
     <script src="../js/allRegisterIsOk.js"></script>
@@ -41,25 +41,25 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your user name:</label>
                             <div class="col-sm-8" id="user">
-                                <input  onchange="userIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter User Name">
+                                <input  onblur="userIsCorrectInRegister()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter User Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your email:</label>
                             <div class="col-sm-8" id="emails">
-                                <input  onchange="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter Email">
+                                <input  onblur="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your password:</label>
                             <div class="col-sm-8" id ="PASSWORD">
-                                <input  onchange="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter Password">
+                                <input  onblur="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter Password">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Password again:</label>
                             <div class="col-sm-8" id="PASSWORDAGA">
-                                <input  onchange="passwordIsSame()" type="password" class="form-control" id="password2" name="password" placeholder="Enter password">
+                                <input  onblur="passwordIsSame()" type="password" class="form-control" id="password2" name="password" placeholder="Enter password">
                                 <div class="login-options">
                                     <div class="checkbox hidden">
                                         <label for="sc">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="checkbox"><center>
                             <label>
-                                <input type="checkbox" onclick="allRegisterIsOk()"> I agree to the service agreement and privacy and cookies statement!
+                                <input type="checkbox" id="checkInRes" onclick="allRegisterIsOk()"> I agree to the service agreement and privacy and cookies statement!
                             </label></center>
                         </div>
                     </div>

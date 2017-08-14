@@ -1,8 +1,4 @@
-//window.flag_email = '';  ///如何跨页面传输数据
-
-
 function postInfo() {
-    //flag_email = $("input[name='registeremail']").val();
     let username = $("input[name='registerusername']").val(); //用户名
     let password = $("input[name='registerpassword']").val(); //密码
     let useremail = $("input[name='registeremail']").val(); //账号
