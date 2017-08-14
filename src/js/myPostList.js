@@ -210,22 +210,25 @@ const numberShow=6;
 $(function () { $("[data-toggle='popover']").popover(); });
 
 function showMyPostList(id='') {
-    //getMyPost(id);//未与api接通
-    cache=test;//测试假数据
+    getMyPost(id);//未与api接通
+    //cache=test;//测试假数据
     creatSearchForm();
     creatTable();
-    creatPageControl();//测试假数据
-    addTrs(test);//测试假数据
+    //creatPageControl();//测试假数据
+    //addTrs(test);//测试假数据
 }
 function getMyPost(userId) {
     $.ajax({
         type: 'GET',
-        url:"http://127.0.0.1:8888/"+userId+'/postlist',
+        url:"http://47.93.200.205:8080/account/post",
         success: function(postList) {
             pageRow=0;
             cache=postList;
             addTrs(postList);
             creatPageControl();
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
         }
     })
 }
