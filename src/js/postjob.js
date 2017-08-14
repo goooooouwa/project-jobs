@@ -18,7 +18,7 @@ function D(){
 }
 
 function Description(){
-    var a=document.getElementById('editor-container').innerText;
+    var a=quill.container.firstChild.innerText;
     document.getElementById('Description').value=a;
 }
 
@@ -51,7 +51,8 @@ function isNull(){
         return false;
 }
 
-function Release(){
+function  Save() {
+    var description=quill.container.firstChild.innerHTML;
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
     var stime=document.getElementById('stime').value;
@@ -65,7 +66,7 @@ function Release(){
     var country=document.getElementById('country').value;
     var number=document.getElementById('number').value;
     var etime=document.getElementById('etime').value;
-    var description=document.getElementById('editor-container').innerText;
+    // var description=document.getElementById('q1-editor').innerText;
     jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
@@ -82,7 +83,49 @@ function Release(){
             country: country,
             number: number,
             etime: etime,
-            description: description
+            description: description,
+            status:'hidden',
+        };
+
+    console.log(jobinformation);
+    return jobinformation;
+}
+
+function Release(){
+
+    var description=quill.container.firstChild.innerHTML;
+    var title=document.getElementById('Title').value;
+    var company=document.getElementById('company').value;
+    var stime=document.getElementById('stime').value;
+    var apply=document.getElementById('apply').value;
+    var tags=document.getElementById('Tags').value;
+    var salary=document.getElementById('salary').value;
+    var category=document.getElementById('category').value;
+    var jobtype=document.getElementById('job-type').value;
+    var age=document.getElementById('age').value;
+    var city=document.getElementById('city').value;
+    var country=document.getElementById('country').value;
+    var number=document.getElementById('number').value;
+    var etime=document.getElementById('etime').value;
+   // var description=document.getElementById('q1-editor').innerText;
+    jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
+    jobinformation=
+        {
+            title: title,
+            company: company,
+            stime: stime,
+            apply: apply,
+            tags: tags,
+            salary: salary,
+            category: category,
+            jobtype: jobtype,
+            age: age,
+            city: city,
+            country: country,
+            number: number,
+            etime: etime,
+            description: description,
+            status:'public',
         };
     
     if(isNull()==false){
