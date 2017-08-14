@@ -15,20 +15,23 @@ method:get
     }  
 \]  
 ## 2、根据职位title、公司名字、职位描述搜索职位  
-url:47.93.200.205:8080/post/list?keyword=w  
+url:47.93.200.205:8080/post/list?keyword+jobtype+catagory
 method:get  
+示例
+47.93.200.205:8080/post/list?jobtype=全职&catagory=算法工程师
 返回：  
-\[  
-    {  
-        "id": 1,  
-        "title": "WEB前端开发工程师",  
-        "company": "多米音乐",  
-        "salary": "10k-15k",  
-        "sdate": "2017-08-12",  
-        "country": "中国",  
-        "city": "北京"  
-    }  
-]  
+\[
+    {
+        "id": 2,
+        "title": "搜索引擎工程师",
+        "company": "多米音乐",
+        "salary": "8k-9k",
+        "sdate": "08-14",
+        "country": "中国",
+        "city": "北京",
+        "jobtype": "全职"
+    }
+]
 ## 3、添加职位
 url:47.93.200.205:8080/account/post/add  
 method:post  
