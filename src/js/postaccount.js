@@ -1,4 +1,8 @@
+//window.flag_email = '';  ///如何跨页面传输数据
+
+
 function postInfo() {
+    //flag_email = $("input[name='registeremail']").val();
     let username = $("input[name='registerusername']").val(); //用户名
     let password = $("input[name='registerpassword']").val(); //密码
     let useremail = $("input[name='registeremail']").val(); //账号
@@ -13,7 +17,15 @@ function postInfo() {
         },
         success: function(data) {
             //跳转页面
-            console.log('success')
+            if(data.code === 0){
+                //console.log()
+                window.location = `http://localhost:3334/html/sendAnotherEmail.html?email=${useremail}`;
+                //console.log('success')
+            }else{
+                 //console.log(data.msg)
+                 alert(data.msg)
+            }
+           
         }
     });
 }
@@ -37,7 +49,8 @@ function loginInfo() {
                 //document.write(data.msg)
                 setTimeout('Redirect()', 2000);
             } else {
-                $('#showinfo').html(data.msg); //这里显示错误信息
+                alert(data.msg)
+                //$('#showinfo').html(data.msg); //这里显示错误信息
             }
         }
     });
@@ -46,7 +59,7 @@ function loginInfo() {
 function Redirect() //使用函数进行跳转
 {
     console.log('111');
-    window.location = "http://localhost:3334/firstpage.html";
+    window.location = "http://localhost:3334/html/homepage.html";
 }
 
 function intoIndex() { //进入首页，调用该函数，判断是否已经登录
@@ -76,7 +89,7 @@ function logout() {
 
 //忘记密码的操作
 function forgetpass() {
-    let email = 'something';
+    let email = $("input[name='forgetemail']").val();
     let url = 'http://localhost:3334/forget/password';
     $.ajax({
         url: `${url}`,
@@ -86,16 +99,22 @@ function forgetpass() {
         },
         success: function(data) {
             //提示已经发送验证码
-            console.log(data);
+            if(data.code===0){
+                console.log(data);
+                window.location = `http://localhost:3334/html/modifyPassword.html?email=${email}`;
+            }
+          
         }
     })
 }
 
 //重置密码操作
 function passresert() {
-    let email = '@';
-    let password = 'password';
-    let vcode = '1234';
+    let email = location.search.slice(7); 
+    console.log(email)
+    let password = $('#password2').val();
+    let vcode = $('#vcode').val();
+    console.log(vcode)
     let url = 'http://localhost:3334/forget/resert';
 
     $.ajax({
@@ -107,7 +126,47 @@ function passresert() {
             'verification': `${vcode}`
         },
         success: function(data) {
-            console.log(data);
+            if(data.code === 0){
+               console.log(data);
+               alert(data.msg) 
+               window.location = `http://localhost:3334/html/login.html`;
+            }else{
+                alert(data.msg)
+            }
+            
         }
     })
+}
+
+
+function againEmail(){  //再次发送验证
+    let email = location.search.slice(7);
+    console.log(email)
+    let url = `http://localhost:3334/user/againemail?email=${email}`;
+    $.ajax({
+        url: `${url}`,
+        type: 'POST',
+        data:{
+            'useremail': `${email}`
+        },
+        success:function(data){
+            console.log(data);
+        }
+    });
+}
+
+//keypress
+function keyPress(){
+    let username = $("input[name='registerusername']").val(); //用户名
+    let url = `http://localhost:3334/user/signup/username`;
+    $.ajax({
+        url: `${url}`,
+        type: 'POST',
+        data:{
+            'username': `${username}`
+        },
+        success:function(data){
+            console.log(data.msg);
+        }
+    });
 }
