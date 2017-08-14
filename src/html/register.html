@@ -16,6 +16,7 @@
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link href="../css/spIcons.min.css" rel="stylesheet" media=screen>
     <script src="../js/static/jquery.min.js"></script>
+    <script src="../js/postaccount.js"></script>
     <!-- SendPulse AB website tests -->
 </head>
 <body>
@@ -36,23 +37,23 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h2>Create a Account</h2>
-                    <form role="form" class="form-horizontal" action="/login/" method="post">
+                    <div  class="form-horizontal">
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your user name:</label>
                             <div class="col-sm-8" id="user">
-                                <input onchange="userIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="login" placeholder="Enter User Name">
+                                <input  onchange="userIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter User Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your email:</label>
                             <div class="col-sm-8" id="emails">
-                                <input  onchange="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="login" placeholder="Enter Email">
+                                <input  onchange="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your password:</label>
                             <div class="col-sm-8" id ="PASSWORD">
-                                <input  onchange="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="login" placeholder="Enter Password">
+                                <input  onchange="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -72,15 +73,15 @@
                                 <input type="checkbox" onclick="allRegisterIsOk()"> I agree to the service agreement and privacy and cookies statement!
                             </label></center>
                         </div>
+                    </div>
+                    <div class="modal-footer" style="margin-left:-40px; margin-right:-40px; margin-bottom:-25px;">
+                        <p class="pull-left padding-top-5">
+                            <small style="margin-right: 100px"><a href="login.html">&larr; I have an account</a></small>
+                            <br>
+                        </p>
+                        <button  id ="signup" onclick="postInfo()" class="btn btn-green" disabled="disabled" >Signup</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <p class="pull-left padding-top-5">
-                        <small style="margin-right: 100px"><a href="login.html">&larr; I have an account</a></small>
-                        <br>
-                    </p>
-                    <input  id ="signup" onclick="window.open('./sendEmailToFinishSignUp.html')" type="submit" name="submit" class="btn btn-green" value="Sign up" disabled="disabled" >
-                </div>
-                </form>
             </div>
         </div>
 

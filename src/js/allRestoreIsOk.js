@@ -3,7 +3,8 @@ function allRestoreIsOk() {
     var b=document.getElementById("password2");
     var c=document.getElementById("restore");
     var d =document.getElementById("ok");
-    if (a.value!==""&&b.value!==""&& d.checked===true){
+    var e=document.getElementById("vcode");
+    if (a.value!==""&&b.value!==""&& d.checked===true&& e.value!==""){
         c.disabled=false;
     }
     else {

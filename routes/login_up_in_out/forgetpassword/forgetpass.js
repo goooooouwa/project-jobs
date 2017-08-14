@@ -27,7 +27,7 @@ app.post('/password', function(req, res) {
             console.log('26---' + err);
         } else {
             console.log('28--- success') //添加验证码成功
-            res.send('添加验证码成功')
+            res.json({code:0,msg:'验证码发送成功'})
         }
     })
 })
@@ -52,7 +52,7 @@ app.post('/resert', function(req, res) {
                 //更改密码
                 if (password === result[0].password) {
                     console.log('51--- 密码不能与近期密码相同')
-                    res.send('密码不能与近期密码相同')
+                    res.json({code:1,msg:'密码不能与近期密码相同'})
                 } else {
                     connection.query(sql_pass, function(err, result) {
                         if (err) {
@@ -65,7 +65,7 @@ app.post('/resert', function(req, res) {
                 }
             } else {
                 console.log('48--- 验证码错误')
-                res.send('验证码错误')
+                res.json({code:1, msg:'验证码错误'})
             }
         }
     })

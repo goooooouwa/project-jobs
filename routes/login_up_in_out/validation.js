@@ -9,7 +9,7 @@ let path = require('path')
 
 let app = express();
 
-app.use(express.static('static')); ///设置静态文件目录
+app.use(express.static('../../src')); ///设置静态文件目录
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,7 +41,7 @@ app.use(function(req, res, next) { ///使用中间件来进行session的操作
     }
     next()
 });
-
+ 
 app.post('/user/signup/username', function(req, res) { ///失去焦点，立即发送验证用户名存在请求
     //验证长度---
     let username = req.body.username;
@@ -70,7 +70,7 @@ app.post('/user/signup', function(req, res) { //注册函数
     md5.update(req.body.password || '');
     let password = md5.digest('hex');
 
-    console.log('73' + username + ' ' + email + ' ' + password);
+    //console.log('73' + username + ' ' + email + ' ' + password);
     let sql_email = `select username from usertable where email='${email}'`;
     let sql_username = `select username from usertable where username='${username}'`;
     let sql = `insert into usertable(username,password, email) values('${username}','${password}','${email}')`;
@@ -130,23 +130,28 @@ app.post('/user/signup', function(req, res) { //注册函数
 
 //当用户为验证，需要再次获得邮箱验证的时候---点击发送邮件按钮（包括过期验证和未验证）--都是通过user这个对象进行传递的，所有需要前端发送邮箱信息给后端
 app.post('/user/againemail', function(req, res) {
-    let email = req.body.useremail || ''; //通过邮箱去查找用户
+    let email = req.query.email || ''; //通过邮箱去查找用户
+    console.log(email);
     let sql = `select * from usertable where email='${email}'`; //得到用户所有信息
 
     connection.query(sql, function(err, result) {
         if (err) {
             console.log('138-- ' + err);
         } else {
-
-            let user = {
-                username: `${result[0].username}`,
-                password: `${result[0].password}`,
-                usermail: `${result[0].email}`,
-                active: false,
-                activeToken: '', //字符串
-                activeExpires: '' //日期
+            if(result.length){
+                let user = {
+                    username: `${result[0].username}`,
+                    password: `${result[0].password}`,
+                    usermail: `${result[0].email}`,
+                    active: false,
+                    activeToken: '', //字符串
+                    activeExpires: '' //日期
+                }
+                comfirmmail(user) //再次验证
+            }else{
+                console.log('151---查询失败')
             }
-            comfirmmail(user) //再次验证
+            
         }
     })
 })
