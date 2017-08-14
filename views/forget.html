@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>SendPulse: Member's Area</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" media=screen>
+    <script src="../js/passwordIsSame.js"></script>
+    <script src="../js/emailIsCorrect_InForget.js"></script>
+    <link href="../css/template.css" rel="stylesheet" media=screen>
+    <link href="../css/login.css" rel="stylesheet" media=screen>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="../css/spIcons.min.css" rel="stylesheet" media=screen>
+    <script src="../js/static/jquery.min.js"></script>
+    <!-- SendPulse AB website tests -->
+</head>
+<body >
+<div style="position: absolute;left:0px;top:0px;width:100%;height:100%">
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502270042375&di=f054295afc124294cc794f584ff0d438&imgtype=0&src=http%3A%2F%2Fwww.pp3.cn%2Fuploads%2F201508%2F2015082608.jpg" width="100%" height=100%"/>
+</div>
+
+<div class="loginpage">
+    <div class="modal">
+        <div class="modal-dialog login-header">
+            <a class="logo-link"  target="_blank">
+                <img src="http://www.codingirls.club/assets/CGC02-c4bbb83e7831724c5d32623da38bd5c070155728b087e8985ef7cd1e1f394344.png" width="210" height="42"alt="SendPulse">
+            </a>
+            <div class="clearfix">&nbsp;</div>
+        </div>
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2>Restore Password</h2>
+                    <form role="form" class="form-horizontal" action="/account/forgetpwd" method="post">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Your email:</label>
+                            <div class="col-sm-8" id="emails">
+                                <input onchange="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="email" placeholder="Enter Email">
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="help-block pull-left padding-top-5">
+                        <small><a href="/account/login">&larr; Try to login</a></small></p>
+                    <input  id="restore" type="submit" name="submit" class="btn btn-green" value="Send" disabled="disabled">
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="/js/my/bootstrap.min.js"></script>
+<script src="/js/my/matchMedia.js"></script>
+<script src="../js/jquery.mobile.custom.min.js"></script>
+<script src="../js/general.js"></script>
+<script src="../js/login.js"></script>
+<script src="../js/social.js"></script>
+</body>
+</html>
