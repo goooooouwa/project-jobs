@@ -292,10 +292,42 @@ function confirmUser(username, password, req, res, flag) { ///验证用户信息
 }
 
 
-//=================登出
-let logout = require('./logout/logout'); //得到模块
-app.use('/', logout);
+//==用户细节信息
+app.post('/user/detail', function(req, res) {
+    let username = req.body.username
+    let company_name = req.body.companyname
+    let company_address = req.body.companyaddress
+    let company_kind = req.body.companykind //得到用户传送的数据
 
+    //console.log(company_address)
+    //设置sql
+    let sql = `update usertable set companyname='${company_name}',companyaddress='${company_address}', companykind='${company_kind}' where username='${username}'`;
+    connection.query(sql, function(err, result) {
+        if (err) {
+            console.log('21--- ' + err)
+        } else {
+            console.log('23--- success')
+            res.json({ code: 0, msg: '用户信息更新成功' })
+        }
+    })
+
+})
+
+//=================登出
+
+//清除session
+app.get('/user/logout', function(req, res) {
+    req.session.destroy(); //销毁
+    //console.log(req.session); === undefined
+    //console.log(req.session.user);
+    if (req.session === undefined) {
+        //如果不存在了---提示成功注销登录，否则返回登出失败
+        res.send('成功注销');
+    } else {
+        res.send('注销失败')
+    }
+    //res.redirect()   //这里应该调到首页去，在注销登录以后
+})
 
 //=================忘记密码
 let forget = require('./forgetpassword/forgetpass');
