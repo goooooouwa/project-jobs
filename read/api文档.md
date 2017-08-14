@@ -33,7 +33,7 @@ method:get
 url:47.93.200.205:8080/account/post/add 
 method:post
 示例
-{
+\{
         "title": "WEB前端开发工程师",
         "company": "百度",
         "salary": "10k-15k",
@@ -47,7 +47,7 @@ method:post
         "description":"熟悉html,css,js"
 }
 返回
-{
+\{
     "code": 0,
     "msg": "添加成功"
 }
