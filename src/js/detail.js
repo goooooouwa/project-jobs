@@ -84,7 +84,7 @@ const jobs=[
 
 ];
 
-$(document).ready(loadRecommendJobs(1,jobs));
+$(document).ready(getJobDetailFromSQ(1));
 
 function loadInfo() {
     let jobId=GetQueryString("jobId");
@@ -127,7 +127,7 @@ function getLogOrNot(status) {
 function getJobDetailFromSQ(jobId) {
     debugger;
  $.get(
-     '47.93.200.205:8080/detail?jobId='+jobId,
+     '47.93.200.205:8080/post/detail?id='+jobId,
      function (jobInfo) {
          debugger;
          loadJobInfo(jobInfo);
