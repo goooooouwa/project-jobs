@@ -19,10 +19,10 @@ body{
 .form-controlcommon{
      display: block;
      width:50%;
-     height: 28px;
+     height: 35px;
      padding-top:6px;
      padding-right: 12px;
-     padding-bottom:6px;
+     padding-bottom:2%;
      font-size: 14px;
      line-height:1.42857143;
      color:#5d6368;
@@ -30,16 +30,16 @@ body{
      background-image: none;
      border:1px solid #ccc;
      border-radius: 4px;
-     margin-bottom:2%
+     margin-bottom:2px;
  }
 
 .secondform-controlcommon{
     display: block;
     width:50%;
-    height: 30px;
-    padding-top:6px;
+    height: 35px;
+    padding-top:2px;
     padding-right: 12px;
-    padding-bottom:6px;
+    padding-bottom:2px;
     font-size: 14px;
     line-height:1.42857143;
     color:#5d6368;
@@ -113,9 +113,9 @@ body{
 
 .Edit-controlcommon{
     display: block;
-    width:10%;
+    width:15%;
     height: 20px;
-    padding-top:2px;
+    padding-bottom:1px;
     padding-right: 12px;
     padding-bottom:6px;
     font-size: 12px;
