@@ -50,10 +50,12 @@ a.homepageTitle{
     width: 50px;
     position: relative;
     line-height: 53px;
-    color: #999;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
     padding: 14px 5px;
     font-size: 20px;
     margin: 0 16px;
+    text-decoration: none;
 }
 a.homepageTitle:hover{
     height: 54px;
@@ -67,6 +69,7 @@ a.homepageTitle:hover{
     margin: 0 16px;
     text-decoration: none;
 }
+
 a.alljobsTitle{
     height: 54px;
     width: 50px;
