@@ -63,7 +63,7 @@ function intoIndex() { //进入首页，调用该函数，判断是否已经登�
     $.ajax({
         url: `${url}`,
         type: 'GET',
-        success: function(data) {
+        success: function(data) { 
             ///$('#getuser').html(data); //将数据发送到4
             if(data.code === 0){
                 //显示用户名
@@ -172,4 +172,72 @@ function keyPress(){
             console.log(data.msg);
         }
     });
+}
+ 
+//获取用户个人详细信息
+function getUserDetail(){
+    let url = `http://localhost:3334/user/detail`;
+    $.ajax({
+        url: `${url}`,
+        type:'GET',
+        success:function(data){ 
+            //显示数据给用户界面
+            if(data.code === 0){
+                //console.log(data.msg)
+                $("input[name='InputcompanyName']").val(data.msg.name);
+                $("input[name='InputcompanyAddress']").val(data.msg.address);
+                $("input[name='InputcompanyKind']").val(data.msg.kind);
+                //alert('更新信息成功')
+            }else{
+                console.log('查询失败')
+            }
+        }
+    })
+}
+
+//提交用户个人详细信息
+function postUserDetail(){
+    let companyname = $("input[name='InputcompanyName']").val();
+    let companyaddress  = $("input[name='InputcompanyAddress']").val();
+    let companykind = $("input[name='InputcompanyKind']").val();
+    console.log(companyname + ' ' + companyaddress + ' ' + companykind)
+    let url = `http://localhost:3334/user/detail`;
+    $.ajax({
+        url: `${url}`,
+        type: 'POST',
+        data:{
+            "companyname": `${companyname}`,
+            "companyaddress": `${companyaddress}`,
+            "companykind": `${companykind}`
+        },
+        success:function(data){
+            //提示提交成功
+            if(data.code === 0)
+                alert('更新信息成功')
+        }
+    })
+}
+
+function setNewPassword(){
+    let url = `http://localhost:3334/user/set/password`;
+    let current = $("input[name='InputCurrentPassword']").val();
+    let newpass = $("input[name='InputNewPassword']").val();
+    let username = $('#top_username').text();
+    console.log(username + '  ' + current + '  ' + newpass)
+    $.ajax({
+        url: `${url}`,
+        type:'POST',
+        data:{
+            'username': `${username}`,
+            'current': `${current}`,
+            'newpass': `${newpass}`
+        },
+        success:function(data){
+            if(data.code === 0){
+                console.log(data.msg)
+            }else{
+                console.log(data.msg)
+            }
+        }
+    })
 }

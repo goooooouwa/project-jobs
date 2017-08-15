@@ -1,4 +1,4 @@
-let status=0;
+let status=1;
 
 const data={
 
@@ -84,7 +84,7 @@ const jobs=[
 
 ];
 
-$(document).ready(getJobDetailFromSQ(1));
+$(document).ready(loadInfo());
 
 function loadInfo() {
     let jobId=GetQueryString("jobId");
@@ -103,24 +103,22 @@ function GetQueryString(name)
 
 function getLogOrNot(status) {
     if(status==0){
-        $("#judgeWhetherLog").append(`<ul class="lg_tbar_r">
-            <li>
-            <a href="login.html" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">登录</a>
-            </li>
-            <li>
-            <a href="register.html" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">注册</a>
-            </li>
-            </ul>`);
+        $("#judgeWhetherLog").append(`<div>
+            <span>
+            <a href="login.html" class="login">登录</a>
+            </span>
+            <span style="color: #c4c3c3">|</span>
+            <span>
+            <a href="register.html" class="register">注册</a>
+            </span>
+            </div>`);
     }
     else {
-        $("#judgeWhetherLog").append(`<ul class="lg_tbar_r">
-            <li>
-            <a href="" data-lg-tj-id="5f00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">Hello ~</a>
-            </li>
-            <li>
-            <a href="person.html" class="bl" data-lg-tj-id="5g00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">欢迎进入个人中心</a>
-            </li>
-            </ul>`);
+        $("#judgeWhetherLog").append(`<div>
+            <span>
+            <a href="person.html" class="welcome">Hello~ 欢迎进入个人中心</a>
+            </span> 
+            </div>`);
     }
 }
 
