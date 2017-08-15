@@ -3,15 +3,13 @@ function userIsCorrectInRegister() {
     var b =document.getElementById("userName");
     var d =document.getElementById("user");
     var e =document.getElementById("user").getElementsByTagName("p");
-    if (a.test(b.value)===false && e.length===0){
+     if  (a.test(b.value)||b.value===""){
+        d.removeChild(e[0]);
+    }
+    else if (a.test(b.value)===false && e.length===0){
         d.innerHTML+="<p style='color: red'>\n" +
             " <small><i>User name's format is wrong!!!</i></small>\n" +
             " </p>"
     }
-    else if  (a.test(b.value)||b.value===""){
-        if(e.length){
-            d.removeChild(e[0]);
-        }
 
-    }
 }

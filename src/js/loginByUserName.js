@@ -1,5 +1,6 @@
 function loginByUserName() {
     $('#emails').html('');
-    $('#emails').append('<input onblur="userIsCorrect()" class="form-control" id="email" name="loginemailname" placeholder="Enter user name">');
+    $('#emails').append('<input onmouseout="userIsCorrect()" class="form-control" id="email" name="loginemailname" placeholder="Enter user name">');
     document.getElementById('label').innerHTML='Your username:'
+    document.getElementById("rm").checked=false;
 }
