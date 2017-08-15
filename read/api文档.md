@@ -81,7 +81,7 @@ method:get
         "tags": "前端,jquery",  
         "howtoapply": "简历发送邮箱至111@qq.com",  
         "duration": 30  
-    },  
+    }  
 ]  
 ## 5、用户修改自己创建的职位Post
 url:47.93.200.205:8080/account/post  
