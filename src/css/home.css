@@ -1,23 +1,178 @@
+.blackNav{
+    height: 30px;
+    background-color: #333;
+}
+.webName{
+    background: url(//static.lagou.com/www/static/common/widgets/header_c/modules/img/app_icon_7554d8e.png) 0px 6px no-repeat;
+    padding-top: 4px;
+    padding-left: 15px;
+    margin-left: 10%;
+    font-size: 15px;
+    width: 30%;
+}
+.whetherLog{
+    padding-top: 4px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.login{
+    color: #c4c3c3;
+}
+.login:hover{
+    color: #fff;
+}
+.register{
+    color: #c4c3c3;
+}
+.register:hover{
+    color: #fff;
+}
+.welcome{
+    color:#c4c3c3;
+}
+.welcome:hover{
+    color: #fff;
+}
+div.whiteNav{
+    list-style: none;
+    height: 54px;
+    padding-left: 12%;
+    padding-right: 10%;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fafafa;
+}
+li{
+    display: inline;
+}
+a.homepageTitle{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #999;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+}
+a.homepageTitle:hover{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a.alljobsTitle{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #999;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a.alljobsTitle:hover{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a:-webkit-any-link{
+    cursor: auto;
+}
+.picture{
+    text-align: center;
+}
+.Title{
+    margin-left: 13%;
+    margin-right: 13%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding-bottom: 0.6%;
+    font-size: 0;
+    border-bottom: 1px solid #e8e8e8;
+ }
+.TitleContent{
+    font-size: 18px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    border-bottom: 2px solid #333;
+    background: #fff;
+    color:#333;
+
+}
+h4.jobTitle{
+    color:#209b60;
+}
+.jobborder{
+    border:solid 1px lightgrey;
+}
+
+.shadow{
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 10px;
+    background: whitesmoke;
+}
 .viewMore{
     display: block;
-    width: 370px;
-    height: 42px;
+    width: 25%;
+    height: 2%;
     line-height: 42px;
-    margin: 16px auto 0;
+    margin: 3% auto 0;
     background: #FFF;
     border:1px solid #00B38A;
     font-size: 16px;
     color:#00B38A;
     text-align: center;
 }
+div.company1{
+    padding-top: 8%;
+    text-align: center;
 
+}
+span.company1{
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+
+}
+li.company2{
+    height: 300px;
+    width: 270px;
+    margin: 30px 30px 0 0
+}
+.datacolor{
+    color:lightgreen;
+}
+.databorder{
+    border-right: 1px solid #ccc;
+}
+.borderstyle{
+    height:1px;
+    border:none;
+    border-top:1px solid #c0c0c0;
+}
 
 .footer-body{
     background: #202020;
     padding: 40px 0 0;
     color: #959595;
 }
-.widget{
+.column{
     margin-bottom: 35px;
     padding: 0px 80px;
 
@@ -43,6 +198,9 @@ h4.title:after{
     width: 100%;
     color: #959595;
 }
+.friend-links a:hover{
+    color: #209b60;
+}
 hr.style-one{
     border: 0;
     border-bottom: 1px dashed #403e3e;
@@ -57,8 +215,14 @@ hr.style-one{
     line-height: 1.5em;
     border: 1px solid #4c4b4b;
 }
+.skill a:hover{
+    color: #209b60;
+}
 .supports a{
     color: #959595;
+}
+.supports a:hover{
+    color: #209b60;
 }
 .copyright{
     background: #111;

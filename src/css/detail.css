@@ -1,3 +1,98 @@
+.blackNav{
+    height: 30px;
+    background-color: #333;
+}
+.webName{
+    background: url(//static.lagou.com/www/static/common/widgets/header_c/modules/img/app_icon_7554d8e.png) 0px 6px no-repeat;
+    padding-top: 4px;
+    padding-left: 15px;
+    margin-left: 10%;
+    font-size: 15px;
+    width: 30%;
+}
+.whetherLog{
+    padding-top: 4px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.login{
+    color: #c4c3c3;
+}
+.login:hover{
+    color: #fff;
+}
+.register{
+    color: #c4c3c3;
+}
+.register:hover{
+    color: #fff;
+}
+.welcome{
+    color:#c4c3c3;
+}
+.welcome:hover{
+    color: #fff;
+}
+div.whiteNav{
+    list-style: none;
+    height: 54px;
+    padding-left: 12%;
+    padding-right: 10%;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fafafa;
+}
+li{
+    display: inline;
+}
+a.homepageTitle{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #999;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+}
+a.homepageTitle:hover{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a.alljobsTitle{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #999;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a.alljobsTitle:hover{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a:-webkit-any-link{
+    cursor: auto;
+}
 .info{
     background-color: #f2f2f2;
 }

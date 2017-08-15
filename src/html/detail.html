@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
     <title>jobDetail</title>
     <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <script src="../public/jquery.min.js"></script>
+    <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../js/detail.js"></script>
+    <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
 
     <script>
         document.addEventListener("DOMContentLoaded",function () {
@@ -14,110 +17,32 @@
             })
 
     </script>
-    <!--下面引用首页的导航栏-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit">
-    <meta property="qc:admins" content="23635710066417756375" />
-    <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
-    <meta charset="UTF-8">
-
-   
-    <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
-    <!-- global_domain FE_base... -->
-
-
-    <script type="text/javascript">
-
-        (function() {
-            var protocol = window.location.protocol;
-            var host = window.location.host;
-            var baseUrl = protocol + '//' + host;
-
-            window.GLOBAL_DOMAIN = window.GLOBAL_DOMAIN || {
-                ctx: 'https://www.lagou.com',
-                rctx: 'https://hr.lagou.com',
-                crctx: 'https://hr.lagou.com/company',
-                pctx: 'https://passport.lagou.com',
-                actx: 'https://account.lagou.com',
-                cpctx: 'https://campus.lagou.com',
-                paictx: 'https://pai.lagou.com',
-                sctx: 'https://suggest.lagou.com',
-                zctx: 'https://yanzhi.lagou.com',
-                ectx: 'https://easy.lagou.com',
-                proctx: 'https://pro.lagou.com',
-                lgsctx: protocol + '//static.lagou.com',
-                FE_frontLogin: baseUrl + '/frontLogin.do',
-                FE_frontLogout: baseUrl + '/frontLogout.do',
-                FE_frontRegister: baseUrl + '/frontRegister.do'
-            };
-
-            window.GLOBAL_CDN_DOMAIN = 'static.lagou.com';
-        })();
-    </script>
-
-    <!-- SEO 需求-->
-    <link rel="canonical" href="">
-
-    <!-- 公共样式 -->
-    <!-- header样式 -->	<!-- footer样式 -->
-    <!-- 页面样式 -->
-    <!-- 动态token，防御伪造请求，重复提交 -->
-    <script type="text/javascript">
-        window.X_Anti_Forge_Token = '';
-        window.X_Anti_Forge_Code = '';
-    </script>
-
-    <link rel="stylesheet" type="text/css" href="/src/css/homepage的css/first.css" />
-    <link rel="stylesheet" type="text/css" href="//static.lagou.com/www/static/pkg/layout_ee93d1b.css" />
-    <link rel="stylesheet" type="text/css" href="/src/css/homepage的css/secend.css" />
-    <link rel="stylesheet" type="text/css" href="//static.lagou.com/www/static/pkg/widgets_9455a89.css" />
-    <link rel="stylesheet" type="text/css" href="//static.lagou.com/www/static/pkg/index/page/index/main.html_aio_2_21375ac.css" />
 
 </head>
 <body>
-<div id="lg_header">
-    <!--C端头部黑色导航-->
-    <div id="lg_tbar">
-
-        <div class="inner">
-
-            <div class="lg_tbar_l">
-                <a rel="nofollow" href="../public/imgs/APP二维码.png" class="lg_app" data-lg-tj-id="5500" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">编程女孩APP</a>
-            </div>
-
-           <div id="judgeWhetherLog">
-
-           </div>
+<!--导航栏-->
+<div class="nav">
+    <!--头部黑色导航-->
+    <div class="blackNav row">
+        <div class="webName col-lg-8 col-md-8 col-sm-8">
+            <a href="../public/imgs/APP二维码.png" style="color: #05eaaf;margin-top: 1%">编程女孩APP</a>
         </div>
+        <div id="judgeWhetherLog" class="whetherLog col-lg-2 col-md-2 col-sm-2">
 
-    </div><!--end #lg_tbar-->
+        </div>
+    </div>
 
-
-    <!--C端头部白色导航-->
-    <div id="lg_tnav">
-
-        <div class="inner">
-            <div class="lg_tnav_l">
-                <a href="" class="lg_logo" data-lg-tj-id="5h00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
-
-                </a>
-
-
-                <ul class="lg_tnav_wrap">
-                    <li>
-                        <a href="homepage.html" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" style="text-decoration: none">首页</a>
-                    </li>
-                    <li>
-                        <a href="alljobs.html" class="" data-lg-tj-id="5i00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" style="text-decoration: none">ALL JOBS</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </div><!--end #lg_tnav-->
-
-
-    </div><!--end #header-->
+    <!--头部白色导航-->
+    <div>
+        <div class="whiteNav">
+            <span>
+                <a class="homepageTitle" href="homepage.html" >首页</a>
+            </span>
+            <span>
+                <a class="alljobsTitle" href="alljobs.html" >ALL JOBS</a>
+            </span>
+        </div>
+    </div>
 </div>
 <!--下面是工作详细信息-->
 <div class="container">
