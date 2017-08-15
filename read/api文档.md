@@ -25,15 +25,18 @@ method:get
         "id": 1,  
         "title": "WEB前端开发工程师",  
         "company": "多米音乐",  
+        "catagory": "Web前端开发",  
         "salary": "10k-15k",  
         "sdate": "2017-08-14",  
         "country": "中国",  
         "city": "北京",  
-        "description": "岗位职责：\n1、负责web及wap前端页面和功能的开发、调试和维护；?2、?负责与设计人员和程序人员的沟通；?3、?前端技术框架和js等互动效果开发。\n?\n职位需求：\n1、具有1年以上的前端开发经验\n2、精通 Html、css，js等前端技术，熟悉各个浏览器的兼容问题\n3、能熟练使用jquery",
+        "description": "岗位职责：\n1、负责web及wap前端页面和功能的开发、调试和维护；?2、?负责与设计人员和程序人员的沟通；?3、?前端技术框架和js等互动效果开发。\n?\n职位需求：\n1、具有1年以上的前端开发经验\n2、精通 Html、css，js等前端技术，熟悉各个浏览器的兼容问题\n3、能熟练使用jquery",  
+        "status": 1,  
         "age": "18-28岁",  
         "number": 5,  
         "tags": "前端,jquery",  
-        "apply": "简历发送邮箱至111@qq.com"  
+        "apply": "简历发送邮箱至111@qq.com",  
+        "duration": 30  
     }  
 ]  
 ## 3、用户添加职位（6）
