@@ -17,6 +17,7 @@
     <link href="../css/spIcons.min.css" rel="stylesheet" media=screen>
     <script src="../js/postaccount.js"> </script>
     <script src="../js/loginCheck.js"> </script>
+    <script src="../js/passwordIsEmpty.js"> </script>
     <!-- SendPulse AB website tests -->
 </head>
 <body >
@@ -24,7 +25,7 @@
 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502270042375&di=f054295afc124294cc794f584ff0d438&imgtype=0&src=http%3A%2F%2Fwww.pp3.cn%2Fuploads%2F201508%2F2015082608.jpg" width="100%" height=100%"/>
 </div>
 
-<div class="loginpage">
+<div class="loginpage" onmousemove="loginCheck()">
     <div class="modal">
         <div class="modal-dialog login-header">
             <a class="logo-link"  target="_blank">
@@ -35,8 +36,8 @@
         </div>
 
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body" >
+            <div class="modal-content" >
+                <div class="modal-body"  >
                     <h2>My Account</h2>
                     <div class="btn-group" role="group" aria-label="..."style="margin-left: 110px;margin-top: -20px">
                         <button type="button" class="btn btn-default" onclick="loginByEmail()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By email&nbsp;&nbsp;&nbsp;&nbsp;</button>
@@ -46,34 +47,35 @@
                         <div class="form-group" >
                             <label class="col-sm-4 control-label" id="label">Your email:</label>
                             <div class="col-sm-8" id="emails">
-                                <input onblur="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="loginemailname" placeholder="Enter email">
+                                <input   onmouseout="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="loginemailname" placeholder="Enter email">
                             </div>
                         </div> 
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your password:</label>
                             <div class="col-sm-8">
-                                <input data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" class="form-control" id="password" name="loginpassword" placeholder="Enter password">
-                                <p>
+                                <div id="inputPassword"><input onmouseover="passwordIsEmpty()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" class="form-control" id="password" name="loginpassword" placeholder="Enter password">
+                                </div>
+                                    <p>
                                     <small><a href="forget.html">Forgot password?</a></small>
                                 </p>
 
                                 <div class="login-options">
                                     <div class="checkbox">
                                         <label class="small" for="rm">
-                                            <input type="checkbox" name="rm" id="rm" checked="false" onclick="loginCheck();"/>  Remember me on this computer
+                                            <input type="checkbox" name="rm" id="rm" defaultChecked="false" />  Remember me on this computer
                                         </label>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                <div class="modal-footer" style='margin-left: -40px;margin-right: -40px;margin-bottom: -25px'>
+                <div class="modal-footer" style='margin-left: -40px;margin-right: -40px;margin-bottom: -25px' >
                     <p class="pull-left padding-top-5">
                         <em class="small light-grey">
                             Don't have an account? <a class="bold" href="./register.html">Register</a>
                         </em>
                     </p>
-                    <button   disabled="disabled" onclick="loginInfo()" id= "login" name="submit" class="btn btn-green" value="Login">Login</button>
+                    <button  onclick="loginInfo()" disabled="disabled" id= "login" name="submit" class="btn btn-green" value="Login">Login</button>
                 </div>
             </div>
             </div>

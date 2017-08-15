@@ -17,6 +17,7 @@ function passwordIsCorrect2() {
     var b = document.getElementById("InputNewPassword");
     var c = document.getElementById("newPassword");
     var d = document.getElementById("newPassword").getElementsByTagName("p");
+    var e =document.getElementById("InputCurrentPassword");
     if (a.test(b.value)||b.value===""){
         c.removeChild(d[0]);
     }
@@ -25,9 +26,16 @@ function passwordIsCorrect2() {
             " <small><i>Password's format is wrong!!!</i></small>\n" +
             " </p>"
     }
-
+    else if (b.value===e.value && d.length===0){
+        c.innerHTML+="<p style='color: red'>\n" +
+            " <small><i>The new password should be the different from the old!!!</i></small>\n" +
+            " </p>"
+    }
+    else if (b.value!==e.value||b.value===""){
+        c.removeChild(d[0]);
+    }
 }
-function newIsEqualOld(){
+/*function newIsEqualOld(){
     var a =document.getElementById("InputNewPassword");
     var b =document.getElementById("InputCurrentPassword");
     var c = document.getElementById("newPassword");
@@ -40,8 +48,7 @@ function newIsEqualOld(){
         " <small><i>The new password should be the different from the old!!!</i></small>\n" +
         " </p>"
     }
-   console.log("dsa")
-}
+}*/
 function modifyPassword() {
     var a = document.getElementById("rightSideWindow");
     a.innerHTML="<br>\n" +
@@ -52,7 +59,7 @@ function modifyPassword() {
         "            </div>\n" +"<br>"+
         "            <div class=\"form-group\" id='newPassword'>\n" +
         "                <label for=\"InputNewPassword\" style=\"font-size: 30px\">New Password</label>\n" +
-        "                <input style=\"background: ghostwhite\" onblur='passwordIsCorrect2();newIsEqualOld();' type=\"password\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成\" class=\"form-control\" id=\"InputNewPassword\" placeholder=\"Enter new password\" name=\"InputNewPassword\">\n" +
+        "                <input style=\"background: ghostwhite\" onblur='passwordIsCorrect2();' type=\"password\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成\" class=\"form-control\" id=\"InputNewPassword\" placeholder=\"Enter new password\" name=\"InputNewPassword\">\n" +
         "            </div>\n" +"<br>"+
         "            <div class=\"form-group\" id='newPassword2'>\n" +
         "                <label for=\"InputNewPassword2\" style=\"font-size: 30px\">Password Confirmation</label>\n" +

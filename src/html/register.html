@@ -41,25 +41,25 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your user name:</label>
                             <div class="col-sm-8" id="user">
-                                <input  onblur="userIsCorrectInRegister()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter user name">
+                                <input  onmouseout="userIsCorrectInRegister()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter user name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your email:</label>
                             <div class="col-sm-8" id="emails">
-                                <input  onblur="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter email">
+                                <input  onmouseout="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your password:</label>
                             <div class="col-sm-8" id ="PASSWORD">
-                                <input  onblur="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter password">
+                                <input  onmouseout="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter password">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Password again:</label>
                             <div class="col-sm-8" id="PASSWORDAGA">
-                                <input  onblur="passwordIsSame()" type="password" class="form-control" id="password2" name="password" placeholder="Enter password">
+                                <input  onmouseout="passwordIsSame()" type="password" class="form-control" id="password2" name="password" placeholder="Enter password">
                                 <div class="login-options">
                                     <div class="checkbox hidden">
                                         <label for="sc">
