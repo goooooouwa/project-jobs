@@ -15,7 +15,6 @@ function showMyPostList() {
     getMyPost();//未与api接通
     //creatPageControl();//测试假数据
     //addTrs(test);//测试假数据
-    $("#pageNo").change(ToPageNo());
 
 }
 function getSearch() {
@@ -31,7 +30,6 @@ function getSearch() {
             cache=resultSearch;
             addTrs(resultSearch);
             creatPageControl();
-            $("#pageNo").change(ToPageNo());
         },
         error:function (XMLHttpRequest, textStatus, errorThrown) {
             alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
@@ -95,7 +93,7 @@ function creatPageControl() {
     }else {
         $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-default lastPage  disabled " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }
-    $divRow.append($(`<div class="col-xs-3 col-md-1" ><div class="center-block"><p  id="pageNo" style="width:40%;margin-left: auto;margin-right: auto;height: 40%;margin-top: auto;margin-bottom: auto" >${pageRow+1}</p></div></div>`));
+    $divRow.append($(`<div class="col-xs-3 col-md-1" ><div class="center-block"><p  class="center-block" id="pageNo" style="width:1%;margin-left:auto;margin-right: auto;height: 40%;margin-top: auto;margin-bottom: auto" >${pageRow+1}</p></div></div>`));
     if(isNextPage()){
         $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-default nextPage " onclick="nextPage()">&#62;&#62;</button></div>`));
     }else{
@@ -150,7 +148,7 @@ function addTr(onePost) {
         </tr>
         <tr>
             <td >how to apply</td>
-            <td >${onePost.howtoapply}</td>
+            <td >${onePost.apply}</td>
         </tr>
     </tbody>
     </table>
@@ -261,7 +259,7 @@ function setInfo(onePostId) {
             onePost=one;
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
-            document.getElementById('apply').value=onePost.howtoapply;
+            document.getElementById('apply').value=onePost.apply;
             document.getElementById('Tags').value=onePost.tags;
             document.getElementById('salary').value=onePost.salary;
             document.getElementById('category').value=onePost.catagory;
@@ -271,6 +269,7 @@ function setInfo(onePostId) {
             document.getElementById('country').value=onePost.country;
             document.getElementById('number').value=onePost.number;
             document.getElementById('etime').value=onePost.etime;
+            document.getElementById('Description').value=onePost.description;
             document.getElementsByClassName('ql-editor')[0].innerHTML=onePost.description;
             break;
         };
