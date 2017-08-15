@@ -69,46 +69,21 @@ method:get
         "id": 1,  
         "title": "WEB前端开发工程师",  
         "company": "多米音乐",  
-        "salary": "10k-15k",  
-        "sdate": "08-14",  
-        "country": "中国",  
-        "city": "北京",  
-        "jobtype": "全职"  
-    },  
-    {  
-        "id": 2,  
-        "title": "搜索引擎工程师",  
-        "company": "多米音乐",  
-        "salary": "8k-9k",  
-        "sdate": "08-14",  
-        "country": "中国",  
-        "city": "北京",  
-        "jobtype": "全职"  
-    }  
-]  
-## 5、用户查看自己创建的职位Post详情(8)
-url:47.93.200.205:8080/account/post/detail+jobid  
-method:get  
-示例:  
-url:47.93.200.205:8080/account/post/detail?jobid=1
-返回:  
-\[  
-    {  
-        "id": 1,  
-        "title": "WEB前端开发工程师",  
-        "company": "多米音乐",  
+        "catagory": "Web前端开发",  
         "salary": "10k-15k",  
         "sdate": "2017-08-14",  
         "country": "中国",  
         "city": "北京",  
-        "description": "岗位职责：\n1、负责web及wap前端页面和功能的开发、调试和维护；?2、?负责与设计人员和程序人员的沟通；?3、?前端技术框架和js等互动效果开发。\n?\n职位需求：\n1、具有1年以上的前端开发经验\n2、精通 Html、css，js等前端技术，熟悉各个浏览器的兼容问题\n3、能熟练使用jquery",
+        "description": "岗位职责：\n1、负责web及wap前端页面和功能的开发、调试和维护；?2、?负责与设计人员和程序人员的沟通；?3、?前端技术框架和js等互动效果开发。\n?\n职位需求：\n1、具有1年以上的前端开发经验\n2、精通 Html、css，js等前端技术，熟悉各个浏览器的兼容问题\n3、能熟练使用jquery",  
+        "status": 1,  
         "age": "18-28岁",  
         "number": 5,  
         "tags": "前端,jquery",  
-        "howtoapply": "简历发送邮箱至111@qq.com"  
-    }  
+        "howtoapply": "简历发送邮箱至111@qq.com",  
+        "duration": 30  
+    },  
 ]  
-## 6、用户修改自己创建的职位Post
+## 5、用户修改自己创建的职位Post
 url:47.93.200.205:8080/account/post  
 method:put  
 示例：  
@@ -134,11 +109,11 @@ method:put
     "code": 0,  
     "msg": "更新成功"  
 }  
-## 7、用户删除自己创建的职位Post
+## 6、用户删除自己创建的职位Post
 url:47.93.200.205:8080/account/post/jobid  
 method:delete  
 示例：  
-47.93.200.205:8080/account/post/4  
+47.93.200.205:8080/account/post/1  
 返回：  
 {  
     "code": 0,  
