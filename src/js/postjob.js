@@ -96,7 +96,6 @@ function Release(){
     var description=quill.container.firstChild.innerHTML;
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
-    var stime=document.getElementById('stime').value;
     var apply=document.getElementById('apply').value;
     var tags=document.getElementById('Tags').value;
     var salary=document.getElementById('salary').value;
@@ -113,7 +112,6 @@ function Release(){
         {
             title: title,
             company: company,
-            stime: stime,
             apply: apply,
             tags: tags,
             salary: salary,
@@ -122,8 +120,8 @@ function Release(){
             age: age,
             city: city,
             country: country,
-            number: number,
-            etime: etime,
+            number: parseInt(number),
+            duration: parseInt(etime),
             description: description,
             status:'public',
         };
@@ -131,9 +129,8 @@ function Release(){
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
-        $.post('http://127.0.0.1:8082', {
-            data: JSON.stringify(jobinformation),
-            dataType: 'JSONP',
+        $.post('http://47.93.200.205:8080/account/post', {
+            data:jobinformation,
             crossDomain: true
         }, function (data) {
             postSuccess(data);
@@ -145,7 +142,7 @@ function Release(){
     return jobinformation;
 }
 function postSuccess(data) {
-    alert(data+"成功");
+    alert(data.msg);
 }
 function postFailed(data) {
     alert(data+"失败");
