@@ -236,3 +236,41 @@ hr.style-one{
     padding-bottom:10px;
     border-top:1px solid #303030;
 }
+
+/*alljobs*/
+
+.keywordSearch input[type='text'] {
+    background-color: white;
+    display: inline-block;
+    padding: 12px 15px;
+    width: 50%;
+    height: 40px;
+    line-height: 20px;
+    border:1px solid #00b38a;
+    border-right: 0;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: -5px;
+    font-size: 16px;
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+}
+.keywordSearch input[type='button'] {
+    background-color: #00b38a;
+    color: #fff;
+    padding: 15px 35px;
+    border: 0;
+    width: auto;
+    height: 40px;
+    line-height: 1px;
+    margin-top: 2%;
+    font-size: 16px;
+    align-items: flex-start;
+    text-align: center;
+    -webkit-appearance: textfield;
+
+    user-select: none;
+    cursor: pointer;
+}

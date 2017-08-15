@@ -1,4 +1,4 @@
-let status=1;
+let status=0;
 function getLogOrNot(status) {
     if(status==0){
         $("#judgeWhetherLog").append(`<div>
