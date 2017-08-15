@@ -141,7 +141,6 @@ function Release(){
         alert("Please refine your infomation!");
     }else {
         $.post('http://47.93.200.205:8080/account/post', {
-
             data: JSON.stringify(jobinformation),
             dataType: 'JSONP',
             crossDomain: true
