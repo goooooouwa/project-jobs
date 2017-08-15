@@ -34,7 +34,7 @@
 
 
     <script src="../js/postjob.js"></script>
-    <script src="../css/postjob.css"></script>
+
     <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
@@ -60,7 +60,7 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-    <div style="width: 70%;hight:200px; margin-left:15%;margin-right:15%">
+    <div style="width: 60%;hight:200px; margin-left:20%;margin-right:20%">
 
 
         <div class="modal-content">
@@ -81,10 +81,9 @@
                                 <label for="company" class="Xialabox"><b><span style="color:red">*</span>Company</b></label>
                                 <input type="text" class="form-controlcommon" id="company">
                             </div>
-                            <div  class="col-md-4" >
+                            <div  class="col-md-3" >
                                 <label for="etime" class="Xialabox"><b><span style="color:red">*</span>Duration</b></label>
                                 <input type="number" name="etime" id="etime" class="form-controlcommon">
-                                <h2></h2>
                             </div>
                         </div>
 
@@ -179,7 +178,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="Save()">Save</button>
-                <button type="button" class="btn btn-primary" id="release" onclick="Release()">Release</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="release" onclick="Release()">Release</button>
             </div>
         </div>
     </div>
