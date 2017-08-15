@@ -3,229 +3,31 @@
 工作职位
 招聘工作的状态，hidden（未发表）/public（成功发表）*/
 `use strict`
-const test=[
-    {
-        "id":"1",
-        "title": "t",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"2",
-        "title": "ta",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"hidden"
-    },
-    {
-        "id":"3",
-        "title": "tea",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"4",
-        "title": "t",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"5",
-        "title": "ta",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"hidden"
-    },
-    {
-        "id":"6",
-        "title": "ttt",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"7",
-        "title": "t",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"8",
-        "title": "ta",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"hidden"
-    },
-    {
-        "id":"9",
-        "title": "ttt",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"10",
-        "title": "t",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"public"
-    },
-    {
-        "id":"11",
-        "title": "ta",
-        "company": "company",
-        "stime": "stime",
-        "apply": "apply",
-        "tags": "tags",
-        "salary": "salary",
-        "category": "category",
-        "jobtype": "jobtype",
-        "age": "age",
-        "city": "city",
-        "country": "country",
-        "number": "number",
-        "etime": "etime",
-        "description": "description",
-        "status":"hidden"
-    },
-
-];
 let pageRow=0;
 let cache=new Array();
 const numberShow=6;
 $(function () { $("[data-toggle='popover']").popover(); });
 
 function showMyPostList(id='') {
-    //getMyPost(id);//未与api接通
-    cache=test;//测试假数据
+    getMyPost(id);//未与api接通
+    //cache=test;//测试假数据
     creatSearchForm();
     creatTable();
-    creatPageControl();//测试假数据
-    addTrs(test);//测试假数据
+    //creatPageControl();//测试假数据
+    //addTrs(test);//测试假数据
 }
 function getMyPost(userId) {
     $.ajax({
         type: 'GET',
-        url:"http://127.0.0.1:8888/"+userId+'/postlist',
+        url:"http://47.93.200.205:8080/account/post",
         success: function(postList) {
             pageRow=0;
             cache=postList;
             addTrs(postList);
             creatPageControl();
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
         }
     })
 }
@@ -325,7 +127,7 @@ function addTr(onePost) {
         </tr>
         <tr>
             <td >how to apply</td>
-            <td >${onePost.apply}</td>
+            <td >${onePost.howtoapply}</td>
         </tr>
     </tbody>
     </table>
@@ -335,11 +137,14 @@ function addTr(onePost) {
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
-    if(onePost.status=='public'){
+    if(onePost.status=='0'){
         postTr.className ="success";
+        jobStatusTd.innerText = "public";
     }
     else {
         postTr.className ="warning";
+        jobStatusTd.innerText = "hidden";
+
 
     }
     $('[data-toggle="popover"]').popover({
@@ -418,10 +223,10 @@ function setInfo(onePostId) {
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
             document.getElementById('stime').value=onePost.stime;
-            document.getElementById('apply').value=onePost.apply;
+            document.getElementById('apply').value=onePost.howtoapply;
             document.getElementById('Tags').value=onePost.tags;
             document.getElementById('salary').value=onePost.salary;
-            document.getElementById('category').value=onePost.category;
+            document.getElementById('category').value=onePost.catagory;
             document.getElementById('job-type').value=onePost.jobtype;
             document.getElementById('age').value=onePost.age;
             document.getElementById('city').value=onePost.city;
@@ -462,6 +267,7 @@ function searchPost() {
         }
     }
     $("tbody").empty();
+    cache=result;
     addTrs(result);
     return result;
 }
