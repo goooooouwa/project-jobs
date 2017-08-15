@@ -15,7 +15,6 @@ body{
     height: 5%;
     background-color:#212121;
 }
-
 .form-controlcommon{
      display: block;
      width:50%;
@@ -92,7 +91,7 @@ body{
    }
 */
 .select-controlcommon{
-    width:5%;
+    width:8%;
     height:0;
     padding-top:6px;
     padding-right: 12px;
@@ -114,7 +113,7 @@ body{
 .Edit-controlcommon{
     display: block;
     width:15%;
-    height: 20px;
+    height: 35px;
     padding-bottom:1px;
     padding-right: 12px;
     padding-bottom:6px;

@@ -55,7 +55,6 @@ function  Save() {
     var description=quill.container.firstChild.innerHTML;
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
-    var stime=document.getElementById('stime').value;
     var apply=document.getElementById('apply').value;
     var tags=document.getElementById('Tags').value;
     var salary=document.getElementById('salary').value;
@@ -66,13 +65,12 @@ function  Save() {
     var country=document.getElementById('country').value;
     var number=document.getElementById('number').value;
     var etime=document.getElementById('etime').value;
-    // var description=document.getElementById('q1-editor').innerText;
-    jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
+
+    jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
             title: title,
             company: company,
-            stime: stime,
             apply: apply,
             tags: tags,
             salary: salary,
@@ -82,7 +80,7 @@ function  Save() {
             city: city,
             country: country,
             number: number,
-            etime: etime,
+            duration: etime,
             description: description,
             status:'hidden',
         };
@@ -107,7 +105,7 @@ function Release(){
     var number=document.getElementById('number').value;
     var etime=document.getElementById('etime').value;
    // var description=document.getElementById('q1-editor').innerText;
-    jobinfo=[title, company, stime,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
+    jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
             title: title,

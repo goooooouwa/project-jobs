@@ -222,7 +222,6 @@ function setInfo(onePostId) {
             onePost=one;
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
-            document.getElementById('stime').value=onePost.stime;
             document.getElementById('apply').value=onePost.howtoapply;
             document.getElementById('Tags').value=onePost.tags;
             document.getElementById('salary').value=onePost.salary;
@@ -241,7 +240,6 @@ function setInfo(onePostId) {
 function cleanForm() {
     document.getElementById('Title').value='';
     document.getElementById('company').value='';
-    document.getElementById('stime').value='';
     document.getElementById('apply').value='';
     document.getElementById('Tags').value='';
     document.getElementById('salary').value='';
