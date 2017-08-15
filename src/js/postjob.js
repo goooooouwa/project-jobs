@@ -82,9 +82,22 @@ function  Save() {
             number: number,
             duration: etime,
             description: description,
-            status:'hidden',
+            status:1,
         };
 
+    if(isNull()==false){
+        alert("Please refine your infomation!");
+    }else {
+        $.post('http://47.93.200.205:8080/account/post', {
+            data: JSON.stringify(jobinformation),
+            dataType: 'JSONP',
+            crossDomain: true
+        }, function (data) {
+            postSuccess(data);
+        }).error(function (data) {
+            postFailed(data.responseText);
+        });
+    }
     console.log(jobinformation);
     return jobinformation;
 }
@@ -121,19 +134,21 @@ function Release(){
             number: parseInt(number),
             duration: parseInt(etime),
             description: description,
-            status:'public',
+            status:0,
         };
     
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
         $.post('http://47.93.200.205:8080/account/post', {
-            data:jobinformation,
+
+            data: JSON.stringify(jobinformation),
+            dataType: 'JSONP',
             crossDomain: true
         }, function (data) {
             postSuccess(data);
-        }).error(function (data) {
-            postFailed(data.responseText);
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
         });
     }
    console.log(jobinformation);
@@ -142,6 +157,5 @@ function Release(){
 function postSuccess(data) {
     alert(data.msg);
 }
-function postFailed(data) {
-    alert(data+"失败");
-}
+
+

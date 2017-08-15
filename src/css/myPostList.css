@@ -18,11 +18,8 @@ tbody {
 .table td {
   text-align: center; }
 
-
-
 .popover {
   width: 800px;
   max-width: initial;
   max-heigh: 800px;
-
   max-height: initial; }
