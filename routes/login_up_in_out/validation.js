@@ -182,7 +182,7 @@ function comfirmmail(user) {
         })
     })
 }
-
+ 
 app.get('/account/active', function(req, res) { ///得到验证码，访问验证码
     let actoken = req.query.token;
     let sql = `select * from usertable where activetoken='${actoken}'`;
@@ -301,7 +301,8 @@ function confirmUser(username, password, req, res, flag) { ///验证用户信息
 
 //==用户细节信息
 app.post('/user/detail', function(req, res) {
-    let username = req.body.username
+    let username = req.session.user['info'];
+    //console.log(username);
     let company_name = req.body.companyname
     let company_address = req.body.companyaddress
     let company_kind = req.body.companykind //得到用户传送的数据
@@ -311,17 +312,76 @@ app.post('/user/detail', function(req, res) {
     let sql = `update usertable set companyname='${company_name}',companyaddress='${company_address}', companykind='${company_kind}' where username='${username}'`;
     connection.query(sql, function(err, result) {
         if (err) {
-            console.log('21--- ' + err)
+            console.log('314--- ' + err)
         } else {
-            console.log('23--- success')
+            console.log('316--- success')
             res.json({ code: 0, msg: '用户信息更新成功' })
         }
     })
 
 })
 
-//=================登出
+app.get('/user/detail', function(req, res) {
+    let username = req.session.user['info'];
+    //console.log(username);
+    //设置sql
+    let sql = `select * from usertable where username='${username}'`;
+    connection.query(sql, function(err, result) {
+        if (err) {
+            console.log('330--- ' + err)
+        } else if(result.length){
+            console.log('332--- success')
+            
+            res.json({code:0,msg:{
+                'name':result[0].companyname,
+                'address': result[0].companyaddress,
+                'kind': result[0].companykind
+            }})
+            //res.json({ code: 0, msg: '用户信息更新成功' })
+        }else{
+            res.json({code:1, msg:"查询失败"})
+        }
+    })
 
+})
+
+//密码修改操作
+app.post('/user/set/password', function(req,res){
+    let username = req.body.username.slice(1);
+    let  md5 = crypto.createHash('md5');
+
+    md5.update(req.body.current || '');
+    let current = md5.digest('hex');
+
+    let  md6 = crypto.createHash('md5');
+    md6.update(req.body.newpass || '');
+    let newpass = md6.digest('hex')
+
+    let sql = `select password from usertable where username='${username}'`;
+    let sql_newpass = `update usertable set password='${newpass}' where username= '${username}'`
+    connection.query(sql, function(err, result){
+        if(err){
+            console.log('358-- ' + err)
+        }else{
+            console.log(result[0].password)
+            if(current === result[0].password){
+                connection.query(sql_newpass, function(err,result){
+                    if(err){
+                        console.log('370--' + err)
+                    }else{
+                        res.json({code:0,msg:"更新密码成功"})
+                    }
+                })
+            }else{
+                res.json({code:1, msg:"请输入正确密码"})
+            }
+        }
+    })
+})
+
+
+
+//=================登出
 //清除session
 app.get('/user/logout', function(req, res) {
     req.session.destroy(); //销毁
