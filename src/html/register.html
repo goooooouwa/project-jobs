@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +5,8 @@
     <title>SendPulse: Member's Area</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" media=screen>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
     <script src="../js/passwordIsSame.js"></script>
     <script src="../js/userIsCorrectInRegister.js"></script>
     <script src="../js/passwordIsCorrect.js"></script>
@@ -15,7 +16,6 @@
     <link href="../css/login.css" rel="stylesheet" media=screen>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link href="../css/spIcons.min.css" rel="stylesheet" media=screen>
-    <script src="../js/static/jquery.min.js"></script>
     <script src="../js/postaccount.js"></script>
     <!-- SendPulse AB website tests -->
 </head>
@@ -41,19 +41,19 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your user name:</label>
                             <div class="col-sm-8" id="user">
-                                <input  onblur="userIsCorrectInRegister()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter User Name">
+                                <input  onblur="userIsCorrectInRegister()" data-toggle="tooltip" data-placement="left" title="您的用户名应由3到12位大小写英文字母、阿拉伯数字或下划线组成" type="userName" value="" class="form-control" id="userName" name="registerusername" placeholder="Enter user name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your email:</label>
                             <div class="col-sm-8" id="emails">
-                                <input  onblur="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter Email">
+                                <input  onblur="emailIsCorrect()" type="email" value="" class="form-control" id="email" name="registeremail" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Your password:</label>
                             <div class="col-sm-8" id ="PASSWORD">
-                                <input  onblur="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter Password">
+                                <input  onblur="passwordIsCorrect()" data-toggle="tooltip" data-placement="left" title="您的密码应由6到16位大小写字母、阿拉伯数字、下划线或其它常见特殊字符组成" type="password" value="" class="form-control" id="password1" name="registerpassword" placeholder="Enter password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -87,12 +87,6 @@
 
     </div>
 </div>
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script src="/js/my/bootstrap.min.js"></script>
-<script src="/js/my/matchMedia.js"></script>
-<script src="../js/jquery.mobile.custom.min.js"></script>
-<script src="../js/general.js"></script>
-<script src="../js/login.js"></script>
-<script src="../js/social.js"></script>
+
 </body>
 </html>

@@ -226,7 +226,7 @@ function name_or_email(username) { ///判断输入的是用户名还是密码
 
 app.post('/user/login', function(req, res) { ///用户登录
     //填写信息 --> 发送账号密码 -->验证匹配密码(邮箱存在 或者不存在) -->(存在)登陆成功 -->进入首页
-    //验证 邮箱 || 用户名
+    //验证 邮箱 || 用户名 
     let username = req.body.username || '';
     let password1 = req.body.password || '';
     let flag = name_or_email(username);
@@ -248,9 +248,11 @@ app.get('/index', function(req, res) { //进入首页，查看登录状态
     if (req.session.user.info !== '') { //如果email不为空，说明登录
         console.log('244--- ' + req.session);
         let user = req.session.user;
-        res.send(`Hello, ${user.info}`);
+        //res.send(`Hello, ${user.info}`);
+        res.json({code:0, msg:`${user.info}`})
     } else {
-        res.send('Sorry, you\'re not logined in..Please try to login in');
+        res.json({code:1,msg:'Sorry, you\'re not logined in..Please try to login in'})
+        //res.send('Sorry, you\'re not logined in..Please try to login in');
     }
 });
 

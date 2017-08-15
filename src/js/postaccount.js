@@ -55,7 +55,7 @@ function loginInfo() {
 function Redirect() //使用函数进行跳转
 {
     console.log('111');
-    window.location = "http://localhost:3334/html/homepage.html";
+    window.location = "http://localhost:3334/html/person.html";
 }
 
 function intoIndex() { //进入首页，调用该函数，判断是否已经登录
@@ -64,7 +64,14 @@ function intoIndex() { //进入首页，调用该函数，判断是否已经登�
         url: `${url}`,
         type: 'GET',
         success: function(data) {
-            $('#getuser').html(data); //将数据发送到
+            ///$('#getuser').html(data); //将数据发送到4
+            if(data.code === 0){
+                //显示用户名
+                $('#top_username').text(` ${data.msg}`)
+            }else if(data.code === 1){
+                //don't do 
+                
+            }
         }
     })
 }
@@ -137,7 +144,7 @@ function passresert() {
 
 function againEmail(){  //再次发送验证
     let email = location.search.slice(7);
-    console.log(email)
+    //console.log(email)
     let url = `http://localhost:3334/user/againemail?email=${email}`;
     $.ajax({
         url: `${url}`,

@@ -9,8 +9,7 @@
         Coding Girls Club
     </title>
     <link rel="stylesheet" type="text/css" href="../css/postjob.css">
-    <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="../public/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>    
     <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../js/personal information.js"></script>
@@ -27,6 +26,7 @@
     <!--MyPostList-->
 
     <link rel="stylesheet" href="../css/myPostList.css">
+    
     <script type="text/javascript" src="../js/myPostList.js"></script>
 
     <!--创建-->
@@ -38,9 +38,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
     <link href="../mod/201609081635/css/themes/quill.snow.css" rel="stylesheet">
-
+    
+   
+    <script src="../js/postaccount.js"></script>
     <script>
         $(document).ready(function () {
+            intoIndex();
             $('.dropdown-toggle').dropdown();
         });
     </script>
@@ -166,7 +169,7 @@
                         </div>
 
 
-
+ 
                     </div>
                 </div>
             </div>
@@ -288,7 +291,7 @@
               </span>
             </div>
             <div class="col-sm-6 text-right">
-                <span><a><i class="fa fa-user"></i> Username</a></span>
+                <span><a><i class="fa fa-user"></i> <i id="top_username">Username</i></a></span>
             </div>
         </div>
     </div>
