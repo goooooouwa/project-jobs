@@ -43,33 +43,33 @@ function color() {
          <div class="container-fluid">
          <div class="row">
          <div class="col-md-2">
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/aurora.jpg)';"  class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/aurora.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/aurora.jpg)';"  class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/aurora.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>
               <p style="margin-left: 15px">Aurora</p>
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/rocky.jpg)'"class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/rocky.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/rocky.jpg)'"class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/rocky.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>
               <p style="margin-left: 15px">Rocky</p>
               </div>         
          <div class="col-md-2" style="margin-left: -60px">
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/desertkiss.jpg)'"class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/desertkiss.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/desertkiss.jpg)'"class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/desertkiss.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="margin-left: -3px">Desert Kiss</p>
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/sun.jpg)'"class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/sun.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/sun.jpg)'"class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/sun.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="margin-left: -8px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun</p>
 </div>
          <div class="col-md-2"style="margin-left: -60px">
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/elixir.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/elixir.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/elixir.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/elixir.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elixir</p>
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/painting.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/painting.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/painting.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/painting.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="font-size: 16px">&nbsp;&nbsp;Painting</p>
 </div>         
          <div class="col-md-2" style="margin-left: -60px">
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/glasspane.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/glasspane.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/glasspane.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/glasspane.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="margin-left: -5px">Glass Pane</p>
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/lake.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/lake.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/lake.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/lake.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lake</p>
 </div>
          <div class="col-md-2" style="margin-left: -60px">
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/meadow.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/meadow.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/meadow.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/meadow.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="font-size: 16px;margin-left: -5px">&nbsp;&nbsp;Meadow</p>
-              <button onclick="document.getElementById('colorChange').style.background='url(../../images/morning.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../../images/morning.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button onclick="document.getElementById('colorChange').style.background='url(../images/morning.jpg)'" class="btn btn-default btn-lg" type="button" style="border-radius:6px;background-image:url('../images/morning.jpg');background-size:100% 100%;width: 80px;height: 35px"></button>&nbsp;&nbsp;&nbsp;&nbsp;
               <p style="font-size: 16px">&nbsp;&nbsp;Morning</p>
 </div>
          <div class="col-md-2"></div>

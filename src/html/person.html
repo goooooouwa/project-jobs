@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="../css/myPostList.css">
     
     <script type="text/javascript" src="../js/myPostList.js"></script>
-
+    
+    <script type="text/javascript" src="../js/postaccount.js"></script>
     <!--创建-->
 
 
@@ -43,7 +44,13 @@
     <script src="../js/postaccount.js"></script>
     <script>
         $(document).ready(function () {
-            intoIndex();
+            
+            intoIndex(); ///个人账号
+            if($('#top_username').text() !== ' Username'){
+                getUserDetail(); //个人信息    
+            }
+            
+            
             $('.dropdown-toggle').dropdown();
         });
     </script>
@@ -52,7 +59,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div style="width: 60%;hight:200px; margin-left:20%;margin-right:20%">
+    <div style="width: 75%;height:200px; margin-left:12.5%;margin-right:12.5%">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -303,7 +310,7 @@
         <div class="col-md-3" >
             <div class="page-breadcrumb" id="colorChange" style="background-size: cover">
                 <div class="btn-group-vertical btn-group-lg" role="group" aria-label="...">
-                    <img src="http://img3.imgtn.bdimg.com/it/u=951120017,198117664&fm=26&gp=0.jpg" alt="" class="img-circle" style="margin-left: 70px">
+                    <img style="width:100px; height:100px; margin-left:40px;"src="http://www.evil0x.com/wp-content/uploads/2015/10/026A2BD2-2A1F-486E-8C5F-380A6F666A88.jpg" alt="" class="img-circle" style="margin-left: 70px">
                     <br><br>
                     <button onclick="modifyPersonalInfo()" class="btn btn-default " style="background-color:transparent;color:white;text-align:left" type="submit">&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Account Information</button>
                     <br>
@@ -322,11 +329,11 @@
 
                     <!--<button class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-cog " aria-hidden="true"></i>&nbsp;Other Setting</button>-->
                     <br><br><br><br><br>
-                    <a href="http://www.codingirls.club/"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center>s</a>
+                    <a href="http://localhost:3334/html/login.html"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out" onclick="logout()"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center>s</a>
                     <br>
                     <br>
                     <br>
-
+ 
                 </div>
 
             </div>
@@ -337,24 +344,24 @@
             <div>
                 <div class="form-group">
                     <label for="InputcompanyName" style="font-size: 30px">Company Name</label>
-                    <input style="background:ghostwhite" type="text" class="form-control" id="InputcompanyName" placeholder="Enter company name">
+                    <input style="background:ghostwhite" type="text" class="form-control" id="InputcompanyName" placeholder="Enter company name" name="InputcompanyName">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="InputcompanyAddress" style="font-size: 30px">Company Address</label>
-                    <input style="background: ghostwhite" type="text" class="form-control" id="InputcompanyAddress" placeholder="Enter company address">
+                    <input style="background: ghostwhite" type="text" class="form-control" id="InputcompanyAddress" placeholder="Enter company address" name="InputcompanyAddress">
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="InputcompanyKind" style="font-size: 30px">Company Kind</label>
-                    <input style="background: ghostwhite" type="text" class="form-control" id="InputcompanyKind" placeholder="Enter company kind">
+                    <input style="background: ghostwhite" type="text" class="form-control" id="InputcompanyKind" placeholder="Enter company kind" name="InputcompanyKind">
                 </div>
                 <div class="checkbox" id="personalInfoCheckBox">
                     <label>
                         <input type="checkbox" onchange="WhetherBan()"><h4>OK</h4>
                     </label>
                 </div>
-                <button  id ="button" type="submit" class="btn btn-success btn-lg" disabled="disabled">Save changes</button>
+                <button  id ="button" type="submit" class="btn btn-success btn-lg" disabled="disabled" onclick="postUserDetail()">Save changes</button>
 
             </div>
         </div>
