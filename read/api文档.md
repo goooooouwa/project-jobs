@@ -33,7 +33,7 @@ method:get
         "age": "18-28岁",  
         "number": 5,  
         "tags": "前端,jquery",  
-        "howtoapply": "简历发送邮箱至111@qq.com"  
+        "apply": "简历发送邮箱至111@qq.com"  
     }  
 ]  
 ## 3、用户添加职位（6）
@@ -47,7 +47,7 @@ method:post
         "catagory":"Web前端开发",  
         "duration":30,  
         "jobtype":"全职",  
-        "howtoapply":"发送简历至邮箱：111@qq.com",  
+        "apply":"发送简历至邮箱：111@qq.com",  
         "country": "中国",  
         "city": "北京",  
         "tags":"前端",  
@@ -79,7 +79,7 @@ method:get
         "age": "18-28岁",  
         "number": 5,  
         "tags": "前端,jquery",  
-        "howtoapply": "简历发送邮箱至111@qq.com",  
+        "apply": "简历发送邮箱至111@qq.com",  
         "duration": 30  
     }  
 ]  
@@ -102,7 +102,7 @@ method:put
         "number": 5,  
         "duration":20,  
         "tags": "前端,jquery",  
-        "howtoapply": "简历发送邮箱至111@qq.com"  
+        "apply": "简历发送邮箱至111@qq.com"  
 }  
 返回  
 {  
