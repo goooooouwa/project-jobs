@@ -27,6 +27,36 @@ function postInfo() {
 }
 
 function loginInfo() {
+    if (document.getElementById('label').innerText==="Your email:"){
+    let a =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+    let b= document.getElementById("email");
+    let c = document.getElementById("emails");
+    let d =document.getElementById("emails").getElementsByTagName("p");
+    if (a.test(b.value)===true || b.value===""){
+        c.removeChild(d[0]);
+    }
+    else if(a.test(b.value)===false && d.length===0) {
+        c.innerHTML+="<p style='color: red'>\n" +
+            " <small><i>Email's format is wrong!!!</i></small>\n" +
+            " </p>"
+        return false;
+    }
+    }
+    else if (document.getElementById('label').innerText==="Your username:"){
+        let a =/^[a-zA-Z0-9_]{6,18}$/;
+        let b= document.getElementById("email");
+        let c = document.getElementById("emails");
+        let d =document.getElementById("emails").getElementsByTagName("p");
+        if (a.test(b.value)===true || b.value===""){
+            c.removeChild(d[0]);
+        }
+        else if(a.test(b.value)===false && d.length===0) {
+            c.innerHTML+="<p style='color: red'>\n" +
+                " <small><i>Username's format is wrong!!!</i></small>\n" +
+                " </p>"
+            return false;
+        }
+    }
     let username = $("input[name='loginemailname']").val();
     let password = $("input[name='loginpassword']").val();
     let url = 'http://localhost:3334/user/login';
@@ -92,6 +122,19 @@ function logout() {
 
 //忘记密码的操作
 function forgetpass() {
+    let a =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+    let b = document.getElementById("email");
+    let c = document.getElementById("emails");
+    let d =document.getElementById("emails").getElementsByTagName("p");
+    if (a.test(b.value)===true || b.value===""){
+        c.removeChild(d[0]);
+    }
+    else if(a.test(b.value)===false && d.length===0) {
+        c.innerHTML+="<p style='color: red'>\n" +
+            " <small><i>Email's format is wrong!!!</i></small>\n" +
+            " </p>"
+        return false;
+    }
     let email = $("input[name='forgetemail']").val();
     let url = 'http://localhost:3334/forget/password';
     $.ajax({
