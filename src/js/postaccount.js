@@ -241,3 +241,20 @@ function setNewPassword(){
         }
     })
 }
+
+
+///获取用户颜色  [1...20]
+function getUserColor(){
+    let color = ['rgb(32,165,96)','rgb(255,69,0)','rgb(255,230,0)','forestgreen','black','darkcyan','mediumblue','rgb(65,150,225)','slateblue','rgb(169,169,169)','url(../images/aurora.jpg)','url(../images/desertkiss.jpg)','url(../images/elixir.jpg)','url(../images/glasspane.jpg)','url(../images/meadow.jpg)','url(../images/rocky.jpg)','url(../images/sun.jpg)','url(../images/painting.jpg)','url(../images/lake.jpg)','url(../images/morning.jpg)'];
+    let url = `http://localhost:3334/user/get/color`;
+    $.ajax({
+        url:  `${url}`,
+        type: 'GET',
+        success:function(data){
+            //显示最后的颜色
+            console.log(data.msg)
+            document.getElementById('colorChange').style.background=color[parseInt(data.msg)-1]
+        }
+
+    })
+}
