@@ -272,7 +272,7 @@ function setInfo(onePostId) {
             document.getElementById('city').value=onePost.city;
             document.getElementById('country').value=onePost.country;
             document.getElementById('number').value=onePost.number;
-            document.getElementById('etime').value=onePost.etime;
+            document.getElementById('etime').value=onePost.duration;
             document.getElementById('Description').value=onePost.description;
             document.getElementsByClassName('ql-editor')[0].innerHTML=onePost.description;
             break;
