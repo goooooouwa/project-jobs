@@ -7,7 +7,7 @@ function emailIsCorrect() {
         b.removeChild(d[0]);
     }
     else if(c.test(a.value)===false && d.length===0) {
-        b.innerHTML+="<p style='color: red'>\n" +
+        b.innerHTML+="<p style='color: red;margin-top: -13px'>\n" +
             "<small>Email's format is wrong!!!</small>\n" +
             "</p>"
     }
