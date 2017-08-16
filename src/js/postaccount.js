@@ -73,7 +73,7 @@ function loginInfo() {
                 setTimeout('Redirect()', 5000);
             } else if (data.code === 0) {
                 //document.write(data.msg)
-                setTimeout('Redirect()', 2000);
+                setTimeout('Redirect()', 1000);
             } else {
                 alert(data.msg)
                 //$('#showinfo').html(data.msg); //这里显示错误信息
@@ -84,7 +84,7 @@ function loginInfo() {
 
 function Redirect() //使用函数进行跳转
 {
-    console.log('111');
+    //console.log('111');
     window.location = "http://localhost:3334/html/person.html";
 }
 
