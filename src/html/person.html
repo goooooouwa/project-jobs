@@ -14,7 +14,6 @@
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../js/personal information.js"></script>
     <script src="../js/security%20center.js"></script>
-    <script src="../js/color.js"></script>
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
     <link  rel="stylesheet" href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css">
     <meta name="csrf-param" content="authenticity_token" />
@@ -26,6 +25,8 @@
     <!--MyPostList-->
 
     <link rel="stylesheet" href="../css/myPostList.css">
+
+    
     
     <script type="text/javascript" src="../js/myPostList.js"></script>
     
@@ -34,6 +35,8 @@
 
 
     <script src="../js/postjob.js"></script>
+
+    <script src="../js/color.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
@@ -46,10 +49,10 @@
         $(document).ready(function () {
             
             intoIndex(); ///个人账号
+            getUserColor();
             if($('#top_username').text() !== ' Username'){
                 getUserDetail(); //个人信息    
             }
-            
             
             $('.dropdown-toggle').dropdown();
         });
@@ -287,15 +290,15 @@
                       </div>
                   </div>
                 </div>
-                  <button style="margin-left: -196px" type="button" class="btn btn-default" data-toggle="modal" data-target="#my-modal"><i class="fa fa-home " aria-hidden="true"></i>Home</button>
+                  <button style="margin-left: -100px" type="button" class="btn btn-default" onclick="window.location='http://localhost:3334/html/HOME.html'"><i class="fa fa-home " aria-hidden="true"></i>Home</button>
                 <button id="show-img" type="button" class="btn btn-default" data-toggle="modal" data-target="#my-modal"><i class="fa fa-wechat"></i> 关注公众号</button>
               </span>
                 <span>
-                <a style="margin-left: -123px" href="mailto:info@codingirls.club"><i class="fa fa-envelope" ></i> info@codingirls.club</a>
+                <a style="margin-left: -27px;padding-top:5px" href="mailto:info@codingirls.club"><i class="fa fa-envelope" ></i> info@codingirls.club</a>
               </span>
             </div>
             <div class="col-sm-6 text-right">
-                <span><a><i class="fa fa-user"></i> <i id="top_username">Username</i></a></span>
+                <span><a style="margin-right:-100px;"><i class="fa fa-user"></i> <i id="top_username">Username</i></a></span>
             </div>
         </div>
     </div>
@@ -325,8 +328,8 @@
                     </div>
 
                     <!--<button class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-cog " aria-hidden="true"></i>&nbsp;Other Setting</button>-->
-                    <br><br><br><br><br>
-                    <a href="./login.html"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out" onclick="logout()"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center>s</a>
+                    <br><br><br>
+                    <a href="./login.html"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out" onclick="logout()"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center></a>
                     <br>
                     <br>
                     <br>
