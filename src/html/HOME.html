@@ -414,26 +414,37 @@
         </div>
         <!--呈现职位-->
         <div class="jobList container">
-
-            <p id="p1"></p>
-            <ul id="list" class="jobSorted pagination" style="display: block; width: 500px; margin:0 auto">
+            <ul id="list" class="jobSorted"></ul>
+            <ul id="list1" class="pagination" style="display: block; width: 500px; margin:0 auto">
             </ul>
         </div>
         <script src="../js/jqPaginator.js"></script>
         <script>
-            $.jqPaginator('#list', {
-                totalPages: 8,
-                visiblePages: 5,
-                currentPage: 1,
-                onPageChange: function (num, type) {
-                    $('#p1').text(type + '：' + num);
+            $.ajax({ 
+                url:`http://47.93.200.205:8080/post/list`,
+                type:'GET',
+                success:function(data){
+                    $.jqPaginator('#list1', {
+                        totalCounts: data.count-20,
+                        visiblePages: 5,
+                        currentPage:1,
+                        pageSize:20,
+                        onPageChange: function (num, type) {
+                            //$('#p1').text(type + '：' + num);
+                            $.ajax({ 
+                                url:`http://47.93.200.205:8080/post/list?page=${num}`,
+                                type:'GET',
+                                success:function(data){
+                                    render(data)
+                                
+                                }
+                            })
+                        }
+                    });
                 }
-            });        
+            })        
         </script>
 
-            <ul id="list" class="jobSorted pagination" style="display: block;">
-              
-            </ul>
         </div>
 
 
