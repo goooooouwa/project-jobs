@@ -152,10 +152,13 @@ function addTr(onePost) {
         </tr>
     </tbody>
     </table>
-    <div style='width:24%;margin-left: auto;
+    <div style='width:30%;margin-left: auto;
             margin-right: auto;' class='center-block'>
-           <button   class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
-           <button   class='btn btn-lg btn-danger'  onclick='deletePost(${onePost.id})' >delete</button>
+           <div class='center-block'>
+                <button   class='btn btn-lg btn-warning col-xs-12 col-md-5' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
+                <div class='col-xs-12 col-md-2'></div>
+                <button   class='btn btn-lg btn-danger col-xs-12 col-md-5'  onclick='deletePost(${onePost.id})' >delete</button>
+           </div>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -287,11 +290,11 @@ function deletePost(onePostId) {
             let no=`未删除招聘${onePost.title} ！`;
             if (confirm(ask)) {
                 deletePostJql(onePostId,yes);
+
             }
             else {
                 alert(no);
             }
-            showMyPostList();
             break;
         }
     }
@@ -341,6 +344,7 @@ function deletePostJql(onePostId,yes) {
         if (request.readyState == 4) {
             if (request.status == 200) {
                 alert(yes);
+                showMyPostList();
             }
         }
     };
