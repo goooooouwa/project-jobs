@@ -315,6 +315,7 @@ function cleanForm() {
     document.getElementById('number').value='';
     document.getElementById('Description').value='';
     document.getElementById('etime').value='';
+    document.getElementById('Description').value='';
     document.getElementsByClassName('ql-editor')[0].innerHTML='';
 }
 //前端搜索,不用？
