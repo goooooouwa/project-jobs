@@ -33,7 +33,10 @@ function loginInfo() {
     let c = document.getElementById("emails");
     let d =document.getElementById("emails").getElementsByTagName("p");
     if (a.test(b.value)===true || b.value===""){
-        c.removeChild(d[0]);
+        if(d[0]){
+            c.removeChild(d[0]);
+        }
+
     }
     else if(a.test(b.value)===false && d.length===0) {
         c.innerHTML+="<p style='color: red'>\n" +
@@ -43,12 +46,15 @@ function loginInfo() {
     }
     }
     else if (document.getElementById('label').innerText==="Your username:"){
-        let a =/^[a-zA-Z0-9_]{6,18}$/;
+        let a =/^[a-zA-Z0-9_!@#$%^&*]{6,16}$/;
         let b= document.getElementById("email");
         let c = document.getElementById("emails");
         let d =document.getElementById("emails").getElementsByTagName("p");
         if (a.test(b.value)===true || b.value===""){
-            c.removeChild(d[0]);
+            if(d[0]){
+                c.removeChild(d[0]);
+            }
+
         }
         else if(a.test(b.value)===false && d.length===0) {
             c.innerHTML+="<p style='color: red'>\n" +
