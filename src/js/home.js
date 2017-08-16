@@ -22,7 +22,8 @@ function getLogOrNot(status) {
 
 function render(data) {
     result='';
-    data = data.data;
+    data=data.data;
+
     for (var i in data) {
         //console.log('aaaaaaaaaaaaaaa')
         result += `

@@ -145,8 +145,9 @@ function getRecommendJobsFromSQ(jobId) {
         }
     })
 }
-function loadJobInfo(jobInfo) {
+function loadJobInfo(jobInfoArray) {
     debugger;
+    let jobInfo=jobInfoArray[0];
     $("#jobTitle").text(jobInfo.title);
     $("#postData").text('发布时间: '+jobInfo.sdate);
     $("#tags").text(jobInfo.tags);
@@ -155,7 +156,7 @@ function loadJobInfo(jobInfo) {
     $("#salary").text(jobInfo.salary+'元');
     $("#address").text(jobInfo.address);
     $("#number").text(jobInfo.number+'人');
-
+    debugger;
     $("#jobDescription").append(jobInfo.description);//引入富文本编辑
 
     $("#apply").text(jobInfo.apply);
@@ -163,6 +164,7 @@ function loadJobInfo(jobInfo) {
     $("#company").text(jobInfo.company);
     $("#country").text(jobInfo.country);
     $("#city").text(jobInfo.city);
+    debugger;
 
 }
 
