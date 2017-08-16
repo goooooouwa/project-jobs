@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/homepage的css/button.min.css" />
     <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
     <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
@@ -20,10 +21,10 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("li").mouseover(function(){
+            $(".changeColor").mouseover(function(){
                 $(this).toggleClass("shadow")
             });
-            $("li").mouseout(function(){
+            $(".changeColor").mouseout(function(){
                 $(this).toggleClass("shadow")});
 
         });
@@ -41,21 +42,37 @@
 
         </div>
     </div>
-
-    <!--头部白色导航-->
-    <div>
-        <div class="whiteNav">
-            <span>
-                <a class="homepageTitle" href="" >首页</a>
-            </span>
-            <span>
-                <a class="alljobsTitle" href="alljobs.html" >ALL JOBS</a>
-            </span>
-        </div>
-    </div>
 </div>
     <!--首页盒子-->
     <div id="homePage" style="display: none">
+        <!--头部白色导航-->
+        <div>
+            <div class="whiteNav">
+            <span>
+                <a class="homepageTitle" href="" style="height: 54px;
+                                                        width: 50px;
+                                                        position: relative;
+                                                        line-height: 53px;
+                                                        color: #333;
+                                                        border-bottom: 2px solid #00b38a;
+                                                        padding: 14px 5px;
+                                                        font-size: 20px;
+                                                        margin: 0 16px;
+                                                        text-decoration: none;">首页</a>
+            </span>
+                <span>
+                <a class="alljobsTitle" href="" style="     height: 54px;
+                                                            width: 50px;
+                                                            position: relative;
+                                                            line-height: 53px;
+                                                            color: #999;
+                                                            padding: 14px 5px;
+                                                            font-size: 20px;
+                                                            margin: 0 16px;
+                                                            text-decoration: none;">ALL JOBS</a>
+                </span>
+            </div>
+        </div>
         <!--logo-->
         <div class="picture">
             <a href="https://www.thoughtworks.com/" target="_blank" ><img src="../public/imgs/thoughtworklogo.png" style="max-width: 100%" ></a>
@@ -66,7 +83,7 @@
         </div>
         <div style="margin-left: 13%; margin-right:13%">
             <ul class="row" id="hotJobs">
-                <li class=" jobborder col-md-2" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
+                <li class=" jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
                     <div>
                         <div style="padding-top: 10px">
                             <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
@@ -85,7 +102,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="jobborder col-md-2" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
+                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
                     <div>
                         <div style="padding-top: 10px">
                             <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
@@ -104,7 +121,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="jobborder col-md-2" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
+                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
                     <div>
                         <div style="padding-top: 10px">
                             <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
@@ -123,7 +140,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="jobborder col-md-2" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
+                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
                     <div>
                         <div style="padding-top: 10px">
                             <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
@@ -142,7 +159,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="jobborder col-md-2" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
+                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
                     <div>
                         <div style="padding-top: 10px">
                             <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
@@ -173,7 +190,7 @@
         </div>
         <div style="margin-left:13%;margin-right: 13%">
             <ul class="row" >
-                <li class="jobborder col-md-2 company2" onclick="location.href='https://www.huanbeiloan.com/'">
+                <li class="jobborder col-md-2 company2 changeColor" onclick="location.href='https://www.huanbeiloan.com/'">
                     <div  class="company1">
                         <p><img  src="//static.lagou.com/thumbnail_160x160/i/image/M00/52/57/CgpEMll1oUCAefSeAAFV2wHAEK8770.png" alt="公司logo" width="80" height="80"></p >
                         <p>还呗</p >
@@ -196,7 +213,7 @@
                     </span>
                     </div>
                 </li>
-                <li class=" jobborder col-md-2 company2"onclick="location.href='https://www.huanbeiloan.com/'">
+                <li class=" jobborder col-md-2 company2 changeColor" onclick="location.href='https://www.huanbeiloan.com/'">
                     <div  class="company1">
                         <p><img src="//static.lagou.com/thumbnail_160x160/i/image/M00/4F/2D/Cgp3O1euvMOAJUSmAAAhk5XZ6xs855.png"  alt="公司logo" width="80" height="80"></p >
                         <p>广东叮当</p >
@@ -219,7 +236,7 @@
                     </span>
                     </div>
                 </li>
-                <li class=" jobborder col-md-2 company2"onclick="location.href='https://www.huanbeiloan.com/'">
+                <li class=" jobborder col-md-2 company2 changeColor" onclick="location.href='https://www.huanbeiloan.com/'">
                     <div  class="company1">
                         <p><img src="//static.lagou.com/thumbnail_160x160/i/image/M00/49/AA/CgqKkVeYHveAbvHsAADT2G1NbOc588.jpg"  alt="公司logo" width="80" height="80"></p >
                         <p>nestia</p >
@@ -242,7 +259,7 @@
         </span>
                     </div>
                 </li>
-                <li class=" jobborder col-md-2 company2"onclick="location.href='https://www.huanbeiloan.com/'">
+                <li class=" jobborder col-md-2 company2 changeColor" onclick="location.href='https://www.huanbeiloan.com/'">
                     <div  class="company1">
                         <p><img src="//static.lagou.com/thumbnail_160x160/i/image/M00/0D/97/CgpEMljl3DyAdc3uAABYs06HVcs977.png" alt="公司logo" width="80" height="80"></p >
                         <p>悸动画</p >
@@ -272,10 +289,149 @@
     </div>
     <!--allJobs盒子-->
     <div id="allJobs" style="display: block">
+        <!--头部白色导航-->
+        <div>
+            <div class="whiteNav">
+            <span>
+                <a class="homepageTitle" href="" style="height: 54px;
+                                                        width: 50px;
+                                                        position: relative;
+                                                        line-height: 53px;
+                                                        color: #999;
+                                                        padding: 14px 5px;
+                                                        font-size: 20px;
+                                                        margin: 0 16px;
+                                                        text-decoration: none;">首页</a>
+            </span>
+                <span>
+                <a class="alljobsTitle" href="" style="     height: 54px;
+                                                            width: 50px;
+                                                            position: relative;
+                                                            line-height: 53px;
+                                                            color: #333;
+                                                            border-bottom: 2px solid #00b38a;
+                                                            padding: 14px 5px;
+                                                            font-size: 20px;
+                                                            margin: 0 16px;
+                                                            text-decoration: none;">ALL JOBS</a>
+                </span>
+            </div>
+        </div>
+        <!--搜索-->
             <div class="keywordSearch container">
                 <input type="text" id="sea" autocomplete="off" maxlength="64" placeholder="搜索职位、公司或地点" value="">
                 <input type="button" id="submit" onclick="searchPo()" value="搜索"/>
             </div>
+        <!--分类-->
+        <div class="sort">
+            <!--工作性质分类-->
+            <div>
+                <div class="svg-wrapper">
+                    <input type="button" class="button gray" id="jobtype" value="工作性质：" >
+                </div>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="全职" onclick="getTag()" value="全职" >
+                        </div>
+                    </svg>
+                </div>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="兼职" onclick="getTag()" value="兼职" >
+                        </div>
+                    </svg>
+                </div>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="实习" onclick="getTag()" value="实习" >
+                        </div>
+                    </svg>
+                </div>
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="自由职业" onclick="getTag()" value="自由职业" >
+                        </div>
+                    </svg>
+                </div>
+            </div>
+            <!--工作职位分类-->
+            <div>
+                <div class="svg-wrapper">
+                    <div id="text">
+                        <input type="button" class="button gray" id="catagory" value="工作职位：" >
+                    </div>
+                </div>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="系统工程师" onclick="getCatagory()" value="系统工程师" >
+                        </div>
+                    </svg>
+                </div>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="Web前端开发" onclick="getCatagory()" value="Web前端开发" >
+                        </div>
+                    </svg>
+                </div>
+
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="软件工程师" onclick="getCatagory()" value="软件工程师"" >
+                        </div>
+                    </svg>
+                </div>
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="IT项目经理/主管" onclick="getCatagory()" value="IT项目经理/主管" >
+                        </div>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!--呈现职位-->
+        <div class="jobList container">
+            <ul id="list" class="jobSorted" style="display: block;">
+                <script>getList()</script>
+            </ul>
+        </div>
+
+        <a id="backtop" title="回到顶部" rel="nofollow"></a>
+        <script>
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() >= 50) {
+                        $('#backtop').fadeIn();
+                    }
+                    else {
+                        $('#backtop').fadeOut();
+                    }
+                });
+            });
+            $('#backtop').click(function () {
+                $('html,body').animate({ scrollTop: 0 }, 500);
+            });
+        </script>
      <br><br>
     </div>
 

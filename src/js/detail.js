@@ -87,20 +87,25 @@ const jobs=[
 $(document).ready(loadInfo());
 
 function loadInfo() {
-    let jobId=GetQueryString("jobId");
+    let jobId=getQueryVariable("jobid");
     if(jobId !=null && jobId.toString().length>1) {
+        debugger;
         getJobDetailFromSQ(jobId);
         getRecommendJobsFromSQ(jobId);
     }
 
 }
-function GetQueryString(name)
-{
-    let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-    let r = window.location.search.substr(1).match(reg);
-    if(r!=null)return unescape(r[2]); return null;
-}
 
+function getQueryVariable(variable)
+{
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
 function getLogOrNot(status) {
     if(status==0){
         $("#judgeWhetherLog").append(`<div>
@@ -125,9 +130,8 @@ function getLogOrNot(status) {
 function getJobDetailFromSQ(jobId) {
     debugger;
  $.get(
-     '47.93.200.205:8080/post/detail?id='+jobId,
+     `http://47.93.200.205:8080/post/detail?jobid=${jobId}`,
      function (jobInfo) {
-         debugger;
          loadJobInfo(jobInfo);
      }
  )
@@ -142,9 +146,9 @@ function getRecommendJobsFromSQ(jobId) {
     })
 }
 function loadJobInfo(jobInfo) {
-
+    debugger;
     $("#jobTitle").text(jobInfo.title);
-    $("#postData").text('发布时间: '+jobInfo.postData);
+    $("#postData").text('发布时间: '+jobInfo.sdate);
     $("#tags").text(jobInfo.tags);
     $("#catagory").text(jobInfo.catagory);
     $("#jobtype").text(jobInfo.jobtype);
@@ -152,7 +156,7 @@ function loadJobInfo(jobInfo) {
     $("#address").text(jobInfo.address);
     $("#number").text(jobInfo.number+'人');
 
-    $("#jobDescription").append(jobInfo.job_description);//引入富文本编辑
+    $("#jobDescription").append(jobInfo.description);//引入富文本编辑
 
     $("#apply").text(jobInfo.apply);
 
