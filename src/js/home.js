@@ -30,7 +30,7 @@ function render(data) {
         //console.log('aaaaaaaaaaaaaaa')
         result += `
               <div class="row">
-                <li class="jobborder col-lg-10 col-md-10 col-sm-10 changeColor" style="height: 200px;width: 100%;margin: 30px 30px 0 0" onclick="location.href='detail.html?jobid=${data[i].id}'">
+                <li class="jobborder col-lg-10 col-md-10 col-sm-10 changeColor" style="height: 200px;width: 100%;margin: 30px 30px 0 0;cursor: pointer" onclick="location.href='detail.html?jobid=${data[i].id}'">
                 <div>
                     <div style="padding-top: 10px">
                         <span style="font-size: 28px;color: #209b60">${data[i].title}</span>
@@ -112,3 +112,36 @@ function getCatagory() {
         }
     })
 }
+function loadHotJobs(data) {
+    for(let job of data){
+     let result=`<li class=" jobborder col-md-2 changeColor" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" onclick="location.href='detail.html?jobid=${job.id}'">
+            <div style="padding-top: 5%">
+              <span style="font-size:150%;color: #209b60;">${job.title}</span>
+              <span style="color: #999999">${job.sdate}</span>
+            </div>
+            <hr style="height:1px;margin-top: 3%;margin-bottom:3%;border:none;border-top:1px solid #c0c0c0;" />
+            <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>月薪: ${job.salary}</p ></div>
+            <div>
+               <span class="company_name" style="color: #999999;font-size: 18px"><p>${job.company}</p ></span>
+            </div>
+            <div style="font-size: 18px;color:#999999">
+            <p>
+            <span>${job.country}</span>
+            <span>${job.city}</span>
+            </p >
+            </div>
+            </li>`;
+     $('#hotJobs').append(result);
+
+    }
+}
+function getHotJobs() {
+    $.ajax({
+        url:`http://47.93.200.205:8080/post/hot`,
+        type:'get',
+        success: function (data) {
+            loadHotJobs(data);
+        }
+    })
+}
+

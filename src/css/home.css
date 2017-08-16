@@ -148,10 +148,10 @@ h4.jobTitle{
 .viewMore{
     cursor: pointer;
     display: block;
-    width: 25%;
+    width: 20%;
     height: 2%;
     line-height: 42px;
-    margin: 3% auto 0;
+    margin: 3% auto 5% 39%;
     background: #FFF;
     border:1px solid #00B38A;
     font-size: 16px;
@@ -253,6 +253,7 @@ hr.style-one{
     padding-bottom:10px;
     border-top:1px solid #303030;
 }
+/*.fixed-bottom {position: fixed;bottom: 0;width:100%;}*??固定页脚/
 
 /*alljobs*/
 .keywordSearch{
