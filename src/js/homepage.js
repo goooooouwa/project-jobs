@@ -1,5 +1,5 @@
 function render(data) {
-    result='';
+    result='';data=data.data;
     for (var i in data) {
         result += `<li class="con_list_item first_row default_list">
                         <div class="list_item_top">
@@ -82,6 +82,18 @@ function getCatagory() {
     $("#list").empty();
     $.ajax({
         url:`http://47.93.200.205:8080/post/list?catagory=${id}`,
+        type:'get',
+        success: function (data) {
+            render(data);
+        }
+    })
+}
+function getPage() {
+    var id = event.target.id;
+    $("#list").empty();
+    //alert(id);
+    $.ajax({
+        url:`http://47.93.200.205:8080/post/list?page=${id}`,
         type:'get',
         success: function (data) {
             render(data);
