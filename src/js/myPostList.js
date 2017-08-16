@@ -115,7 +115,8 @@ function addTrs(postList) {
 function addTr(onePost) {
     let table = document.getElementById('tbody');
     let postTr = table.insertRow(table.rows.length);
-
+    var reg = new RegExp( '\"' , "g" );
+    let descriPtion=onePost.description.replace(reg,'\'').slice(0,500).concat('………………');
     let jobTitleTd = postTr.insertCell(postTr.cells.length);
     let jobStatusTd = postTr.insertCell(postTr.cells.length);
     jobTitleTd.innerText = onePost.title;
@@ -140,7 +141,7 @@ function addTr(onePost) {
         </tr>
         <tr>
             <td >description</td>
-            <td >${onePost.description.slice(0,500).concat('………………')}</td>
+            <td >${descriPtion}</td>
         </tr>
         <tr>
             <td >tags</td>
