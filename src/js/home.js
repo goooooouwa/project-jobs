@@ -22,6 +22,7 @@ function getLogOrNot(status) {
 
 function render(data) {
     result='';
+    data=data.data;
     for (var i in data) {
         result += `
               <div class="row">

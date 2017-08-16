@@ -26,6 +26,15 @@
             });
             $(".changeColor").mouseout(function(){
                 $(this).toggleClass("shadow")});
+            $(".homepageTitle").onclick(function () {
+                $("#homePage").style.display='block';
+                $("#allJobs").style.display='none';
+            })
+            $(".alljobsTitle").onclick(function () {
+                $("#homePage").style.display='none';
+                $("#allJobs").style.display='block';
+            })
+
 
         });
     </script>
@@ -404,6 +413,14 @@
                         <rect id="shape" height="40" width="150" />
                         <div id="text">
                             <input type="button" class="button gray" id="IT项目经理/主管" onclick="getCatagory()" value="IT项目经理/主管" >
+                        </div>
+                    </svg>
+                </div>
+                <div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150" />
+                        <div id="text">
+                            <input type="button" class="button gray" id="产品经理" onclick="getCatagory()" value='产品经理' >
                         </div>
                     </svg>
                 </div>
