@@ -80,22 +80,22 @@ function  Save() {
             country: country,
             number: parseInt(number),
             duration: parseInt(etime),
-            description: description,
+            description: parseInt(description),
             status:1,
         };
 
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
-        $.post('http://47.93.200.205:8080/account/post', {
-            data: JSON.stringify(jobinformation),
-
-            crossDomain: true
-        }, function (data) {
-            postSuccess(data);
-        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
-        },'application/json');
+        $.ajax({
+            type: 'POST',
+            data: jobinformation,
+            url:  'http://47.93.200.205:8080/account/post',
+            crossDomain: true,
+            success: function (data) {
+                postSuccess(data);
+            }
+        })
     }
     console.log(jobinformation);
     return jobinformation;
@@ -138,21 +138,24 @@ function Release(){
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
-        $.post('http://47.93.200.205:8080/account/post', {
-            data: JSON.stringify(jobinformation),
-
-            crossDomain: true
-        }, function (data) {
-            postSuccess(data);
-        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
-        },'application/json');
+        $.ajax({
+            type: 'POST',
+            data: jobinformation,
+            url:  'http://47.93.200.205:8080/account/post',
+            crossDomain: true,
+            success: function (data) {
+                postSuccess(data);
+            },
+            err:function () {
+                alert('失败');
+            }
+        })
     }
    console.log(jobinformation);
     return jobinformation;
 }
 function postSuccess(data) {
-    alert(data.msg);
+    alert(data);
 }
 
 
