@@ -23,7 +23,22 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            intoIndex()
+            intoIndex();
+            getHotJobs();
+            //固定页脚？
+//            $(function(){
+//                function footerPosition(){
+//                    $("footer").removeClass("fixed-bottom");
+//                    var contentHeight = document.body.scrollHeight,//网页正文全文高度
+//                        winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+//                    if(!(contentHeight > winHeight)){
+//                        //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+//                        $("footer").addClass("fixed-bottom");
+//                    }
+//                }
+//                footerPosition();
+//                $(window).resize(footerPosition);
+//            });
             $(".changeColor").mouseover(function(){
                 $(this).toggleClass("shadow")
             });
@@ -60,7 +75,7 @@
         });
     </script>
 </head>
-<body>
+<body style="margin: 0;padding: 0;">
 <!--导航栏-->
 <div class="nav">
     <!--头部黑色导航-->
@@ -72,8 +87,9 @@
 
         </div>
     </div>
-</div>
-<div>
+
+   <div>
+    <!--头部白色导航-->
         <div class="whiteNav">
         <span>
             <a class="homepageTitle" style="height: 54px;
@@ -85,10 +101,11 @@
             padding: 14px 5px;
             font-size: 20px;
             margin: 0 16px;
+            cursor: pointer;
             text-decoration: none;">首页</a>
         </span>
             <span>
-            <a  class="alljobsTitle" style="height: 54px;
+            <a class="alljobsTitle" style="height: 54px;
             width: 50px;
             position: relative;
             line-height: 53px;
@@ -96,13 +113,15 @@
             padding: 14px 5px;
             font-size: 20px;
             margin: 0 16px;
+            cursor: pointer;
             text-decoration: none;">ALL JOBS</a>
             </span>
         </div>
     </div>
+</div>
+   <div style="padding-bottom: auto">
     <!--首页盒子-->
     <div id="homePage" style="display: block">
-        <!--头部白色导航-->
         <!--logo-->
         <div class="picture">
             <a href="https://www.thoughtworks.com/" target="_blank" ><img src="../public/imgs/thoughtworklogo.png" style="max-width: 100%" ></a>
@@ -113,107 +132,14 @@
         </div>
         <div style="margin-left: 13%; margin-right:13%">
             <ul class="row" id="hotJobs">
-                <li class=" jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
-                    <div>
-                        <div style="padding-top: 10px">
-                            <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
-                            <span style="color: #999999">2017-08-01</span>
-                        </div>
-                        <hr style="height:1px;border:none;border-top:1px solid #c0c0c0;" />
-                        <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>20k-30k</p ></div>
-                        <div>
-                            <span class="company_name" style="color: #999999;font-size: 18px"><p>北京阿里发发有限公司</p ></span>
-                        </div>
-                        <div style="font-size: 18px;color:#999999">
-                            <p>
-                                <span>中国</span>
-                                <span>武汉</span>
-                            </p >
-                        </div>
-                    </div>
-                </li>
-                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
-                    <div>
-                        <div style="padding-top: 10px">
-                            <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
-                            <span style="color: #999999">2017-08-01</span>
-                        </div>
-                        <hr style="height:1px;border:none;border-top:1px solid #c0c0c0;" />
-                        <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>20k-30k</p ></div>
-                        <div>
-                            <span class="company_name" style="color: #999999;font-size: 18px"><p>北京阿里发发有限公司</p ></span>
-                        </div>
-                        <div style="font-size: 18px;color:#999999">
-                            <p>
-                                <span>中国</span>
-                                <span>武汉</span>
-                            </p >
-                        </div>
-                    </div>
-                </li>
-                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
-                    <div>
-                        <div style="padding-top: 10px">
-                            <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
-                            <span style="color: #999999">2017-08-01</span>
-                        </div>
-                        <hr style="height:1px;border:none;border-top:1px solid #c0c0c0;" />
-                        <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>20k-30k</p ></div>
-                        <div>
-                            <span class="company_name" style="color: #999999;font-size: 18px"><p>北京阿里发发有限公司</p ></span>
-                        </div>
-                        <div style="font-size: 18px;color:#999999">
-                            <p>
-                                <span>中国</span>
-                                <span>武汉</span>
-                            </p >
-                        </div>
-                    </div>
-                </li>
-                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
-                    <div>
-                        <div style="padding-top: 10px">
-                            <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
-                            <span style="color: #999999">2017-08-01</span>
-                        </div>
-                        <hr style="height:1px;border:none;border-top:1px solid #c0c0c0;" />
-                        <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>20k-30k</p ></div>
-                        <div>
-                            <span class="company_name" style="color: #999999;font-size: 18px"><p>北京阿里发发有限公司</p ></span>
-                        </div>
-                        <div style="font-size: 18px;color:#999999">
-                            <p>
-                                <span>中国</span>
-                                <span>武汉</span>
-                            </p >
-                        </div>
-                    </div>
-                </li>
-                <li class="jobborder col-md-2 changeColor" style="height: 200px;width: 370px;margin: 30px 30px 0 0">
-                    <div>
-                        <div style="padding-top: 10px">
-                            <span style="font-size: 28px;color: #209b60">高级java开发工程师</span>
-                            <span style="color: #999999">2017-08-01</span>
-                        </div>
-                        <hr style="height:1px;border:none;border-top:1px solid #c0c0c0;" />
-                        <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>20k-30k</p ></div>
-                        <div>
-                            <span class="company_name" style="color: #999999;font-size: 18px"><p>北京阿里发发有限公司</p ></span>
-                        </div>
-                        <div style="font-size: 18px;color:#999999">
-                            <p>
-                                <span>中国</span>
-                                <span>武汉</span>
-                            </p >
-                        </div>
-                    </div>
-                </li>
+
             </ul>
+            <div class="viewMore">
+                <a class="getmorejobs" style="color: #00B38A; text-align: center;text-decoration: none">查看更多</a>
+            </div>
         </div>
 
-        <div class="viewMore">
-            <a class="getmorejobs" style="color: #00B38A; text-align: center;text-decoration: none">查看更多</a>
-        </div>
+
         <!--热门公司-->
         <div class="Title">
             <span class="TitleContent">热门公司</span>
@@ -319,7 +245,6 @@
     </div>
     <!--allJobs盒子-->
     <div id="allJobs" style="display: none">
-        <!--头部白色导航-->
         <!--搜索-->
             <div class="keywordSearch container">
                 <input type="text" id="sea" autocomplete="off" maxlength="64" placeholder="搜索职位、公司或地点" value="">
@@ -476,7 +401,7 @@
     </div>
 
 <!--页尾-->
-<footer>
+<footer >
     <div class="footer-body">
         <div class="container">
             <div class="row">
