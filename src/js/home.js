@@ -1,6 +1,7 @@
-let status=0;
-function getLogOrNot(status) {
+
+function getLogOrNot(status, str) {
     if(status==0){
+        $('#judgeWhetherLog').empty()
         $("#judgeWhetherLog").append(`<div>
             <span>
             <a href="login.html" class="login">登录</a>
@@ -12,9 +13,10 @@ function getLogOrNot(status) {
             </div>`);
     }
     else {
+        $('#judgeWhetherLog').empty()
         $("#judgeWhetherLog").append(`<div>
             <span>
-            <a href="person.html" class="welcome">Hello~ 欢迎进入个人中心</a>
+            <a href="person.html" class="welcome">Hello~ ${str}</a>
             </span> 
             </div>`);
     }

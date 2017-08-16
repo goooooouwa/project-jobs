@@ -9,13 +9,13 @@
     <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script  type="text/javascript" src="../js/detail.js"></script>
+    <script src='../js/postaccount.js'></script>
     <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
-
     <script>
-        document.addEventListener("DOMContentLoaded",function () {
-             getLogOrNot(status);
-            })
-
+        $(document).ready(function(){
+            loadInfo()
+            intoIndex();
+        })
     </script>
 
 </head>
@@ -29,18 +29,6 @@
         </div>
         <div id="judgeWhetherLog" class="whetherLog col-lg-2 col-md-2 col-sm-2">
 
-        </div>
-    </div>
-
-    <!--头部白色导航-->
-    <div>
-        <div class="whiteNav">
-            <span>
-                <a class="homepageTitle" href="HOME.html" >首页</a>
-            </span>
-            <span>
-                <a class="alljobsTitle" href="HOME.html" >ALL JOBS</a>
-            </span>
         </div>
     </div>
 </div>

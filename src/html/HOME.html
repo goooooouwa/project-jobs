@@ -10,8 +10,8 @@
     
     <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../js/postaccount.js"></script>
     <script src="../js/home.js"></script>
     <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
 
@@ -20,25 +20,43 @@
         document.addEventListener("DOMContentLoaded",function () {
             getLogOrNot(status);
         })
-
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
+            intoIndex()
             $(".changeColor").mouseover(function(){
                 $(this).toggleClass("shadow")
             });
             $(".changeColor").mouseout(function(){
-                $(this).toggleClass("shadow")});
-            $(".homepageTitle").onclick(function () {
-                $("#homePage").style.display='block';
-                $("#allJobs").style.display='none';
+                $(this).toggleClass("shadow")
+            });
+            $(".homepageTitle").on('click',function () {
+                $("#homePage").show()
+                $("#allJobs").hide()
+                $('.homepageTitle').css('color', '#333')
+                $('.alljobsTitle').css('border-bottom', '')
+                $('.homepageTitle').css('border-bottom','2px solid #00b38a')
+                $('.alljobsTitle').css('color', '#999')
             })
-            $(".alljobsTitle").onclick(function () {
-                $("#homePage").style.display='none';
-                $("#allJobs").style.display='block';
+            $(".alljobsTitle").on('click',function () {
+                $("#homePage").hide()
+                $("#allJobs").show()
+                $('.homepageTitle').css('border-bottom','')
+                $('.homepageTitle').css('color', '#999')
+                $('.alljobsTitle').css('color', '#333')
+                $('.alljobsTitle').css('border-bottom','2px solid #00b38a')
             })
-
-
+            $('.getmorejobs').on('click',function(){
+                $(document.body).animate({
+                scrollTop: 0
+                },0);
+                $("#homePage").hide()
+                $("#allJobs").show()
+                $('.homepageTitle').css('border-bottom','')
+                $('.homepageTitle').css('color', '#999')
+                $('.alljobsTitle').css('color', '#333')
+                $('.alljobsTitle').css('border-bottom','2px solid #00b38a')
+            })
         });
     </script>
 </head>
@@ -55,36 +73,36 @@
         </div>
     </div>
 </div>
-    <!--首页盒子-->
-    <div id="homePage" style="display: none">
-        <!--头部白色导航-->
-        <div>
-            <div class="whiteNav">
+<div>
+        <div class="whiteNav">
+        <span>
+            <a class="homepageTitle" style="height: 54px;
+            width: 50px;
+            position: relative;
+            line-height: 53px;
+            color: #333;
+            border-bottom: 2px solid #00b38a;
+            padding: 14px 5px;
+            font-size: 20px;
+            margin: 0 16px;
+            text-decoration: none;">首页</a>
+        </span>
             <span>
-                <a class="homepageTitle" href="" style="height: 54px;
-                                                        width: 50px;
-                                                        position: relative;
-                                                        line-height: 53px;
-                                                        color: #333;
-                                                        border-bottom: 2px solid #00b38a;
-                                                        padding: 14px 5px;
-                                                        font-size: 20px;
-                                                        margin: 0 16px;
-                                                        text-decoration: none;">首页</a>
+            <a  class="alljobsTitle" style="height: 54px;
+            width: 50px;
+            position: relative;
+            line-height: 53px;
+            color: #999;
+            padding: 14px 5px;
+            font-size: 20px;
+            margin: 0 16px;
+            text-decoration: none;">ALL JOBS</a>
             </span>
-                <span>
-                <a class="alljobsTitle" href="" style="     height: 54px;
-                                                            width: 50px;
-                                                            position: relative;
-                                                            line-height: 53px;
-                                                            color: #999;
-                                                            padding: 14px 5px;
-                                                            font-size: 20px;
-                                                            margin: 0 16px;
-                                                            text-decoration: none;">ALL JOBS</a>
-                </span>
-            </div>
         </div>
+    </div>
+    <!--首页盒子-->
+    <div id="homePage" style="display: block">
+        <!--头部白色导航-->
         <!--logo-->
         <div class="picture">
             <a href="https://www.thoughtworks.com/" target="_blank" ><img src="../public/imgs/thoughtworklogo.png" style="max-width: 100%" ></a>
@@ -193,8 +211,8 @@
             </ul>
         </div>
 
-        <div class="viewMore" >
-            <a href="alljobs.html" style="color: #00B38A; text-align: center;text-decoration: none">查看更多</a>
+        <div class="viewMore">
+            <a class="getmorejobs" style="color: #00B38A; text-align: center;text-decoration: none">查看更多</a>
         </div>
         <!--热门公司-->
         <div class="Title">
@@ -300,35 +318,8 @@
         <br><br>
     </div>
     <!--allJobs盒子-->
-    <div id="allJobs" style="display: block">
+    <div id="allJobs" style="display: none">
         <!--头部白色导航-->
-        <div>
-            <div class="whiteNav">
-            <span>
-                <a class="homepageTitle" href="" style="height: 54px;
-                                                        width: 50px;
-                                                        position: relative;
-                                                        line-height: 53px;
-                                                        color: #999;
-                                                        padding: 14px 5px;
-                                                        font-size: 20px;
-                                                        margin: 0 16px;
-                                                        text-decoration: none;">首页</a>
-            </span>
-                <span>
-                <a class="alljobsTitle" href="" style="     height: 54px;
-                                                            width: 50px;
-                                                            position: relative;
-                                                            line-height: 53px;
-                                                            color: #333;
-                                                            border-bottom: 2px solid #00b38a;
-                                                            padding: 14px 5px;
-                                                            font-size: 20px;
-                                                            margin: 0 16px;
-                                                            text-decoration: none;">ALL JOBS</a>
-                </span>
-            </div>
-        </div>
         <!--搜索-->
             <div class="keywordSearch container">
                 <input type="text" id="sea" autocomplete="off" maxlength="64" placeholder="搜索职位、公司或地点" value="">
