@@ -73,7 +73,7 @@ function  Save() {
             apply: apply,
             tags: tags,
             salary: salary,
-            category: category,
+            catagory: category,
             jobtype: jobtype,
             age: age,
             city: city,
@@ -124,7 +124,7 @@ function Release(){
             apply: apply,
             tags: tags,
             salary: salary,
-            category: category,
+            catagory: category,
             jobtype: jobtype,
             age: age,
             city: city,
@@ -148,7 +148,7 @@ function Release(){
             alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
         },'application/json');
     }
-   console.log(jobinformation);
+    console.log(jobinformation);
     return jobinformation;
 }
 function postSuccess(data) {
