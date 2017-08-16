@@ -31,6 +31,7 @@ method:get
         "salary": "10k-15k",  
         "sdate": "2017-08-14",  
         "country": "中国",  
+        "count”: 2,  
         "city": "北京",  
         "description": "岗位职责：\n1、负责web及wap前端页面和功能的开发、调试和维护；?2、?负责与设计人员和程序人员的沟通；?3、?前端技术框架和js等互动效果开发。\n?\n职位需求：\n1、具有1年以上的前端开发经验\n2、精通 Html、css，js等前端技术，熟悉各个浏览器的兼容问题\n3、能熟练使用jquery",  
         "status": 1,  
@@ -124,3 +125,31 @@ method:delete
     "code": 0,  
     "msg": "删除成功"  
 }  
+## 7、查看热门职位
+url:47.93.200.205:8080/post/hot  
+method:get  
+## 8、相似职位推荐
+url:47.93.200.205:8080/post/similar+jobid  
+method:get
+示例：  
+47.93.200.205:8080/post/similar?jobid=89  
+返回：  
+\[  
+    {  
+        "id": 1,  
+        "count": 0,  
+        "title": "WEB前端开发工程师",  
+        "company": "多米音乐",  
+        "catagory": "WEB前端开发",  
+        "jobtype": "全职",  
+        "salary": "3000-4000",  
+        "sdate": "2017-08-15",  
+        "country": "中国",  
+        "city": "北京",  
+        "description": "岗位职责：\n1、负责web及wap前端页面和功能的开发、调试和维护；?2、?负责与设计人员和程序人员的沟通；?3、?前端技术框架和js等互动效果开发。\n?\n职位需求：\n1、具有1年以上的前端开发经验\n2、精通 Html、css，js等前端技术，熟悉各个浏览器的兼容问题\n3、能熟练使用jquery进行",  
+        "age": "18-28岁",  
+        "number": 1,  
+        "tags": "互联网，软件",  
+        "apply": "发送简历至邮箱"  
+    }  
+]  
