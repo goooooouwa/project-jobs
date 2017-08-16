@@ -52,7 +52,7 @@ function isNull(){
 
 function Revise(){
     var id=$('#id').text();
-    var description=document.getElementById('Description').value;
+    var description=quill.container.firstChild.innerHTML;
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
     var apply=document.getElementById('apply').value;
