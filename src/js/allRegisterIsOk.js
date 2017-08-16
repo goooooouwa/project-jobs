@@ -16,12 +16,12 @@ function allRegisterIsOk() {
     var k=/^[a-zA-Z0-9_]{6,18}$/;
     var l=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
     var m=/^[a-zA-Z0-9_!@#$%^&*]{6,16}$/;
-    if (k.test(f.value)||f.value===""){
+    if (m.test(f.value)||f.value===""){
         if(a[0]){
             a1.removeChild(a[0]);
         }
     }
-    else if (k.test(f.value)===false && a.length===0){
+    else if (m.test(f.value)===false && a.length===0){
         a1.innerHTML+="<p style='color: red'>\n" +
             " <small><i>User name's format is wrong!!!</i></small>\n" +
             " </p>"
@@ -43,12 +43,12 @@ function allRegisterIsOk() {
 
     }
 
-    if (m.test(h.value)||h.value===""){
+    if (k.test(h.value)||h.value===""){
         if(c[0]){
             c1.removeChild(c[0]);
         }
     }
-    else if (m.test(h.value)===false && c.length===0){
+    else if (k.test(h.value)===false && c.length===0){
         c1.innerHTML+="<p style='color: red'>\n" +
             " <small><i>Password's format is wrong!!!</i></small>\n" +
             " </p>"

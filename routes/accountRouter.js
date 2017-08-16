@@ -113,9 +113,10 @@ router.post('/login', function (req, res) {
     let md5 = crypto.createHash('md5');
     md5.update(password);
     password = md5.digest('hex');
-    let sql = `select username from cgc_user where username='${username}' and password='${password}' or email='${username}' and password='${password}'`;
+    let sql = `select username from cgc_user where password='${password}' and (username='${username}' or email='${username}')`;
+    console.log(sql);
     connection.query(sql, function (err, result) {
-        if (result.length == 1) {
+        if (!err && result.length == 1) {
             req.session.username = JSON.parse(JSON.stringify(result))[0].username;
             res.redirect('/');
         }
@@ -156,5 +157,5 @@ router.get('/', function (req, res) {
         res.render('person');
     }
 });
-router.use('/post', require('./myPostRouter.js'));
+router.use('/post', require('./ownPostRouter.js'));
 module.exports = router;
