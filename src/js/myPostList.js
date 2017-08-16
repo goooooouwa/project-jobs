@@ -58,7 +58,7 @@ function creatSearchForm(){
     <div class="form-group col-md-4">
         <input type="text" id="searchIn" class="form-control col-md-4" id="name" placeholder="搜索" style="margin-top: 20px;">
     </div>
-    <button type="submit" class="btn btn-default btn-lg" aria-label="Left Align" style="margin-top: 20px;" onclick="getSearch()">
+    <button type="submit" class="btn btn-default btn-lg" aria-label="Left Align" style="margin-top: 20px;" onclick="searchPost()">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </button>
 </form>`);
@@ -152,9 +152,10 @@ function addTr(onePost) {
         </tr>
     </tbody>
     </table>
-    <div style='width:60px;margin-left: auto;
-            margin-right: auto;'>
+    <div style='width:24%;margin-left: auto;
+            margin-right: auto;' class='center-block'>
            <button   class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
+           <button   class='btn btn-lg btn-danger'  onclick='deletePost(${onePost.id})' >delete</button>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -274,6 +275,27 @@ function setInfo(onePostId) {
             break;
         };
     }
+    event.preventDefault();
+}
+function deletePost(onePostId) {
+    let onePost=new Object();
+    for(let one of cache) {
+        if (parseInt(one.id) == parseInt(onePostId)) {
+            onePost = one;
+            let ask=`确定删除招聘：${onePost.title} ？`;
+            let yes=`已删除招聘${onePost.title} ！`;
+            let no=`未删除招聘${onePost.title} ！`;
+            if (confirm(ask)) {
+                deletePostJql(onePostId,yes);
+            }
+            else {
+                alert(no);
+            }
+            showMyPostList();
+            break;
+        }
+    }
+    event.preventDefault();
 }
 function cleanForm() {
     document.getElementById('Title').value='';
@@ -303,8 +325,25 @@ function searchPost() {
             }
         }
     }
-    $("tbody").empty();
+    creatSearchForm();
+    creatTable();
+    pageRow=0;
     cache=result;
     addTrs(result);
-    return result;
+    creatPageControl();
+    event.preventDefault();
+
+}
+function deletePostJql(onePostId,yes) {
+    let request = new XMLHttpRequest();
+    request.open('DELETE', 'http://47.93.200.205:8080/account/post/'+ onePostId);
+    request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+            if (request.status == 200) {
+                alert(yes);
+            }
+        }
+    };
+    request.setRequestHeader("Content-Type","application/json");
+    request.send();
 }
