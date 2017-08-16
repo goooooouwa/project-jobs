@@ -24,7 +24,6 @@ function Description(){
 
 var jobinformation=Object;
 var jobinfo=[];
-var des;
 
 function isNull(){
     var count=0;
@@ -51,6 +50,59 @@ function isNull(){
         return false;
 }
 
+function Revise(){
+    var id=$('#id').text();
+    var description=document.getElementById('Description').value;
+    var title=document.getElementById('Title').value;
+    var company=document.getElementById('company').value;
+    var apply=document.getElementById('apply').value;
+    var tags=document.getElementById('Tags').value;
+    var salary=document.getElementById('salary').value;
+    var category=document.getElementById('category').value;
+    var jobtype=document.getElementById('job-type').value;
+    var age=document.getElementById('age').value;
+    var city=document.getElementById('city').value;
+    var country=document.getElementById('country').value;
+    var number=document.getElementById('number').value;
+    var etime=document.getElementById('etime').value;
+
+    jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
+    jobinformation=
+        {
+            id:id,
+            title: title,
+            company: company,
+            apply: apply,
+            tags: tags,
+            salary: salary,
+            catagory: category,
+            jobtype: jobtype,
+            age: age,
+            city: city,
+            country: country,
+            number: parseInt(number),
+            duration: parseInt(etime),
+            description: description,
+            status:0,
+        };
+
+    if(isNull()==false){
+        alert("Please refine your infomation!");
+    }else {
+        $.ajax({
+            type: 'PUT',
+            data: jobinformation,
+            url:  'http://47.93.200.205:8080/account/post',
+            crossDomain: true,
+            success: function (data) {
+                postSuccess(data);
+            }
+        })
+    }
+    console.log(jobinformation);
+    return jobinformation;
+}
+
 function  Save() {
     var description=quill.container.firstChild.innerHTML;
     var title=document.getElementById('Title').value;
@@ -74,13 +126,13 @@ function  Save() {
             apply: apply,
             tags: tags,
             salary: salary,
-            category: category,
+            catagory: category,
             jobtype: jobtype,
             age: age,
             city: city,
             country: country,
-            number: number,
-            duration: etime,
+            number: parseInt(number),
+            duration: parseInt(etime),
             description: description,
             status:1,
         };
@@ -88,15 +140,15 @@ function  Save() {
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
-        $.post('http://47.93.200.205:8080/account/post', {
-            data: JSON.stringify(jobinformation),
-            dataType: 'JSONP',
-            crossDomain: true
-        }, function (data) {
-            postSuccess(data);
-        }).error(function (data) {
-            postFailed(data.responseText);
-        });
+        $.ajax({
+            type: 'POST',
+            data: jobinformation,
+            url:  'http://47.93.200.205:8080/account/post',
+            crossDomain: true,
+            success: function (data) {
+                postSuccess(data);
+            }
+        })
     }
     console.log(jobinformation);
     return jobinformation;
@@ -117,7 +169,6 @@ function Release(){
     var country=document.getElementById('country').value;
     var number=document.getElementById('number').value;
     var etime=document.getElementById('etime').value;
-   // var description=document.getElementById('q1-editor').innerText;
     jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
@@ -126,7 +177,7 @@ function Release(){
             apply: apply,
             tags: tags,
             salary: salary,
-            category: category,
+            catagory: category,
             jobtype: jobtype,
             age: age,
             city: city,
@@ -136,21 +187,24 @@ function Release(){
             description: description,
             status:0,
         };
-    
+
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
-        $.post('http://47.93.200.205:8080/account/post', {
-            data: JSON.stringify(jobinformation),
-            dataType: 'JSONP',
-            crossDomain: true
-        }, function (data) {
-            postSuccess(data);
-        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
-        });
+        $.ajax({
+            type: 'POST',
+            data: jobinformation,
+            url:  'http://47.93.200.205:8080/account/post',
+            crossDomain: true,
+            success: function (data) {
+                postSuccess(data);
+            },
+            err:function () {
+                alert('失败');
+            }
+        })
     }
-   console.log(jobinformation);
+    console.log(jobinformation);
     return jobinformation;
 }
 function postSuccess(data) {

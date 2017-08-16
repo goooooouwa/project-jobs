@@ -23,7 +23,9 @@ function getLogOrNot(status) {
 function render(data) {
     result='';
     data=data.data;
+
     for (var i in data) {
+        //console.log('aaaaaaaaaaaaaaa')
         result += `
               <div class="row">
                 <li class="jobborder col-lg-10 col-md-10 col-sm-10 changeColor" style="height: 200px;width: 100%;margin: 30px 30px 0 0" onclick="location.href='detail.html?jobid=${data[i].id}'">

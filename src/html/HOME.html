@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/homepage的css/button.min.css" />
     <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    
+    <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../js/home.js"></script>
@@ -428,10 +431,39 @@
         </div>
         <!--呈现职位-->
         <div class="jobList container">
-            <ul id="list" class="jobSorted" style="display: block;">
-                <script>getList()</script>
+            <ul id="list" class="jobSorted"></ul>
+            <ul id="list1" class="pagination" style="display: block; width: 500px; margin:0 auto">
             </ul>
         </div>
+        <script src="../js/jqPaginator.js"></script>
+        <script>
+            $.ajax({ 
+                url:`http://47.93.200.205:8080/post/list`,
+                type:'GET',
+                success:function(data){
+                    $.jqPaginator('#list1', {
+                        totalCounts: data.count-20,
+                        visiblePages: 5,
+                        currentPage:1,
+                        pageSize:20,
+                        onPageChange: function (num, type) {
+                            //$('#p1').text(type + '：' + num);
+                            $.ajax({ 
+                                url:`http://47.93.200.205:8080/post/list?page=${num}`,
+                                type:'GET',
+                                success:function(data){
+                                    render(data)
+                                
+                                }
+                            })
+                        }
+                    });
+                }
+            })        
+        </script>
+
+        </div>
+
 
         <a id="backtop" title="回到顶部" rel="nofollow"></a>
         <script>

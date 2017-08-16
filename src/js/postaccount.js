@@ -27,6 +27,36 @@ function postInfo() {
 }
 
 function loginInfo() {
+    if (document.getElementById('label').innerText==="Your email:"){
+    let a =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+    let b= document.getElementById("email");
+    let c = document.getElementById("emails");
+    let d =document.getElementById("emails").getElementsByTagName("p");
+    if (a.test(b.value)===true || b.value===""){
+        c.removeChild(d[0]);
+    }
+    else if(a.test(b.value)===false && d.length===0) {
+        c.innerHTML+="<p style='color: red'>\n" +
+            " <small><i>Email's format is wrong!!!</i></small>\n" +
+            " </p>"
+        return false;
+    }
+    }
+    else if (document.getElementById('label').innerText==="Your username:"){
+        let a =/^[a-zA-Z0-9_]{6,18}$/;
+        let b= document.getElementById("email");
+        let c = document.getElementById("emails");
+        let d =document.getElementById("emails").getElementsByTagName("p");
+        if (a.test(b.value)===true || b.value===""){
+            c.removeChild(d[0]);
+        }
+        else if(a.test(b.value)===false && d.length===0) {
+            c.innerHTML+="<p style='color: red'>\n" +
+                " <small><i>Username's format is wrong!!!</i></small>\n" +
+                " </p>"
+            return false;
+        }
+    }
     let username = $("input[name='loginemailname']").val();
     let password = $("input[name='loginpassword']").val();
     let url = 'http://localhost:3334/user/login';
@@ -43,7 +73,7 @@ function loginInfo() {
                 setTimeout('Redirect()', 5000);
             } else if (data.code === 0) {
                 //document.write(data.msg)
-                setTimeout('Redirect()', 2000);
+                setTimeout('Redirect()', 1000);
             } else {
                 alert(data.msg)
                 //$('#showinfo').html(data.msg); //这里显示错误信息
@@ -54,7 +84,7 @@ function loginInfo() {
 
 function Redirect() //使用函数进行跳转
 {
-    console.log('111');
+    //console.log('111');
     window.location = "http://localhost:3334/html/person.html";
 }
 
@@ -92,6 +122,19 @@ function logout() {
 
 //忘记密码的操作
 function forgetpass() {
+    let a =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+    let b = document.getElementById("email");
+    let c = document.getElementById("emails");
+    let d =document.getElementById("emails").getElementsByTagName("p");
+    if (a.test(b.value)===true || b.value===""){
+        c.removeChild(d[0]);
+    }
+    else if(a.test(b.value)===false && d.length===0) {
+        c.innerHTML+="<p style='color: red'>\n" +
+            " <small><i>Email's format is wrong!!!</i></small>\n" +
+            " </p>"
+        return false;
+    }
     let email = $("input[name='forgetemail']").val();
     let url = 'http://localhost:3334/forget/password';
     $.ajax({
@@ -239,5 +282,22 @@ function setNewPassword(){
                 console.log(data.msg)
             }
         }
+    })
+}
+
+
+///获取用户颜色  [1...20]
+function getUserColor(){
+    let color = ['rgb(32,165,96)','rgb(255,69,0)','rgb(255,230,0)','forestgreen','black','darkcyan','mediumblue','rgb(65,150,225)','slateblue','rgb(169,169,169)','url(../images/aurora.jpg)','url(../images/desertkiss.jpg)','url(../images/elixir.jpg)','url(../images/glasspane.jpg)','url(../images/meadow.jpg)','url(../images/rocky.jpg)','url(../images/sun.jpg)','url(../images/painting.jpg)','url(../images/lake.jpg)','url(../images/morning.jpg)'];
+    let url = `http://localhost:3334/user/get/color`;
+    $.ajax({
+        url:  `${url}`,
+        type: 'GET',
+        success:function(data){
+            //显示最后的颜色
+            console.log(data.msg)
+            document.getElementById('colorChange').style.background=color[parseInt(data.msg)-1]
+        }
+
     })
 }

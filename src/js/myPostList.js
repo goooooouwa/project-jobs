@@ -58,7 +58,7 @@ function creatSearchForm(){
     <div class="form-group col-md-4">
         <input type="text" id="searchIn" class="form-control col-md-4" id="name" placeholder="搜索" style="margin-top: 20px;">
     </div>
-    <button type="submit" class="btn btn-default btn-lg" aria-label="Left Align" style="margin-top: 20px;" onclick="getSearch()">
+    <button type="submit" class="btn btn-default btn-lg" aria-label="Left Align" style="margin-top: 20px;" onclick="searchPost()">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </button>
 </form>`);
@@ -115,7 +115,8 @@ function addTrs(postList) {
 function addTr(onePost) {
     let table = document.getElementById('tbody');
     let postTr = table.insertRow(table.rows.length);
-
+    var reg = new RegExp( '\"' , "g" );
+    let descriPtion=onePost.description.replace(reg,'\'').slice(0,500).concat('………………');
     let jobTitleTd = postTr.insertCell(postTr.cells.length);
     let jobStatusTd = postTr.insertCell(postTr.cells.length);
     jobTitleTd.innerText = onePost.title;
@@ -140,7 +141,7 @@ function addTr(onePost) {
         </tr>
         <tr>
             <td >description</td>
-            <td >${onePost.description.slice(0,500).concat('………………')}</td>
+            <td >${descriPtion}</td>
         </tr>
         <tr>
             <td >tags</td>
@@ -152,9 +153,15 @@ function addTr(onePost) {
         </tr>
     </tbody>
     </table>
-    <div style='width:60px;margin-left: auto;
-            margin-right: auto;'>
-           <button   class='btn btn-lg btn-warning' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
+    <div style='width:40%;margin-left: 35%;
+            margin-right: auto;>
+           <div id='postDe' class='center-block'>
+                <button   class='btn  btn-warning col-xs-12 col-md-3' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
+                <div class='col-xs-12 col-md-1'></div>
+                <button   class='btn  btn-danger col-xs-12 col-md-3'  onclick='deletePost(${onePost.id})' >delete</button>
+                <div class='col-xs-12 col-md-1'></div>
+                <button   class='btn  btn-success col-xs-12 col-md-3'  onclick='releasePost(${onePost.id})' >release</button>
+           </div>
     </div>
     ">Detail</a>`;
     actionTd.appendChild(detailDiv);
@@ -165,7 +172,6 @@ function addTr(onePost) {
     else {
         postTr.className ="warning";
         jobStatusTd.innerText = "hidden";
-
 
     }
     $('[data-toggle="popover"]').popover({
@@ -257,6 +263,7 @@ function setInfo(onePostId) {
     for(let one of cache){
         if(parseInt(one.id)==parseInt(onePostId)){
             onePost=one;
+            $('#id').text(onePost.id);
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
             document.getElementById('apply').value=onePost.apply;
@@ -268,12 +275,33 @@ function setInfo(onePostId) {
             document.getElementById('city').value=onePost.city;
             document.getElementById('country').value=onePost.country;
             document.getElementById('number').value=onePost.number;
-            document.getElementById('etime').value=onePost.etime;
+            document.getElementById('etime').value=onePost.duration;
             document.getElementById('Description').value=onePost.description;
             document.getElementsByClassName('ql-editor')[0].innerHTML=onePost.description;
             break;
         };
     }
+    event.preventDefault();
+}
+function deletePost(onePostId) {
+    let onePost=new Object();
+    for(let one of cache) {
+        if (parseInt(one.id) == parseInt(onePostId)) {
+            onePost = one;
+            let ask=`确定删除招聘：${onePost.title} ？`;
+            let yes=`已删除招聘${onePost.title} ！`;
+            let no=`未删除招聘${onePost.title} ！`;
+            if (confirm(ask)) {
+                deletePostJql(onePostId,yes);
+
+            }
+            else {
+                alert(no);
+            }
+            break;
+        }
+    }
+    event.preventDefault();
 }
 function cleanForm() {
     document.getElementById('Title').value='';
@@ -287,6 +315,9 @@ function cleanForm() {
     document.getElementById('city').value='';
     document.getElementById('country').value='';
     document.getElementById('number').value='';
+    document.getElementById('Description').value='';
+    document.getElementById('etime').value='';
+    document.getElementById('Description').value='';
     document.getElementsByClassName('ql-editor')[0].innerHTML='';
 }
 //前端搜索,不用？
@@ -303,8 +334,46 @@ function searchPost() {
             }
         }
     }
-    $("tbody").empty();
+    creatSearchForm();
+    creatTable();
+    pageRow=0;
     cache=result;
     addTrs(result);
-    return result;
+    creatPageControl();
+    event.preventDefault();
+
+}
+function deletePostJql(onePostId,yes) {
+    let request = new XMLHttpRequest();
+    request.open('DELETE', 'http://47.93.200.205:8080/account/post/'+ onePostId);
+    request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+            if (request.status == 200) {
+                alert(yes);
+                showMyPostList();
+            }
+        }
+    };
+    request.setRequestHeader("Content-Type","application/json");
+    request.send();
+}
+function releasePost(onePostId){
+    "use strict";
+    let onePost=new Object();
+    for(let one of cache) {
+        if (parseInt(one.id) == parseInt(onePostId)) {
+            onePost = one;
+            onePost.status=0;
+            $.ajax({
+                type: 'PUT',
+                data: onePost,
+                url:  'http://47.93.200.205:8080/account/post',
+                crossDomain: true,
+                success: function (data) {
+                    alert(data.msg);
+                }
+            })
+        }
+    }
+    event.preventDefault();
 }
