@@ -51,7 +51,8 @@ function isNull(){
 }
 
 function Revise(){
-    var description=quill.container.firstChild.innerHTML;
+    var id=$('#id').text();
+    var description=document.getElementById('Description').value;
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
     var apply=document.getElementById('apply').value;
@@ -68,6 +69,7 @@ function Revise(){
     jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
+            id:id,
             title: title,
             company: company,
             apply: apply,
@@ -80,7 +82,7 @@ function Revise(){
             country: country,
             number: parseInt(number),
             duration: parseInt(etime),
-            description: parseInt(description),
+            description: description,
             status:0,
         };
 
@@ -131,7 +133,7 @@ function  Save() {
             country: country,
             number: parseInt(number),
             duration: parseInt(etime),
-            description: parseInt(description),
+            description: description,
             status:1,
         };
 

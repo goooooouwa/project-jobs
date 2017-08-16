@@ -262,6 +262,7 @@ function setInfo(onePostId) {
     for(let one of cache){
         if(parseInt(one.id)==parseInt(onePostId)){
             onePost=one;
+            $('#id').text(onePost.id);
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
             document.getElementById('apply').value=onePost.apply;
