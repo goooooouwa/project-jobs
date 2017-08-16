@@ -378,8 +378,34 @@ app.post('/user/set/password', function(req,res){
         }
     })
 })
+///设置用户颜色
+app.post('/user/set/color', function(req,res){
+    let username = req.session.user['info']; //得到session
+    //console.log('384-- ' + username)
+    //let username = req.body.username
+    let color = req.body.color;
+    //console.log(color)
+    let sql = `update usertable set usercolor='${color}' where username='${username}'`;
+    connection.query(sql, function(err, result){
+        if(err){
+            console.log('388-- '+ err)
+        }else{
+            res.json({code:0, msg: '设置颜色成功'})
+        }
+    })
+})
 
-
+app.get('/user/get/color', function(req, res){
+    let username = req.session.user['info']; //得到session;
+    let sql = `select usercolor from usertable where username='${username}'`;
+    connection.query(sql, function(err, result){
+        if(err){
+            console.log('400-- ' + err)
+        }else if(result.length){
+            res.json({code:0, msg:result[0].usercolor})
+        }
+    })
+})
 
 //=================登出
 //清除session

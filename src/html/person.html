@@ -14,7 +14,6 @@
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../js/personal information.js"></script>
     <script src="../js/security%20center.js"></script>
-    <script src="../js/color.js"></script>
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
     <link  rel="stylesheet" href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css">
     <meta name="csrf-param" content="authenticity_token" />
@@ -26,6 +25,8 @@
     <!--MyPostList-->
 
     <link rel="stylesheet" href="../css/myPostList.css">
+
+    
     
     <script type="text/javascript" src="../js/myPostList.js"></script>
     
@@ -34,6 +35,8 @@
 
 
     <script src="../js/postjob.js"></script>
+
+    <script src="../js/color.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
@@ -46,10 +49,10 @@
         $(document).ready(function () {
             
             intoIndex(); ///个人账号
+            getUserColor();
             if($('#top_username').text() !== ' Username'){
                 getUserDetail(); //个人信息    
             }
-            
             
             $('.dropdown-toggle').dropdown();
         });
@@ -60,7 +63,7 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-    <div style="width: 60%;hight:200px; margin-left:20%;margin-right:20%">
+    <div style="width: 70%;hight:200px; margin-left:15%;margin-right:15%">
 
 
         <div class="modal-content">
@@ -109,10 +112,10 @@
                                 <label for="category" class="Xialabox"><b><span style="color:red">*</span>Category</b></label>
                                 <input type="text" class="secondform-controlcommon" id="category"disabled>
                                 <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
-                                    <option value="Development">Development</option>
-                                    <option value="Designer">Designer</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <option value="Product Manager">Product Manager</option>
+                                    <option value="开发者">开发者</option>
+                                    <option value="设计者">设计者</option>
+                                    <option value="市场">市场</option>
+                                    <option value="产品经理">产品经理</option>
                                 </select>
                             </div>
 
@@ -120,10 +123,10 @@
                                 <label for="job-type"  class="Xialabox"><b><span style="color:red">*</span>Job Type</b></label>
                                 <input type="text" class="secondform-controlcommon" id="job-type"disabled>
                                 <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
-                                    <option value="Volunteer">Volunteer</option>
-                                    <option value="Permanent">Permanent</option>
-                                    <option value="Freelance">Freelance</option>
-                                    <option value="Product Manager">Product Manager</option>
+                                    <option value="志愿者">志愿者</option>
+                                    <option value="全职">全职</option>
+                                    <option value="自由职业">自由职业</option>
+                                    <option value="签约">签约</option>
                                 </select>
                             </div>
 
@@ -147,18 +150,18 @@
 
                             <div   class="col-md-3">
                                 <label for="country"  class="Xialabox"><b><span style="color:red">*</span>Country</b></label>
-                                <input type="text" class="secondform-controlcommon" id="country" disabled>
+                                <input type="text" class="secondform-controlcommon" id="country"  placeholder="中国"disabled>
                                 <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
-                                    <option value="China">China</option>
-                                    <option value="America">America</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="England">England</option>
+                                    <option value="中国">中国</option>
+                                    <option value="美国">美国</option>
+                                    <option value="日本">日本</option>
+                                    <option value="加拿大">加拿大</option>
                                 </select>
                             </div>
 
                             <div  class="col-md-3">
                                 <label for="number" class="Xialabox"><b><span style="color:red">*</span>Number</b></label>
-                                <input type="text" class="form-controlcommon" id="number">
+                                <input type="number" class="form-controlcommon" id="number">
                             </div>
                         </div>
 
@@ -178,7 +181,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="Save()">Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal" id="release" onclick="Release()">Release</button>
+                <button type="button" class="btn btn-default"  id="release" onclick="Release()">Release</button>
             </div>
         </div>
     </div>
@@ -287,15 +290,15 @@
                       </div>
                   </div>
                 </div>
-                  <button style="margin-left: -196px" type="button" class="btn btn-default" data-toggle="modal" data-target="#my-modal"><i class="fa fa-home " aria-hidden="true"></i>Home</button>
+                  <button style="margin-left: -100px" type="button" class="btn btn-default" onclick="window.location='http://localhost:3334/html/HOME.html'"><i class="fa fa-home " aria-hidden="true"></i>Home</button>
                 <button id="show-img" type="button" class="btn btn-default" data-toggle="modal" data-target="#my-modal"><i class="fa fa-wechat"></i> 关注公众号</button>
               </span>
                 <span>
-                <a style="margin-left: -123px" href="mailto:info@codingirls.club"><i class="fa fa-envelope" ></i> info@codingirls.club</a>
+                <a style="margin-left: -27px;padding-top:5px" href="mailto:info@codingirls.club"><i class="fa fa-envelope" ></i> info@codingirls.club</a>
               </span>
             </div>
             <div class="col-sm-6 text-right">
-                <span><a><i class="fa fa-user"></i> <i id="top_username">Username</i></a></span>
+                <span><a style="margin-right:-100px;"><i class="fa fa-user"></i> <i id="top_username">Username</i></a></span>
             </div>
         </div>
     </div>
@@ -325,8 +328,8 @@
                     </div>
 
                     <!--<button class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-cog " aria-hidden="true"></i>&nbsp;Other Setting</button>-->
-                    <br><br><br><br><br>
-                    <a href="./login.html"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out" onclick="logout()"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center>s</a>
+                    <br><br><br>
+                    <a href="./login.html"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out" onclick="logout()"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center></a>
                     <br>
                     <br>
                     <br>
