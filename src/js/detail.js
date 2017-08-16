@@ -1,4 +1,4 @@
-let status=0;
+
 
 const data={
 
@@ -84,7 +84,6 @@ const jobs=[
 
 ];
 
-$(document).ready(loadInfo());
 
 function loadInfo() {
     let jobId=getQueryVariable("jobid");
@@ -106,7 +105,7 @@ function getQueryVariable(variable)
     }
     return(false);
 }
-function getLogOrNot(status) {
+function getLogOrNot(status, str) {
     if(status==0){
         $("#judgeWhetherLog").append(`<div>
             <span>
@@ -121,7 +120,7 @@ function getLogOrNot(status) {
     else {
         $("#judgeWhetherLog").append(`<div>
             <span>
-            <a href="person.html" class="welcome">Hello~ 欢迎进入个人中心</a>
+            <a href="person.html" class="welcome">Hello~ ${str}</a>
             </span> 
             </div>`);
     }

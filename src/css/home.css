@@ -93,6 +93,21 @@ a.alljobsTitle:hover{
     margin: 0 16px;
     text-decoration: none;
 }
+
+
+
+a.alljobsTitle:active{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
 a:-webkit-any-link{
     cursor: auto;
 }
@@ -131,6 +146,7 @@ h4.jobTitle{
     background: whitesmoke;
 }
 .viewMore{
+    cursor: pointer;
     display: block;
     width: 25%;
     height: 2%;
@@ -142,6 +158,7 @@ h4.jobTitle{
     color:#00B38A;
     text-align: center;
 }
+
 div.company1{
     padding-top: 8%;
     text-align: center;

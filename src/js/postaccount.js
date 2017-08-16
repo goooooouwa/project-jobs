@@ -48,7 +48,10 @@ function loginInfo() {
         let c = document.getElementById("emails");
         let d =document.getElementById("emails").getElementsByTagName("p");
         if (a.test(b.value)===true || b.value===""){
-            c.removeChild(d[0]);
+            if(d[0]){
+                c.removeChild(d[0]);
+            }
+            
         }
         else if(a.test(b.value)===false && d.length===0) {
             c.innerHTML+="<p style='color: red'>\n" +
@@ -98,9 +101,13 @@ function intoIndex() { //进入首页，调用该函数，判断是否已经登�
             if(data.code === 0){
                 //显示用户名
                 $('#top_username').text(` ${data.msg}`)
+                getLogOrNot(1, data.msg);
+                //console.log(111)
+                //return 1;
             }else if(data.code === 1){
                 //don't do 
-                
+                getLogOrNot(0,'');
+                //console.log(222)
             }
         }
     })
