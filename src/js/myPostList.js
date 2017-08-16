@@ -152,12 +152,14 @@ function addTr(onePost) {
         </tr>
     </tbody>
     </table>
-    <div style='width:30%;margin-left: auto;
-            margin-right: auto;' class='center-block'>
-           <div class='center-block'>
-                <button   class='btn btn-lg btn-warning col-xs-12 col-md-5' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
-                <div class='col-xs-12 col-md-2'></div>
-                <button   class='btn btn-lg btn-danger col-xs-12 col-md-5'  onclick='deletePost(${onePost.id})' >delete</button>
+    <div style='width:40%;margin-left: 35%;
+            margin-right: auto;>
+           <div id='postDe' class='center-block'>
+                <button   class='btn  btn-warning col-xs-12 col-md-3' data-toggle='modal' data-target='#myModal' onclick='setInfo(${onePost.id})' >edit</button>
+                <div class='col-xs-12 col-md-1'></div>
+                <button   class='btn  btn-danger col-xs-12 col-md-3'  onclick='deletePost(${onePost.id})' >delete</button>
+                <div class='col-xs-12 col-md-1'></div>
+                <button   class='btn  btn-success col-xs-12 col-md-3'  onclick='releasePost(${onePost.id})' >release</button>
            </div>
     </div>
     ">Detail</a>`;
@@ -169,7 +171,6 @@ function addTr(onePost) {
     else {
         postTr.className ="warning";
         jobStatusTd.innerText = "hidden";
-
 
     }
     $('[data-toggle="popover"]').popover({
@@ -352,4 +353,24 @@ function deletePostJql(onePostId,yes) {
     };
     request.setRequestHeader("Content-Type","application/json");
     request.send();
+}
+function releasePost(onePostId){
+    "use strict";
+    let onePost=new Object();
+    for(let one of cache) {
+        if (parseInt(one.id) == parseInt(onePostId)) {
+            onePost = one;
+            onePost.status=0;
+            $.ajax({
+                type: 'PUT',
+                data: onePost,
+                url:  'http://47.93.200.205:8080/account/post',
+                crossDomain: true,
+                success: function (data) {
+                    alert('成功');
+                }
+            })
+        }
+    }
+    event.preventDefault();
 }
