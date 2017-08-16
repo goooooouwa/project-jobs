@@ -24,7 +24,6 @@ function Description(){
 
 var jobinformation=Object;
 var jobinfo=[];
-var des;
 
 function isNull(){
     var count=0;
@@ -79,8 +78,8 @@ function  Save() {
             age: age,
             city: city,
             country: country,
-            number: number,
-            duration: etime,
+            number: parseInt(number),
+            duration: parseInt(etime),
             description: description,
             status:1,
         };
@@ -90,13 +89,13 @@ function  Save() {
     }else {
         $.post('http://47.93.200.205:8080/account/post', {
             data: JSON.stringify(jobinformation),
-            dataType: 'JSONP',
+
             crossDomain: true
         }, function (data) {
             postSuccess(data);
-        }).error(function (data) {
-            postFailed(data.responseText);
-        });
+        }).error(function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
+        },'application/json');
     }
     console.log(jobinformation);
     return jobinformation;
@@ -117,7 +116,6 @@ function Release(){
     var country=document.getElementById('country').value;
     var number=document.getElementById('number').value;
     var etime=document.getElementById('etime').value;
-   // var description=document.getElementById('q1-editor').innerText;
     jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
     jobinformation=
         {
@@ -136,19 +134,19 @@ function Release(){
             description: description,
             status:0,
         };
-    
+
     if(isNull()==false){
         alert("Please refine your infomation!");
     }else {
         $.post('http://47.93.200.205:8080/account/post', {
             data: JSON.stringify(jobinformation),
-            dataType: 'JSONP',
+
             crossDomain: true
         }, function (data) {
             postSuccess(data);
         }).error(function (XMLHttpRequest, textStatus, errorThrown) {
             alert(XMLHttpRequest+"\n"+textStatus+"\n"+errorThrown);
-        });
+        },'application/json');
     }
    console.log(jobinformation);
     return jobinformation;
