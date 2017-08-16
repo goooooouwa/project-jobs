@@ -368,7 +368,7 @@ function releasePost(onePostId){
                 url:  'http://47.93.200.205:8080/account/post',
                 crossDomain: true,
                 success: function (data) {
-                    alert('成功');
+                    alert(data.msg);
                 }
             })
         }
