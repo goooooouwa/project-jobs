@@ -25,6 +25,7 @@ function allRegisterIsOk() {
         a1.innerHTML+="<p style='color: red'>\n" +
             " <small><i>User name's format is wrong!!!</i></small>\n" +
             " </p>"
+        j.checked=false;
     } else {
 
     }
@@ -37,6 +38,7 @@ function allRegisterIsOk() {
         b1.innerHTML+="<p style='color: red'>\n" +
             " <small><i>Email's format is wrong!!!</i></small>\n" +
             " </p>"
+        j.checked=false;
     } else {
 
     }
@@ -50,6 +52,7 @@ function allRegisterIsOk() {
         c1.innerHTML+="<p style='color: red'>\n" +
             " <small><i>Password's format is wrong!!!</i></small>\n" +
             " </p>"
+        j.checked=false;
     } else {
 
     }
@@ -63,6 +66,7 @@ function allRegisterIsOk() {
         d1.innerHTML+="<p style='color: red'>\n" +
             " <small><i>This password should be the same as last input!!!</i></small>\n" +
             " </p>"
+        j.checked=false;
     } else {
 
     }
