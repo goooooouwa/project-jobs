@@ -63,3 +63,27 @@ function searchPo() {
         }
     })
 }
+function  getTag() {
+    var id = event.target.id;
+    //var searchStr = $("#").val();
+    //alert(id);
+    $("#list").empty();
+    $.ajax({
+        url:`http://47.93.200.205:8080/post/list?jobtype=${id}`,
+        type:'get',
+        success: function (data) {
+            render(data);
+        }
+    })
+}
+function getCatagory() {
+    var id = event.target.id;
+    $("#list").empty();
+    $.ajax({
+        url:`http://47.93.200.205:8080/post/list?catagory=${id}`,
+        type:'get',
+        success: function (data) {
+            render(data);
+        }
+    })
+}
