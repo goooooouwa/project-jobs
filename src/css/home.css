@@ -45,18 +45,18 @@ div.whiteNav{
 li{
     display: inline;
 }
-a.homepageTitle{
-    height: 54px;
-    width: 50px;
-    position: relative;
-    line-height: 53px;
-    color: #333;
-    border-bottom: 2px solid #00b38a;
-    padding: 14px 5px;
-    font-size: 20px;
-    margin: 0 16px;
-    text-decoration: none;
-}
+/*a.homepageTitle{*/
+    /*height: 54px;*/
+    /*width: 50px;*/
+    /*position: relative;*/
+    /*line-height: 53px;*/
+    /*color: #333;*/
+    /*border-bottom: 2px solid #00b38a;*/
+    /*padding: 14px 5px;*/
+    /*font-size: 20px;*/
+    /*margin: 0 16px;*/
+    /*text-decoration: none;*/
+/*}*/
 a.homepageTitle:hover{
     height: 54px;
     width: 50px;
@@ -70,17 +70,17 @@ a.homepageTitle:hover{
     text-decoration: none;
 }
 
-a.alljobsTitle{
-    height: 54px;
-    width: 50px;
-    position: relative;
-    line-height: 53px;
-    color: #999;
-    padding: 14px 5px;
-    font-size: 20px;
-    margin: 0 16px;
-    text-decoration: none;
-}
+/*a.alljobsTitle{*/
+    /*height: 54px;*/
+    /*width: 50px;*/
+    /*position: relative;*/
+    /*line-height: 53px;*/
+    /*color: #999;*/
+    /*padding: 14px 5px;*/
+    /*font-size: 20px;*/
+    /*margin: 0 16px;*/
+    /*text-decoration: none;*/
+/*}*/
 a.alljobsTitle:hover{
     height: 54px;
     width: 50px;
@@ -238,7 +238,9 @@ hr.style-one{
 }
 
 /*alljobs*/
-
+.keywordSearch{
+    margin-top: 1%;
+}
 .keywordSearch input[type='text'] {
     background-color: white;
     display: inline-block;
@@ -273,4 +275,36 @@ hr.style-one{
 
     user-select: none;
     cursor: pointer;
+}
+.sort{
+    margin-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.bonus{
+    margin-top: 8%;
+    margin-bottom:3%;
+}
+.bonus span{
+    font-size: 6px;
+    color: red;
+    padding: 1% 1%;
+    border: 1px solid red;
+    margin: 9% 1% ;
+    line-height: 2%;
+}
+
+#backtop{
+    background: url("../public/imgs/goToTop.png") left top no-repeat;
+    width: 28px;
+    height: 46px;
+    position: fixed;
+    left: 50%;
+    bottom: 146px;
+    margin-left: 631px;
+    cursor: pointer;
+}
+#backtop:hover{
+    background-position: right top!important;
 }

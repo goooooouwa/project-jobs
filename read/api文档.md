@@ -4,7 +4,7 @@ method:get
 示例
 47.93.200.205:8080/post/list?jobtype=全职&catagory=算法工程师
 返回：  
-\[  
+\{data:\[  
     {  
         "id": 2,  
         "title": "搜索引擎工程师",  
@@ -15,7 +15,9 @@ method:get
         "city": "北京",  
         "jobtype": "全职"  
     }  
-]  
+],  
+count:1
+}
 ## 2、根据jobid获取详情（5）
 url:47.93.200.205:8080/post/detail?jobid=1  
 method:get  

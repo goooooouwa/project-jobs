@@ -1,7 +1,7 @@
 
 .spot{position:absolute;width:100%;height:100%;top:0;left:0}
-.svg-wrapper{margin-top:0;position:relative;width:150px;height:40px;display:inline-block;border-radius:3px;margin-left:5px;margin-right:5px}#shape{stroke-width:6px;fill:transparent;stroke:#009FFD;stroke-dasharray:85 400;stroke-dashoffset:-220;transition:1s all ease}#text{margin-top:-35px;text-align:center}#text a{color:green;text-decoration:none;font-weight:100;font-size:1.1em}
-.svg-wrapper:hover #shape{stroke-dasharray:50 0;stroke-width:3px;stroke-dashoffset:0;stroke:#06D6A0}
+.svg-wrapper{margin-top:0;position:relative;width:10%;height:2%;display:inline-block;border-radius:3px;margin-left:10px;margin-right:5px}#shape{stroke-width:5px;fill:transparent;stroke:#009FFD;stroke-dasharray:90% 400;stroke-dashoffset:-218;transition:1s all ease}#text{margin-top:-35px;text-align:center}#text a{color:green;text-decoration:none;font-weight:100;font-size:1.1em}
+.svg-wrapper:hover #shape{stroke-dasharray:50 0;stroke-width:5%;stroke-dashoffset:0;stroke:#06D6A0}
 .button.gray{
     color: #8c96a0;
     text-shadow:1px 1px 1px #fff;
@@ -12,14 +12,14 @@
     background: linear-gradient(top,#f2f3f7,#e4e8ec);
 }
 .button{
-    width: 120px;
+    width:90%;
     line-height: 20px;
     text-align: center;
     font-weight: bold;
     color: #fff;
     text-shadow:1px 1px 1px #333;
     border-radius: 5px;
-    margin:0 20px 20px 0;
+    margin:0 5% 15% 10%;
     position: relative;
     overflow: hidden;
 }

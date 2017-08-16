@@ -86,7 +86,7 @@
                             </div>
                             <div  class="col-md-3" >
                                 <label for="etime" class="Xialabox"><b><span style="color:red">*</span>Duration</b></label>
-                                <input type="number" name="etime" id="etime" class="form-controlcommon">
+                                <input type="number" min="0" name="etime" id="etime" class="form-controlcommon">
                             </div>
                         </div>
 
@@ -161,7 +161,7 @@
 
                             <div  class="col-md-3">
                                 <label for="number" class="Xialabox"><b><span style="color:red">*</span>Number</b></label>
-                                <input type="number" class="form-controlcommon" id="number">
+                                <input type="number" min="1" class="form-controlcommon" id="number">
                             </div>
                         </div>
 
@@ -180,8 +180,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="Save()">Save</button>
-                <button type="button" class="btn btn-default"  id="release" onclick="Release()">Release</button>
+                <button type="button" class="btn btn-default" onclick="Save()">保存</button>
+                <button type="button" class="btn btn-default"   onclick="Revise()">修改</button>
+                <button type="button" class="btn btn-default"  id="release" onclick="Release()">发布</button>
+
             </div>
         </div>
     </div>

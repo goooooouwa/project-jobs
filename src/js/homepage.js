@@ -43,6 +43,7 @@ function render(data) {
     }
 }
 function getList() {
+    debugger;
     var result = '';
     $.ajax({
         url: "http://47.93.200.205:8080/post/list",
