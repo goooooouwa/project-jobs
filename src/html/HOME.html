@@ -430,7 +430,7 @@
                         currentPage:1,
                         pageSize:20,
                         onPageChange: function (num, type) {
-                            $('#p1').text(type + '：' + num);
+                            //$('#p1').text(type + '：' + num);
                             $.ajax({ 
                                 url:`http://47.93.200.205:8080/post/list?page=${num}`,
                                 type:'GET',
