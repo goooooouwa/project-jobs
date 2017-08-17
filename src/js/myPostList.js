@@ -264,6 +264,7 @@ function setInfo(onePostId) {
         if(parseInt(one.id)==parseInt(onePostId)){
             onePost=one;
             $('#id').text(onePost.id);
+            $('#status').text(onePost.status)
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
             document.getElementById('apply').value=onePost.apply;
