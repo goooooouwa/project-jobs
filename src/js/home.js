@@ -38,16 +38,16 @@ function render(data) {
         //console.log('aaaaaaaaaaaaaaa')
         result += `
 
-        <a  href='detail.html?jobid=${data[i].id}'" target="_blank">
+        <a  href='detail.html?jobid=${data[i].id}'target="_blank">
               <div class="row opacishadows">
-                <li class="jobborder col-lg-10 col-md-10 col-sm-10" style="height: 200px;width: 100%;margin: 0px 30px 0 0;cursor: pointer">
+                <div class="jobborder col-lg-10 col-md-10 col-sm-10" style="height: 10%;width: 100%;padding:2% 0; margin: 0 0;cursor: pointer">
                 <div>
                     <div>
-                        <span style="font-size: 28px;color: #209b60">${data[i].title}</span>
+                        <span style="font-size: 28px;color: #209b60;margin-left: 1%">${data[i].title}</span>
                         <span style="color: #999999">${data[i].sdate}</span>
                     </div>
                     <hr style="height:1px;border:none;border-top:1px solid #c0c0c0;" />
-                    <div class="col-lg-9 col-md-9 col-sm-9">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
                         <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>月薪：${data[i].salary}</p></div>
                       <div>
                         <span class="company_name " style="color: #999999;font-size: 18px"><p>${data[i].company}</p ></span>
@@ -59,18 +59,13 @@ function render(data) {
                         </p >
                       </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="col-lg-2 col-md-2 col-sm-2">
                        <span style="color: #209b60;font-size: 15px">${data[i].catagory}</span> 
-                        <div class="bonus">
-                                <span>节日礼物</span>
-                                <span>带薪年假</span>
-                                <span>绩效奖金</span>
-                                <span>定期体检</span>
-                        </div>
+                  
                     </div>
                    
                 </div>
-             </li>
+             </div>
            </div></a>
            <br>`
         $("#list").empty();
@@ -168,8 +163,8 @@ function loadHotJobs(data) {
     for(let job of data){
 
      let result=`
-        <a href='detail.html?jobid=${job.id}'" target="_blank">
-        <li class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
+        <a href='detail.html?jobid=${job.id}' target="_blank">
+        <div class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
             <div style="padding-top: 5%">
               <span style="font-size:150%;color: #209b60;">${job.title}</span>
               <span style="color: #999999">${job.sdate}</span>
@@ -185,7 +180,7 @@ function loadHotJobs(data) {
             <span>${job.city}</span>
             </p >
             </div>
-            </li></a>
+            </div></a>
             `;
      $('#hotJobs').append(result);
      $('.hotjobshadow').mouseover(function(){

@@ -116,8 +116,8 @@ a:-webkit-any-link{
     text-align: center;
 }
 .Title{
-    margin-left: 13%;
-    margin-right: 13%;
+    margin-left: 11%;
+    margin-right: 11%;
     margin-top: 2%;
     margin-bottom: 1%;
     padding-bottom: 0.6%;
@@ -171,10 +171,10 @@ span.company1{
     padding-left: 0;
 
 }
-li.company2{
-    height: 300px;
-    width: 270px;
-    margin: 30px 30px 0 0
+div.company2{
+    height:auto;
+    width: 20%;
+    margin: 5% 5% 0 0
 }
 .datacolor{
     color:lightgreen;

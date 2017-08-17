@@ -169,13 +169,22 @@ function loadJobInfo(jobInfoArray) {
 function loadRecommendJobs(jobId,jobs) {
     let countNum = 0;
     for (let job of jobs) {
-        if (jobId != job.jobId) {
-            $("#recommendJobs").append(`<li>
-            <a class="link" style="cursor: pointer" href="detail.html?jobid=${job.id}">${job.title}</a><br>
-            <span>${job.postData}</span>
-            </li>`);
+        if (jobId != job.id) {
+            $("#recommendJobs").append(`
+            <a class="link" style="color:#333;cursor: pointer;text-decoration: none;" href="detail.html?jobid=${job.id}">
+              <div style=" margin:0 2%;padding: 2% 5%">
+                   <span class="title">${job.title}</span><br>
+                   <span class="sdate">${job.sdate}</span>
+               </div>
+            </a>
+            
+            `);
             countNum++;
         }
         if (countNum == 4) break;
     }
+}
+
+function goBack() {
+    window.history.back();
 }
