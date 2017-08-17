@@ -115,17 +115,22 @@ a:-webkit-any-link{
 .picture{
     text-align: center;
 }
+.pictureFollowing{
+    background: #ffffff url(../public/imgs/一抹绿.jpg) repeat-x top;;
+}
 .Title{
     margin-left: 11%;
     margin-right: 11%;
     margin-top: 2%;
     margin-bottom: 1%;
+    padding-top: 5%;
     padding-bottom: 0.6%;
     font-size: 0;
     border-bottom: 1px solid #e8e8e8;
  }
 .TitleContent{
     font-size: 18px;
+    margin-top: 5%;
     padding-top: 2%;
     padding-bottom: 1%;
     border-bottom: 2px solid #333;

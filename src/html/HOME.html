@@ -25,20 +25,7 @@
         $(document).ready(function(){
             intoIndex();
             getHotJobs();
-            //固定页脚？
-//            $(function(){
-//                function footerPosition(){
-//                    $("footer").removeClass("fixed-bottom");
-//                    var contentHeight = document.body.scrollHeight,//网页正文全文高度
-//                        winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
-//                    if(!(contentHeight > winHeight)){
-//                        //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
-//                        $("footer").addClass("fixed-bottom");
-//                    }
-//                }
-//                footerPosition();
-//                $(window).resize(footerPosition);
-//            });
+
             $(".changeColor").mouseover(function(){
                 $(this).toggleClass("shadow")
             });
@@ -127,18 +114,21 @@
         <div class="picture">
             <a href="https://www.thoughtworks.com/" target="_blank" ><img src="../public/imgs/thoughtworklogo.png" style="max-width: 100%" ></a>
         </div>
-        <!--热门职位-->
-        <div class="Title">
-            <span class="TitleContent">热门职位</span>
-        </div>
-        <div style="margin-left: 13%; margin-right:13%;padding: 2% 1%">
-            <div class="row" id="hotJobs">
+        <div class="pictureFollowing">
+            <!--热门职位-->
+            <div class="Title">
+                <span class="TitleContent">热门职位</span>
+            </div>
+            <div style="margin-left: 13%; margin-right:13%;padding: 2% 1%">
+                <div class="row" id="hotJobs">
 
-            </div>
-            <div class="viewMore">
-                <a class="getmorejobs" style=" text-align: center;text-decoration: none">查看更多</a>
+                </div>
+                <div class="viewMore">
+                    <a class="getmorejobs" style=" text-align: center;text-decoration: none">查看更多</a>
+                </div>
             </div>
         </div>
+
 
 
         <!--热门公司-->
