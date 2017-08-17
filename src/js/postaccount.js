@@ -91,7 +91,7 @@ function loginInfo() {
 function Redirect() //使用函数进行跳转
 {
     //console.log('111');
-    window.location = "http://47.93.200.205:8080/html/person.html";
+    window.location = "../html/person.html";
 }
 
 function intoIndex() { //进入首页，调用该函数，判断是否已经登录
