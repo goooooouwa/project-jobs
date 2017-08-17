@@ -363,16 +363,21 @@ function releasePost(onePostId){
     for(let one of cache) {
         if (parseInt(one.id) == parseInt(onePostId)) {
             onePost = one;
-            onePost.status=0;
-            $.ajax({
-                type: 'PUT',
-                data: onePost,
-                url:  'http://47.93.200.205:8080/account/post',
-                crossDomain: true,
-                success: function (data) {
-                    alert(data.msg);
-                }
-            })
+            if(onePost.status==0){
+                alert('该招聘项已发布！')
+            }else{
+                onePost.status=0;
+                $.ajax({
+                    type: 'PUT',
+                    data: onePost,
+                    url:  'http://47.93.200.205:8080/account/post',
+                    crossDomain: true,
+                    success: function (data) {
+                        alert(data.msg);
+                    }
+                })
+            }
+
         }
     }
     event.preventDefault();
