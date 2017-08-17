@@ -86,20 +86,20 @@ function creatPageControl() {
     let $divBox=$(`<div class="container-fluid"></div>`);
     let $divRow=$(`<div class="row">`);
     $divRow.append($(`<div class="col-xs-12 col-md-5">`));
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-success newPost " data-toggle="modal" data-target="#myModal" onclick="cleanForm()">创建</button></div>`));
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-default headPage" onclick="headPage()">首页</button></div>`));
+    $divRow.append($(`<div class="col-xs-2 col-md-1"><button class="btn  btn-lg btn-success newPost " data-toggle="modal" data-target="#myModal" onclick="cleanForm()">创建</button></div>`));
+    $divRow.append($(`<div class="col-xs-2 col-md-1"><button class="btn  btn-lg btn-default headPage" onclick="headPage()">首页</button></div>`));
     if(isLastPage()){
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-default lastPage " onclick="lastPage()" >&#60;&#60;</button></div>`));
+        $divRow.append($(`<div class="col-xs-2 col-md-1"><button class="btn btn-lg btn-default lastPage " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }else {
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn btn-lg btn-default lastPage  disabled " onclick="lastPage()" >&#60;&#60;</button></div>`));
+        $divRow.append($(`<div class="col-xs-2 col-md-1"><button class="btn btn-lg btn-default lastPage  disabled " onclick="lastPage()" >&#60;&#60;</button></div>`));
     }
-    $divRow.append($(`<div class="col-xs-3 col-md-1" ><div class="center-block"><p  class="center-block" id="pageNo" style="width:1%;margin-left:auto;margin-right: auto;height: 40%;margin-top: auto;margin-bottom: auto" >${pageRow+1}</p></div></div>`));
+    $divRow.append($(`<div class="col-xs-2 col-md-1" ><div class="center-block"><p  class="center-block" id="pageNo" style="width:1%;margin-left:auto;margin-right: auto;height: 40%;margin-top: auto;margin-bottom: auto" >${pageRow+1}</p></div></div>`));
     if(isNextPage()){
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-default nextPage " onclick="nextPage()">&#62;&#62;</button></div>`));
+        $divRow.append($(`<div class="col-xs-2 col-md-1"><button   class="btn btn-lg  btn-default nextPage " onclick="nextPage()">&#62;&#62;</button></div>`));
     }else{
-        $divRow.append($(`<div class="col-xs-3 col-md-1"><button   class="btn btn-lg  btn-default nextPage disabled" onclick="nextPage()">&#62;&#62;</button></div>`));
+        $divRow.append($(`<div class="col-xs-2 col-md-1"><button   class="btn btn-lg  btn-default nextPage disabled" onclick="nextPage()">&#62;&#62;</button></div>`));
     }
-    $divRow.append($(`<div class="col-xs-3 col-md-1"><button class="btn  btn-lg btn-default endPage" onclick="endPage()">尾页</button></div>`));
+    $divRow.append($(`<div class="col-xs-2 col-md-1"><button class="btn  btn-lg btn-default endPage" onclick="endPage()">尾页</button></div>`));
     $divBox.append($divRow)
     $("#rightSideWindow").append($divBox);
     return true;

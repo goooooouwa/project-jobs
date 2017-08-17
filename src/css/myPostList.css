@@ -19,7 +19,7 @@ tbody {
   text-align: center; }
 
 .popover {
-  width: 800px;
+  width: 60%;
   max-width: initial;
-  max-heigh: 800px;
+  max-heigh: 60%;
   max-height: initial; }
