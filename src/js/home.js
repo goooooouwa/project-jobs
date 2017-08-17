@@ -31,16 +31,18 @@ function getLogOrNot(status, str) {
 }
 
 function render(data) {
-    result='';
+    result='<br>';
     data=data.data;
 
     for (var i in data) {
         //console.log('aaaaaaaaaaaaaaa')
         result += `
-              <div class="row">
-                <li class="jobborder col-lg-10 col-md-10 col-sm-10 changeColor" style="height: 200px;width: 100%;margin: 30px 30px 0 0;cursor: pointer" onclick="location.href='detail.html?jobid=${data[i].id}'">
+
+        <a  href='detail.html?jobid=${data[i].id}'" target="_blank">
+              <div class="row opacishadows">
+                <li class="jobborder col-lg-10 col-md-10 col-sm-10" style="height: 200px;width: 100%;margin: 0px 30px 0 0;cursor: pointer">
                 <div>
-                    <div style="padding-top: 10px">
+                    <div>
                         <span style="font-size: 28px;color: #209b60">${data[i].title}</span>
                         <span style="color: #999999">${data[i].sdate}</span>
                     </div>
@@ -69,9 +71,19 @@ function render(data) {
                    
                 </div>
              </li>
-           </div>`
+           </div></a>
+           <br>`
         $("#list").empty();
         $("#list").append(result);
+
+        $('.opacishadows').mouseover(function(){
+            //$(this).css('opacity',0.4)
+            $(this).addClass("shadow")
+        })
+        $('.opacishadows').mouseout(function(){
+            $(this).removeClass("shadow")
+            
+        })
     }
 
 }
@@ -154,7 +166,10 @@ function getCatagory() {
 }
 function loadHotJobs(data) {
     for(let job of data){
-     let result=`<li class=" jobborder col-md-2 changeColor" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" onclick="location.href='detail.html?jobid=${job.id}'">
+
+     let result=`
+        <a href='detail.html?jobid=${job.id}'" target="_blank">
+        <li class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
             <div style="padding-top: 5%">
               <span style="font-size:150%;color: #209b60;">${job.title}</span>
               <span style="color: #999999">${job.sdate}</span>
@@ -170,8 +185,18 @@ function loadHotJobs(data) {
             <span>${job.city}</span>
             </p >
             </div>
-            </li>`;
+            </li></a>
+            `;
      $('#hotJobs').append(result);
+     $('.hotjobshadow').mouseover(function(){
+        $(this).addClass("shadow")
+    })
+    $('.hotjobshadow').mouseout(function(){
+
+        $(this).removeClass("shadow")
+        
+    })
+
 
     }
 }
