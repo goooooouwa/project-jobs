@@ -5,8 +5,8 @@
 .button.gray{
     color: #8c96a0;
     text-shadow:1px 1px 1px #fff;
-    border:1px solid #dce1e6;
-    box-shadow: 0 1px 2px #fff inset,0 -1px 0 #a8abae inset;
+    border:1px solid lightgrey;
+    box-shadow: 0 1px 2px #fff inset,0 0px 0 grey inset;
     background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
     background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
     background: linear-gradient(top,#f2f3f7,#e4e8ec);
@@ -16,7 +16,7 @@
     line-height: 20px;
     text-align: center;
     font-weight: bold;
-    color: #fff;
+    color: greenyellow;
     text-shadow:1px 1px 1px #333;
     border-radius: 5px;
     margin:0 5% 15% 10%;
@@ -43,4 +43,31 @@
     padding:50px 10px;
     text-align:center;
     background-color:white;
+}
+
+
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}
+button {
+    color: var(--color);
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+button:hover, button:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+.slide {
+    --color: #8fc866;
+    --hover: #66c887;
+}
+.slide:hover,
+.slide:focus {
+    box-shadow: inset 8em 0 0 0 var(--hover);
 }
