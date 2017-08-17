@@ -15,7 +15,6 @@
     <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../js/personal information.js"></script>
     <script src="../js/security%20center.js"></script>
-    <script src="../js/CanSaveChange.js"></script>
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
     <link  rel="stylesheet" href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css">
     <meta name="csrf-param" content="authenticity_token" />
@@ -367,7 +366,7 @@
                 </div>
                 <div class="checkbox" id="personalInfoCheckBox">
                     <label>
-                        <input type="checkbox" onchange="WhetherBan()"><h4>OK</h4>
+                        <input type="checkbox" onclick="WhetherBan()"><h4>OK</h4>
                     </label>
                 </div>
                 <button  id ="button" type="submit" class="btn btn-success btn-lg" disabled="disabled" onclick="postUserDetail()">Save changes</button>
