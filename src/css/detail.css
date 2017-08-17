@@ -130,7 +130,7 @@ h2.jobTitle{
 }
 .postDate{
     float: left;
-    margin: 50px 200px 0 80px;
+    margin: 50px 0 0 0;
     color: #999999;
 }
 
@@ -266,13 +266,13 @@ ul.companyInfo li{
     margin-right: 2%;
 }
 
-ul.recommendJobs li{
+div.recommendJobs div span.sdate{
     line-height: 2;
     color: #999999;
-    margin: 5% 2%;
+    margin: 3% 2%;
     font-size: 13px;
 }
-ul.recommendJobs li a{
+div.recommendJobs  div span.title{
     color: #4c4c4c;
 }
 .QRcode{

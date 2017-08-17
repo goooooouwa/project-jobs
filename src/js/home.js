@@ -168,8 +168,8 @@ function loadHotJobs(data) {
     for(let job of data){
 
      let result=`
-        <a href='detail.html?jobid=${job.id}'" target="_blank">
-        <li class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
+        <a href='detail.html?jobid=${job.id}' target="_blank">
+        <div class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
             <div style="padding-top: 5%">
               <span style="font-size:150%;color: #209b60;">${job.title}</span>
               <span style="color: #999999">${job.sdate}</span>
@@ -185,7 +185,7 @@ function loadHotJobs(data) {
             <span>${job.city}</span>
             </p >
             </div>
-            </li></a>
+            </div></a>
             `;
      $('#hotJobs').append(result);
      $('.hotjobshadow').mouseover(function(){

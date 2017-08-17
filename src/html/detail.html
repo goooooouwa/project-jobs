@@ -16,6 +16,7 @@
             loadInfo();
             intoIndex();
         })
+     
     </script>
 
 </head>
@@ -31,17 +32,40 @@
 
         </div>
     </div>
+    <div>
+        <!--头部白色导航-->
+        <div class="whiteNav">
+        <span>
+            <a class="homepageTitle"  href="HOME.html" style="height: 54px;
+            width: 50px;
+            position: relative;
+            line-height: 53px;
+            color: #999;
+            padding: 14px 5px;
+            font-size: 20px;
+            margin: 0 16px;
+            cursor: pointer;
+            text-decoration: none;">首页</a>
+        </span>
+
+        </div>
+    </div>
 </div>
 <!--下面是工作详细信息-->
 <div class="container">
-    <h4 class="preface">>> detail(工作详情)</h4>
+    <h4 class="preface"><< detail(工作详情</h4>
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-9">
             <div class="info">
                 <div>
                     <div class="row">
-                        <h2 class="jobTitle" id="jobTitle"></h2>
-                        <span class="postDate" id="postData"></span>
+                        <div class="col-lg-9 col-sm-9 col-md-9">
+                            <h2 class="jobTitle" id="jobTitle"></h2>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <span class="postDate" id="postData"></span>
+                        </div>
+
                     </div>
 
                     <div class="row">
@@ -99,9 +123,9 @@
                     <li><span class="glyphicon glyphicon-map-marker"></span><span id="country"></span>-><span id="city"></span></li>
                 </ul>
                 <hr class="style-three">
-                <ul class="recommendJobs" id="recommendJobs">
+                <div class="recommendJobs" id="recommendJobs">
 
-                </ul>
+                </div>
             </div>
             <div class="QRcode">
                 <img src="../public/imgs/QRcode.jpg"  width="200px" height="260px">
