@@ -12,7 +12,6 @@
     <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
     <script src="/src/public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link href="/src/public/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="/src/css/homepage的css/alljobs.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//static.lagou.com/www/static/dep/mCustomScrollbar/css/mCustomScrollbar_ac2fb8b.css"/>
     <link rel="stylesheet" type="text/css" href="//static.lagou.com/www/static/pkg/layout_ee93d1b.css"/>
     <link rel="stylesheet" type="text/css" href="//static.lagou.com/www/static/pkg/search-result/page/index/main.html_aio_8637fd5.css"/>
@@ -70,9 +69,14 @@
         <div style="padding-left: 65px" >
         <div>
             <div class="svg-wrapper">
-                <input type="button" class="button gray" id="jobtype" value="工作性质：" >
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="jobtype" value="工作性质：" >
+                    </div>
+                </svg>
             </div>
-
+            <!--start button, nothing above this is necessary -->
             <div class="svg-wrapper">
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                     <rect id="shape" height="40" width="150" />
@@ -111,9 +115,12 @@
 
         <div>
             <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
                     <div id="text">
                         <input type="button" class="button gray" id="catagory" value="工作职位：" >
                     </div>
+                </svg>
             </div>
             <!--start button, nothing above this is necessary -->
             <div class="svg-wrapper">
@@ -150,6 +157,46 @@
                     </div>
                 </svg>
             </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="产品经理" onclick="getCatagory()" value="产品经理" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="Java开发工程师" onclick="getCatagory()" value="Java开发工程师" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="市场" onclick="getCatagory()" value="市场" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="开发者" onclick="getCatagory()" value="开发者" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="设计者" onclick="getCatagory()" value="设计者" >
+                    </div>
+                </svg>
+            </div>
         </div>
         </div>
             <!--End button -->
@@ -166,10 +213,25 @@
             <!-- 依次填入左侧各个模块 -->
             <!-- 职位列表 -->
             <div class="s_position_list " id="s_position_list">
-                <div>
+                <div class="hot_posHotPosition position_list init_joblist"
+                     data-lg-tj-track-code="index_hotjob"
+                     data-lg-tj-track-type="1">
+                    <!-- 切换分站 -->
                     <ul id="list" class="clearfix position_list_ul" style="display: block;">
                         <script>getList()</script>
                     </ul>
+                </div>
+                <div class="page">
+                    <span>上一页</span>
+                    <a href="#" id="1" onclick="getPage()">1</a>
+                    <a href="#" id="2" onclick="getPage()">2</a>
+                    <a href="#" id="3" onclick="getPage()">3</a>
+                    <a href="#" id="4" onclick="getPage()">4</a>
+                    <a href="#" id="5" onclick="getPage()">5</a>
+                    <a href="#" id="6" onclick="getPage()">6</a>
+                    <a href="#" id="7" onclick="getPage()">7</a>
+                    <a href="#" id="8" onclick="getPage()">8</a>
+                    <span>下一页</span>
                 </div>
             </div>
         </div>
