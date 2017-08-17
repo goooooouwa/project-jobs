@@ -16,9 +16,17 @@ function getLogOrNot(status, str) {
         $('#judgeWhetherLog').empty()
         $("#judgeWhetherLog").append(`<div>
             <span>
-            <a href="person.html" class="welcome">Hello~ ${str}</a>
+            <a href="person.html" class="welcome tishialert" id="usernamealert">${str}</a>
             </span> 
             </div>`);
+            $('.welcome').mouseover(function(){
+                console.log(111)
+                $('.tishialert').text("个 人 中 心");
+            })
+            $('.welcome').mouseout(function(){
+                console.log(222)
+                $('.tishialert').text(`${str}`);
+            })
     }
 }
 
@@ -73,7 +81,23 @@ function getList() {
         url: "http://47.93.200.205:8080/post/list",
         type: "get",
         success: function (data) {
-            render(data)
+            console.log(data)
+            $.jqPaginator('#list1', {
+                totalCounts: data.count-20,
+                visiblePages: 5,
+                currentPage:1,
+                pageSize:20,
+                onPageChange: function (num, type) {
+                    //$('#p1').text(type + '：' + num);
+                    $.ajax({ 
+                        url:`http://47.93.200.205:8080/post/list`,
+                        type:'GET',
+                        success:function(data){
+                            render(data)
+                        }
+                    })
+                }
+            });
         }
     });
 }
@@ -84,7 +108,23 @@ function searchPo() {
         url:`http://47.93.200.205:8080/post/list?keyword=${searchStr}`,
         type:'get',
         success: function (data) {
-            render(data);
+            console.log(data)
+            $.jqPaginator('#list1', {
+                totalCounts: data.count,
+                visiblePages: 5,
+                currentPage:1,
+                pageSize:20,
+                onPageChange: function (num, type) {
+                    //$('#p1').text(type + '：' + num);
+                    $.ajax({ 
+                        url:`http://47.93.200.205:8080/post/list?keyword=${searchStr}`,
+                        type:'GET',
+                        success:function(data){
+                            render(data)
+                        }
+                    })
+                }
+            });
         }
     })
 }
