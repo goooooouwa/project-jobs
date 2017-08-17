@@ -1,4 +1,5 @@
 function emailIsCorrect() {
+    document.getElementById('email').blur();
     var a= document.getElementById("email");
     var b = document.getElementById("emails");
     var d =document.getElementById("emails").getElementsByTagName("p");
