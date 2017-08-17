@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>
+        Coding Girls Club
+    </title>
+    <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
+    <link rel="stylesheet" type="text/css" href="../css/postjob.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>    
+    <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../js/personal information.js"></script>
+    <script src="../js/security%20center.js"></script>
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
+    <link  rel="stylesheet" href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="JW3B8KwX8nkLOGSuPmMMlF3Uk2KYd5tmXWN0dapUhsg39W8F2WwPc9lm2JaybcEnhJ7E19X7QM81df0K02Qj+Q==" />
+    <link rel="stylesheet" media="all" href="../css/application-22ed159c0ab50e964fb361699343d8a1dcc8a7c3df1562c35ddcd9e563909ce5.css" data-turbolinks-track="reload" />
+    <script src="../js/application-d1fabe1a07110a00cd62ce48e3acf9ab07bda399762f0defe2a4842b92c5c6a9.js" data-turbolinks-track="reload"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--MyPostList-->
+
+    <link rel="stylesheet" href="../css/myPostList.css">
+
+    
+    
+    <script type="text/javascript" src="../js/myPostList.js"></script>
+    
+    <script type="text/javascript" src="../js/postaccount.js"></script>
+    <!--创建-->
+
+
+    <script src="../js/postjob.js"></script>
+
+    <script src="../js/color.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../public/htmleaf-demo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
+    <link href="../mod/201609081635/css/themes/quill.snow.css" rel="stylesheet">
+    
+   
+    <script src="../js/postaccount.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            intoIndex(); ///个人账号
+            getUserColor();
+            if($('#top_username').text() !== ' Username'){
+                getUserDetail(); //个人信息    
+            }
+            
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+</head>
+<body style="padding-right: 0">
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div style="width: 70%;hight:200px; margin-left:15%;margin-right:15%">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">CreatePost</h4>
+            </div>
+            <div class="modal-body">
+                <div class="htmleaf-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="Title" class="Xialabox"><b><span style="color:red">*</span>Title</b></label>
+                                <input type="text" class="form-controlcommon" id="Title" >
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="company" class="Xialabox"><b><span style="color:red">*</span>Company</b></label>
+                                <input type="text" class="form-controlcommon" id="company">
+                            </div>
+                            <div  class="col-md-3" >
+                                <label for="etime" class="Xialabox"><b><span style="color:red">*</span>Duration</b></label>
+                                <input type="number" min="0" name="etime" id="etime" class="form-controlcommon">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="apply" class="Xialabox"><b><span style="color:red">*</span>Apply</b></label>
+                                <input type="text" class="form-controlcommon"id="apply">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="Tags" class="Xialabox"><b>Tags</b></label>
+                                <input type="text" class="form-controlcommon" id="Tags">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="salary" class="Xialabox"><b>Salary</b></label>
+                                <input type="text" class="form-controlcommon" id="salary">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div  class="col-md-3">
+                                <label for="category" class="Xialabox"><b><span style="color:red">*</span>Catagory</b></label>
+                                <input type="text" class="secondform-controlcommon" id="category"disabled>
+                                <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
+                                    <option value="开发者">开发者</option>
+                                    <option value="设计者">设计者</option>
+                                    <option value="市场">市场</option>
+                                    <option value="产品经理">产品经理</option>
+                                </select>
+                            </div>
+
+                            <div  class="col-md-3">
+                                <label for="job-type"  class="Xialabox"><b><span style="color:red">*</span>Job Type</b></label>
+                                <input type="text" class="secondform-controlcommon" id="job-type" disabled>
+                                <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
+                                    <option value="志愿者">志愿者</option>
+                                    <option value="全职">全职</option>
+                                    <option value="自由职业">自由职业</option>
+                                    <option value="签约">签约</option>
+                                </select>
+                            </div>
+
+                            <div  class="col-md-3">
+                                <label for="age"  class="Xialabox"><b></b>Age</b></label>
+                                <input type="text" class="secondform-controlcommon" id="age"disabled>
+                                <select class="select-controlcommon" onchange="D()" id="agess" name="agess">
+                                    <option value="18-28">18-28</option>
+                                    <option value="28-38">28-38</option>
+                                    <option value="38-48">38-48</option>
+                                    <option value="48-58">48-58</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div  class="col-md-3">
+                                <label for="city" class="Xialabox"><b><span style="color:red">*</span>City</b></label>
+                                <input type="text" class="form-controlcommon" id="city">
+                            </div>
+
+                            <div   class="col-md-3">
+                                <label for="country"  class="Xialabox"><b><span style="color:red">*</span>Country</b></label>
+                                <input type="text" class="secondform-controlcommon" id="country"  placeholder="中国"disabled>
+                                <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
+                                    <option value="中国">中国</option>
+                                    <option value="美国">美国</option>
+                                    <option value="日本">日本</option>
+                                    <option value="加拿大">加拿大</option>
+                                </select>
+                            </div>
+
+                            <div  class="col-md-3">
+                                <label for="number" class="Xialabox"><b><span style="color:red">*</span>Number</b></label>
+                                <input type="number" min="1" class="form-controlcommon" id="number">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label class="Xialabox"><b><span style="color:red">*</span>Description</b></label>
+                                <input type="text" id="Description" class="secondform-controlcommon" DISABLED>
+                                <button class="Edit-controlcommon" data-toggle="modal" data-target="#myModal2">编辑
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="Xialabox"><b><span style="color:red"></span></b></label>
+                                <p id="id" class="idform-controlcommon" disabled></p>
+                                <p id="status" class="idform-controlcommon" disabled></p>
+                            </div>
+                        </div>
+
+
+ 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveOnePost" class="btn btn-default" onclick="Save()">保存</button>
+                <button type="button" id="alterOnePost" class="btn btn-default"   onclick="Revise()">修改</button>
+                <button type="button"  class="btn btn-default"  id="release" onclick="Release()">发布</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"style="background-color:gainsboro">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Description</h4>
+            </div>
+            <div class="modal-dialog">
+                <div class="modal-body">
+                    <div class="htmleaf-container">
+                        <div class="row">
+                            <div  class="col-md-12 mt50">
+                                <div id="standalone-container">
+                                    <div id="toolbar-container">
+                                    <span class="ql-formats">
+                                        <select class="ql-font"></select>
+                                        <select class="ql-size"></select>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-bold"></button>
+                                        <button class="ql-italic"></button>
+                                        <button class="ql-underline"></button>
+                                        <button class="ql-strike"></button>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <select class="ql-color"></select>
+                                        <select class="ql-background"></select>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-script" value="sub"></button>
+                                        <button class="ql-script" value="super"></button>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-header" value="1"></button>
+                                        <button class="ql-header" value="2"></button>
+                                        <button class="ql-blockquote"></button>
+                                        <button class="ql-code-block"></button>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-list" value="ordered"></button>
+                                        <button class="ql-list" value="bullet"></button>
+                                        <button class="ql-indent" value="-1"></button>
+                                        <button class="ql-indent" value="+1"></button>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-direction" value="rtl"></button>
+                                        <select class="ql-align"></select>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-link"></button>
+                                        <button class="ql-image"></button>
+                                        <button class="ql-video"></button>
+                                        <button class="ql-formula"></button>
+                                    </span>
+                                        <span class="ql-formats">
+                                        <button class="ql-clean"></button>
+                                    </span>
+                                    </div>
+                                    <div id="editor-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+                    <script  src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+                    <script src="../mod/201609081635/themes/quill.js"></script>
+                    <!-- Initialize Quill editor -->
+                    <script>
+                        var quill = new Quill('#editor-container', {
+                            modules: {
+                                formula: true,
+                                syntax: true,
+                                toolbar: '#toolbar-container'
+                            },
+                            placeholder: 'Compose an epic...',
+                            theme: 'snow'
+                        });
+                    </script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"class="btn btn-default" data-dismiss="modal" onclick="Description()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top-bar dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 hidden-xs">
+              <span>
+                <div id="my-modal" class="modal fade" aria-labelledby="my-modalLabel" aria-hidden="true" tabindex="-1" role="dialog" style="position:relative;left: 250px;z-index:999;">
+                  <div class="modal-dialog" data-dismiss="modal">
+                      <div class="modal-content" style="text-align: center;" >
+                          <div class="modal-body">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                              <img class="img-responsive" style="position: relative;left: 150px;top: 0px;" src="http://www.codingirls.club/assets/QR-wechat-cdf2a9af8ce5b2488413a54466e2a0b4fdf19e0558c5c328dd6c20844a60029a.jpg" alt="Qr wechat" />
+                              <strong>扫描二维码以关注公众号</strong>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <button style="margin-left: -100px" type="button" class="btn btn-default" onclick="window.location='./HOME.html'"><i class="fa fa-home " aria-hidden="true"></i>Home</button>
+                <button id="show-img" type="button" class="btn btn-default" data-toggle="modal" data-target="#my-modal"><i class="fa fa-wechat"></i> 关注公众号</button>
+              </span>
+                <span>
+                <a style="margin-left: -27px;padding-top:5px" href="mailto:info@codingirls.club"><i class="fa fa-envelope" ></i> info@codingirls.club</a>
+              </span>
+            </div>
+            <div class="col-sm-6 text-right">
+                <span><a style="margin-right:-100px;"><i class="fa fa-user"></i> <i id="top_username">Username</i></a></span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid">
+    <div class="row" style="margin-left: -30px;background:ghostwhite">
+        <div class="col-md-3" >
+            <div class="page-breadcrumb" id="colorChange" style="background-size: cover">
+                <div class="btn-group-vertical btn-group-lg" role="group" aria-label="...">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502823333613&di=4f85423db1a21d2f5a71212695a1cca6&imgtype=0&src=http%3A%2F%2Fwww.qq1234.org%2Fuploads%2Fallimg%2F140426%2F155540J58-13.jpg" alt="" class="img-circle" style="margin-left: 70px">
+                    <br><br>
+                    <button onclick="modifyPersonalInfo()" class="btn btn-default " style="background-color:transparent;color:white;text-align:left" type="submit">&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Account Information</button>
+                    <br>
+                    <button onclick="showMyPostList()" class="btn btn-default" style="background-color:transparent;color:white;text-align:left" type="submit">&nbsp;&nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;My Posts</button>
+                    <br>
+                    <button onclick="modifyPassword()" class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Security Center</button>
+                    <br>
+                    <div class="btn-group">
+                        <button style="background-color:transparent;color:white;text-align:left;font-size: 20px"type="submit"class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog " aria-hidden="true"></i> Setting <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent;margin-left: 40px;border: transparent" >
+                            <li ><a onclick="color()" style="color: white;font-size: 15px">THEME</a></li>
+                        </ul>
+                    </div>
+
+                    <!--<button class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-cog " aria-hidden="true"></i>&nbsp;Other Setting</button>-->
+                    <br><br><br>
+                    <a href="./login.html"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out" onclick="logout()"><i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center></a>
+                    <br>
+                    <br>
+                    <br>
+ 
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-9" id="rightSideWindow" >
+            <br>
+            <div>
+                <div class="form-group">
+                    <label for="InputcompanyName" style="font-size: 30px">Company Name</label>
+                    <input style="background:ghostwhite" type="text" class="form-control" id="InputcompanyName" placeholder="Enter company name" name="InputcompanyName">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="InputcompanyAddress" style="font-size: 30px">Company Address</label>
+                    <input style="background: ghostwhite" type="text" class="form-control" id="InputcompanyAddress" placeholder="Enter company address" name="InputcompanyAddress">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="InputcompanyKind" style="font-size: 30px">Company Kind</label>
+                    <input style="background: ghostwhite" type="text" class="form-control" id="InputcompanyKind" placeholder="Enter company kind" name="InputcompanyKind">
+                </div>
+                <div class="checkbox" id="personalInfoCheckBox">
+                    <label>
+                        <input type="checkbox" onclick="WhetherBan()"><h4>OK</h4>
+                    </label>
+                </div>
+                <button  id ="button" type="submit" class="btn btn-success btn-lg" disabled="disabled" onclick="postUserDetail()">Save changes</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="footer-bottom" style="background: rgb(68,68,68)">
+    <div class="container">
+      <span >&copy; Coding Girls Club Copyright 2016 - 2017. All Right Reserved.
+      </span>
+    </div>
+</div>
+</body>
+</html>

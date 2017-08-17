@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>jobDetail</title>
+    <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
+    <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script  type="text/javascript" src="../js/detail.js"></script>
+    <script src='../js/postaccount.js'></script>
+    <link rel="Shortcut Icon" href="../public/imgs/fage.ico">
+    <script>
+        $(document).ready(function(){
+            loadInfo();
+            intoIndex();
+        })
+     
+    </script>
+
+</head>
+<body>
+<!--导航栏-->
+<div class="nav">
+    <!--头部黑色导航-->
+    <div class="blackNav row">
+        <div class="webName col-lg-8 col-md-8 col-sm-8">
+            <a href="../public/imgs/APP二维码.png" style="color: #05eaaf;margin-top: 1%">编程女孩APP</a>
+        </div>
+        <div id="judgeWhetherLog" class="whetherLog col-lg-2 col-md-2 col-sm-2">
+
+        </div>
+    </div>
+    <div>
+        <!--头部白色导航-->
+        <div class="whiteNav">
+        <span>
+            <a class="homepageTitle"  href="HOME.html" style="height: 54px;
+            width: 50px;
+            position: relative;
+            line-height: 53px;
+            color: #999;
+            padding: 14px 5px;
+            font-size: 20px;
+            margin: 0 16px;
+            cursor: pointer;
+            text-decoration: none;">首页</a>
+        </span>
+
+        </div>
+    </div>
+</div>
+<!--下面是工作详细信息-->
+<div class="container" >
+    <h4 class="preface"><< detail(工作详情)</h4>
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-9" style="cursor: default">
+            <div class="info">
+                <div>
+                    <div class="row">
+                        <div class="col-lg-9 col-sm-9 col-md-9">
+                            <h2 class="jobTitle" id="jobTitle"></h2>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-md-3">
+                            <span class="postDate" id="postData"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <table class="basicInfo">
+                            <tbody>
+                            <tr>
+                                <th>tags :</th>
+                                <td id="tags"></td>
+                            </tr>
+                            <tr>
+                                <th>catagory(职位类别) :</th>
+                                <td><span id="catagory"></span>-><span id="jobtype"></span></td>
+                            </tr>
+                            <tr>
+                                <th>salary(薪水) :</th>
+                                <td id="salary"></td>
+                            </tr>
+                            <tr>
+                                <th>number(需求人数) :</th>
+                                <td id="number"></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr class="style-one">
+                <div class="detailInfo">
+                    <h3 class="descriptionTitle"><b>description(岗位描述)</b></h3>
+                    <div id="jobDescription" class="descriptionContent" >
+
+                    </div>
+                </div>
+                <div class="apply">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <h3 class="howToApply"><b>How To Apply</b></h3>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1" >
+                            <hr class="style-two" align="right">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">
+                            <span class="applyTitle"><i>connect us(联系方式) :</i></span><br>
+                            <span class="applyContents" id="apply"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="companyAndRecommend" style="cursor: default">
+                <span class="companyWord">company(公司) :</span>
+                <ul class="companyInfo">
+                    <li><span class="glyphicon glyphicon-home"></span><span id="company"></span></li><br>
+                    <li><span class="glyphicon glyphicon-map-marker"></span><span id="country"></span>-><span id="city"></span></li>
+                </ul>
+                <hr class="style-three">
+                <div class="recommendJobs" id="recommendJobs">
+
+                </div>
+            </div>
+            <div class="QRcode">
+                <img src="../public/imgs/APP二维码.png"  width="200px" height="260px">
+            </div>
+        </div>
+    </div>
+</div>
+<script  type="text/javascript" src="../js/detail.js"></script>
+</body>
+</html>

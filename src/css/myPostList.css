@@ -1,0 +1,25 @@
+#postTable {
+  width: 95%;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: auto; }
+
+thead {
+  font-size: xx-large;
+  font-weight: bold; }
+
+tbody {
+  font-weight: bolder; }
+
+.table > tbody > tr > td {
+  text-align: center;
+  vertical-align: inherit; }
+
+.table td {
+  text-align: center; }
+
+.popover {
+  width: 60%;
+  max-width: initial;
+  max-heigh: 60%;
+  max-height: initial; }

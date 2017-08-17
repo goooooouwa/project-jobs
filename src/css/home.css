@@ -1,0 +1,348 @@
+.blackNav{
+    height: 30px;
+    background-color: #333;
+}
+.webName{
+    background: url(//static.lagou.com/www/static/common/widgets/header_c/modules/img/app_icon_7554d8e.png) 0px 6px no-repeat;
+    padding-top: 4px;
+    padding-left: 15px;
+    margin-left: 10%;
+    font-size: 15px;
+    width: 30%;
+}
+.whetherLog{
+    padding-top: 4px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.login{
+    color: #c4c3c3;
+}
+.login:hover{
+    color: #fff;
+}
+.register{
+    color: #c4c3c3;
+}
+.register:hover{
+    color: #fff;
+}
+.welcome{
+    color:#c4c3c3;
+}
+.welcome:hover{
+    text-decoration-line: none;
+    color: #fff;
+}
+div.whiteNav{
+    list-style: none;
+    height: 54px;
+    padding-left: 12%;
+    padding-right: 10%;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fafafa;
+}
+li{
+    display: inline;
+}
+/*a.homepageTitle{*/
+    /*height: 54px;*/
+    /*width: 50px;*/
+    /*position: relative;*/
+    /*line-height: 53px;*/
+    /*color: #333;*/
+    /*border-bottom: 2px solid #00b38a;*/
+    /*padding: 14px 5px;*/
+    /*font-size: 20px;*/
+    /*margin: 0 16px;*/
+    /*text-decoration: none;*/
+/*}*/
+a.homepageTitle:hover{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+/*a.alljobsTitle{*/
+    /*height: 54px;*/
+    /*width: 50px;*/
+    /*position: relative;*/
+    /*line-height: 53px;*/
+    /*color: #999;*/
+    /*padding: 14px 5px;*/
+    /*font-size: 20px;*/
+    /*margin: 0 16px;*/
+    /*text-decoration: none;*/
+/*}*/
+a.alljobsTitle:hover{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+
+
+a.alljobsTitle:active{
+    height: 54px;
+    width: 50px;
+    position: relative;
+    line-height: 53px;
+    color: #333;
+    border-bottom: 2px solid #00b38a;
+    padding: 14px 5px;
+    font-size: 20px;
+    margin: 0 16px;
+    text-decoration: none;
+}
+a:-webkit-any-link{
+    cursor: auto;
+}
+.picture{
+    text-align: center;
+}
+.pictureFollowing{
+    background: #ffffff url(../public/imgs/一抹绿.jpg) repeat-x top;;
+}
+.Title{
+    margin-left: 11%;
+    margin-right: 11%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding-top: 5%;
+    padding-bottom: 0.6%;
+    font-size: 0;
+    border-bottom: 1px solid #e8e8e8;
+ }
+.TitleContent{
+    font-size: 18px;
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    border-bottom: 2px solid #333;
+    background: #fff;
+    color:#333;
+
+}
+h4.jobTitle{
+    color:#209b60;
+}
+.jobborder{
+    border:solid 1px lightgrey;
+}
+
+.shadow{
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 10px;
+    background: whitesmoke;
+}
+.getmorejobs{
+    cursor: pointer;
+    display: block;
+    width: 20%;
+    height: 2%;
+    line-height: 42px;
+    margin: 3% auto 5% 39%;
+    background: #FFF;
+    border:1px solid #00B38A;
+    font-size: 16px;
+    text-align: center;
+    --color: #00b38a;
+    --hover: #00b38a;
+    color: var(--color);
+    -webkit-transition: 0.5s;
+    transition: 0.5s
+}
+.getmorejobs:hover,
+.getmorejobs:focus {
+    box-shadow: inset 13em 0 0 0 var(--hover);
+}
+.getmorejobs:hover, .getmorejobs:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
+
+div.company1{
+    padding-top: 8%;
+    text-align: center;
+
+}
+span.company1{
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+
+}
+div.company2{
+    height:auto;
+    width: 20%;
+    margin: 5% 5% 0 0
+}
+.datacolor{
+    color:lightgreen;
+}
+.databorder{
+    border-right: 1px solid #ccc;
+}
+.borderstyle{
+    height:1px;
+    border:none;
+    border-top:1px solid #c0c0c0;
+}
+
+.footer-body{
+    background: #202020;
+    padding: 40px 0 0;
+    color: #959595;
+}
+.column{
+    margin-bottom: 35px;
+    padding: 0px 0px;
+
+}
+h4.title{
+    color: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+
+h4.title:after{
+    content: '';
+    width: 99px;
+    height: 1px;
+    background: #209b60;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+.friend-links a{
+    width: 100%;
+    color: #959595;
+}
+.friend-links a:hover{
+    color: #209b60;
+}
+hr.style-one{
+    border: 0;
+    border-bottom: 1px dashed #403e3e;
+    background: #2f2e2e;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.skill a{
+    padding: 2px 7px;
+    margin: 10% 4%;
+    color: #959595;
+    line-height: 2em;
+    border: 1px solid #4c4b4b;
+}
+.skill a:hover{
+    color: #209b60;
+}
+.supports a{
+    color: #959595;
+}
+.supports a:hover{
+    color: #209b60;
+}
+.copyright{
+    background: #111;
+    font-size: 13px;
+    text-align: center;
+    color:#555;
+    padding-top: 14px;
+    padding-bottom:10px;
+    border-top:1px solid #303030;
+}
+/*.fixed-bottom {position: fixed;bottom: 0;width:100%;}*??固定页脚/
+
+/*alljobs*/
+.keywordSearch{
+    margin-top: 1%;
+}
+.keywordSearch input[type='text'] {
+    background-color: white;
+    display: inline-block;
+    padding: 12px 15px;
+    width: 50%;
+    height: 40px;
+    line-height: 20px;
+    border:1px solid #00b38a;
+    border-right: 0;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: -5px;
+    font-size: 16px;
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+}
+.keywordSearch input[type='button'] {
+    background-color: #00b38a;
+    color: #fff;
+    padding: 15px 35px;
+    border: 0;
+    width: auto;
+    height: 40px;
+    line-height: 1px;
+    margin-top: 2%;
+    font-size: 16px;
+    align-items: flex-start;
+    text-align: center;
+    -webkit-appearance: textfield;
+
+    user-select: none;
+    cursor: pointer;
+}
+.sort{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.bonus{
+    margin-top: 8%;
+    margin-bottom:3%;
+}
+.bonus span{
+    font-size: 6px;
+    color: red;
+    padding: 1% 1%;
+    border: 1px solid red;
+    margin: 9% 1% ;
+    line-height: 2%;
+}
+
+#backtop{
+    background: url("../public/imgs/goToTop.png") left top no-repeat;
+    width: 28px;
+    height: 46px;
+    position: fixed;
+    left: 50%;
+    bottom: 146px;
+    margin-left: 631px;
+    cursor: pointer;
+}
+#backtop:hover{
+    background-position: right top!important;
+}
