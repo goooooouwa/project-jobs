@@ -280,6 +280,12 @@ function setInfo(onePostId) {
             document.getElementsByClassName('ql-editor')[0].innerHTML=onePost.description;
             break;
         };
+    };
+    if(!$("#saveOnePost").hasClass("disabled")){
+        $("#saveOnePost").addClass("disabled");
+    }
+    if(!$("#release").hasClass("disabled")){
+        $("#release").addClass("disabled");
     }
     event.preventDefault();
 }
@@ -319,6 +325,12 @@ function cleanForm() {
     document.getElementById('etime').value='';
     document.getElementById('Description').value='';
     document.getElementsByClassName('ql-editor')[0].innerHTML='';
+    if($("#saveOnePost").hasClass("disabled")){
+        $("#saveOnePost").removeClass("disabled");
+    }
+    if($("#release").hasClass("disabled")){
+        $("#release").removeClass("disabled");
+    }
 }
 //前端搜索,不用？
 function searchPost() {
