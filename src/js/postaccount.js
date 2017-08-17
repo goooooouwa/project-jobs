@@ -2,7 +2,7 @@ function postInfo() {
     let username = $("input[name='registerusername']").val(); //用户名
     let password = $("input[name='registerpassword']").val(); //密码
     let useremail = $("input[name='registeremail']").val(); //账号
-    let url = 'http://localhost:3334/user/signup';
+    let url = 'http://47.93.200.205:8080/user/signup';
     $.ajax({
         url: `${url}`,
         type: "POST",
@@ -15,7 +15,7 @@ function postInfo() {
             //跳转页面
             if(data.code === 0){
                 //console.log()
-                window.location = `http://localhost:3334/html/sendAnotherEmail.html?email=${useremail}`;
+                window.location = `http://47.93.200.205:8080/html/sendAnotherEmail.html?email=${useremail}`;
                 //console.log('success')
             }else{
                  //console.log(data.msg)
@@ -65,7 +65,7 @@ function loginInfo() {
     }
     let username = $("input[name='loginemailname']").val();
     let password = $("input[name='loginpassword']").val();
-    let url = 'http://localhost:3334/user/login';
+    let url = 'http://47.93.200.205:8080/user/login';
     $.ajax({
         url: `${url}`,
         type: "POST",
@@ -91,11 +91,11 @@ function loginInfo() {
 function Redirect() //使用函数进行跳转
 {
     //console.log('111');
-    window.location = "http://localhost:3334/html/person.html";
+    window.location = "http://47.93.200.205:8080/html/person.html";
 }
 
 function intoIndex() { //进入首页，调用该函数，判断是否已经登录
-    let url = 'http://localhost:3334/index';
+    let url = 'http://47.93.200.205:8080/index';
     $.ajax({
         url: `${url}`,
         type: 'GET',
@@ -119,7 +119,7 @@ function intoIndex() { //进入首页，调用该函数，判断是否已经登�
 
 //注销登录的函数---进行调用
 function logout() {
-    let url = 'http://localhost:3334/user/logout';
+    let url = 'http://47.93.200.205:8080/user/logout';
     $.ajax({
         url: `${url}`,
         type: 'GET',
@@ -146,7 +146,7 @@ function forgetpass() {
         return false;
     }
     let email = $("input[name='forgetemail']").val();
-    let url = 'http://localhost:3334/forget/password';
+    let url = 'http://47.93.200.205:8080/forget/password';
     $.ajax({
         url: `${url}`,
         type: 'POST',
@@ -157,7 +157,7 @@ function forgetpass() {
             //提示已经发送验证码
             if(data.code===0){
                 console.log(data);
-                window.location = `http://localhost:3334/html/modifyPassword.html?email=${email}`;
+                window.location = `http://47.93.200.205:8080/html/modifyPassword.html?email=${email}`;
             }
           
         }
@@ -171,7 +171,7 @@ function passresert() {
     let password = $('#password2').val();
     let vcode = $('#vcode').val();
     console.log(vcode)
-    let url = 'http://localhost:3334/forget/resert';
+    let url = 'http://47.93.200.205:8080/forget/resert';
 
     $.ajax({
         url: `${url}`,
@@ -185,7 +185,7 @@ function passresert() {
             if(data.code === 0){
                console.log(data);
                alert(data.msg) 
-               window.location = `http://localhost:3334/html/login.html`;
+               window.location = `http://47.93.200.205:8080/html/login.html`;
             }else{
                 alert(data.msg)
             }
@@ -198,7 +198,7 @@ function passresert() {
 function againEmail(){  //再次发送验证
     let email = location.search.slice(7);
     //console.log(email)
-    let url = `http://localhost:3334/user/againemail?email=${email}`;
+    let url = `http://47.93.200.205:8080/user/againemail?email=${email}`;
     $.ajax({
         url: `${url}`,
         type: 'POST',
@@ -214,7 +214,7 @@ function againEmail(){  //再次发送验证
 //keypress
 function keyPress(){
     let username = $("input[name='registerusername']").val(); //用户名
-    let url = `http://localhost:3334/user/signup/username`;
+    let url = `http://47.93.200.205:8080/user/signup/username`;
     $.ajax({
         url: `${url}`,
         type: 'POST',
@@ -229,7 +229,7 @@ function keyPress(){
  
 //获取用户个人详细信息
 function getUserDetail(){
-    let url = `http://localhost:3334/user/detail`;
+    let url = `http://47.93.200.205:8080/user/detail`;
     $.ajax({
         url: `${url}`,
         type:'GET',
@@ -254,7 +254,7 @@ function postUserDetail(){
     let companyaddress  = $("input[name='InputcompanyAddress']").val();
     let companykind = $("input[name='InputcompanyKind']").val();
     console.log(companyname + ' ' + companyaddress + ' ' + companykind)
-    let url = `http://localhost:3334/user/detail`;
+    let url = `http://47.93.200.205:8080/user/detail`;
     $.ajax({
         url: `${url}`,
         type: 'POST',
@@ -272,7 +272,7 @@ function postUserDetail(){
 }
 
 function setNewPassword(){
-    let url = `http://localhost:3334/user/set/password`;
+    let url = `http://47.93.200.205:8080/user/set/password`;
     let current = $("input[name='InputCurrentPassword']").val();
     let newpass = $("input[name='InputNewPassword']").val();
     let username = $('#top_username').text();
@@ -299,7 +299,7 @@ function setNewPassword(){
 ///获取用户颜色  [1...20]
 function getUserColor(){
     let color = ['rgb(32,165,96)','rgb(255,69,0)','rgb(255,230,0)','forestgreen','black','darkcyan','mediumblue','rgb(65,150,225)','slateblue','rgb(169,169,169)','url(../images/aurora.jpg)','url(../images/desertkiss.jpg)','url(../images/elixir.jpg)','url(../images/glasspane.jpg)','url(../images/meadow.jpg)','url(../images/rocky.jpg)','url(../images/sun.jpg)','url(../images/painting.jpg)','url(../images/lake.jpg)','url(../images/morning.jpg)'];
-    let url = `http://localhost:3334/user/get/color`;
+    let url = `http://47.93.200.205:8080/user/get/color`;
     $.ajax({
         url:  `${url}`,
         type: 'GET',
