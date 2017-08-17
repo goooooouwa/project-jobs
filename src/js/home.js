@@ -37,6 +37,7 @@ function render(data) {
     for (var i in data) {
         //console.log('aaaaaaaaaaaaaaa')
         result += `
+
         <a  href='detail.html?jobid=${data[i].id}'" target="_blank">
               <div class="row opacishadows">
                 <li class="jobborder col-lg-10 col-md-10 col-sm-10" style="height: 200px;width: 100%;margin: 0px 30px 0 0;cursor: pointer">
@@ -165,6 +166,7 @@ function getCatagory() {
 }
 function loadHotJobs(data) {
     for(let job of data){
+
      let result=`
         <a href='detail.html?jobid=${job.id}'" target="_blank">
         <li class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
@@ -194,6 +196,7 @@ function loadHotJobs(data) {
         $(this).removeClass("shadow")
         
     })
+
 
     }
 }

@@ -264,6 +264,7 @@ function setInfo(onePostId) {
         if(parseInt(one.id)==parseInt(onePostId)){
             onePost=one;
             $('#id').text(onePost.id);
+            $('#status').text(onePost.status)
             document.getElementById('Title').value=onePost.title;
             document.getElementById('company').value=onePost.company;
             document.getElementById('apply').value=onePost.apply;
@@ -280,6 +281,12 @@ function setInfo(onePostId) {
             document.getElementsByClassName('ql-editor')[0].innerHTML=onePost.description;
             break;
         };
+    };
+    if(!$("#saveOnePost").hasClass("disabled")){
+        $("#saveOnePost").addClass("disabled");
+    }
+    if(!$("#release").hasClass("disabled")){
+        $("#release").addClass("disabled");
     }
     event.preventDefault();
 }
@@ -319,6 +326,12 @@ function cleanForm() {
     document.getElementById('etime').value='';
     document.getElementById('Description').value='';
     document.getElementsByClassName('ql-editor')[0].innerHTML='';
+    if($("#saveOnePost").hasClass("disabled")){
+        $("#saveOnePost").removeClass("disabled");
+    }
+    if($("#release").hasClass("disabled")){
+        $("#release").removeClass("disabled");
+    }
 }
 //前端搜索,不用？
 function searchPost() {
@@ -363,16 +376,21 @@ function releasePost(onePostId){
     for(let one of cache) {
         if (parseInt(one.id) == parseInt(onePostId)) {
             onePost = one;
-            onePost.status=0;
-            $.ajax({
-                type: 'PUT',
-                data: onePost,
-                url:  'http://47.93.200.205:8080/account/post',
-                crossDomain: true,
-                success: function (data) {
-                    alert(data.msg);
-                }
-            })
+            if(onePost.status==0){
+                alert('该招聘项已发布！')
+            }else{
+                onePost.status=0;
+                $.ajax({
+                    type: 'PUT',
+                    data: onePost,
+                    url:  'http://47.93.200.205:8080/account/post',
+                    crossDomain: true,
+                    success: function (data) {
+                        alert(data.msg);
+                    }
+                })
+            }
+
         }
     }
     event.preventDefault();

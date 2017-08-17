@@ -110,7 +110,7 @@
 
                         <div class="row">
                             <div  class="col-md-3">
-                                <label for="category" class="Xialabox"><b><span style="color:red">*</span>Category</b></label>
+                                <label for="category" class="Xialabox"><b><span style="color:red">*</span>Catagory</b></label>
                                 <input type="text" class="secondform-controlcommon" id="category"disabled>
                                 <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
                                     <option value="开发者">开发者</option>
@@ -176,6 +176,7 @@
                             <div class="col-md-4">
                                 <label class="Xialabox"><b><span style="color:red"></span></b></label>
                                 <p id="id" class="idform-controlcommon" disabled></p>
+                                <p id="status" class="idform-controlcommon" disabled></p>
                             </div>
                         </div>
 
@@ -185,9 +186,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="Save()">保存</button>
-                <button type="button" class="btn btn-default"   onclick="Revise()">修改</button>
-                <button type="button" class="btn btn-default"  id="release" onclick="Release()">发布</button>
+                <button type="button" id="saveOnePost" class="btn btn-default" onclick="Save()">保存</button>
+                <button type="button" id="alterOnePost" class="btn btn-default"   onclick="Revise()">修改</button>
+                <button type="button"  class="btn btn-default"  id="release" onclick="Release()">发布</button>
 
             </div>
         </div>

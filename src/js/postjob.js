@@ -52,6 +52,7 @@ function isNull(){
 
 function Revise(){
     var id=$('#id').text();
+    var status=$('#status').text();
     var description=quill.container.firstChild.innerHTML;
     var title=document.getElementById('Title').value;
     var company=document.getElementById('company').value;
@@ -83,7 +84,7 @@ function Revise(){
             number: parseInt(number),
             duration: parseInt(etime),
             description: description,
-            status:0,
+            status:status,
         };
 
     if(isNull()==false){
@@ -96,6 +97,7 @@ function Revise(){
             crossDomain: true,
             success: function (data) {
                 postSuccess(data);
+                showMyPostList();
             }
         })
     }
@@ -147,6 +149,7 @@ function  Save() {
             crossDomain: true,
             success: function (data) {
                 postSuccess(data);
+                showMyPostList();
             }
         })
     }
@@ -198,6 +201,7 @@ function Release(){
             crossDomain: true,
             success: function (data) {
                 postSuccess(data);
+                showMyPostList();
             },
             err:function () {
                 alert('失败');
