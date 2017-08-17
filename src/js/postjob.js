@@ -96,6 +96,7 @@ function Revise(){
             crossDomain: true,
             success: function (data) {
                 postSuccess(data);
+                showMyPostList();
             }
         })
     }
@@ -147,6 +148,7 @@ function  Save() {
             crossDomain: true,
             success: function (data) {
                 postSuccess(data);
+                showMyPostList();
             }
         })
     }
@@ -198,6 +200,7 @@ function Release(){
             crossDomain: true,
             success: function (data) {
                 postSuccess(data);
+                showMyPostList();
             },
             err:function () {
                 alert('失败');
