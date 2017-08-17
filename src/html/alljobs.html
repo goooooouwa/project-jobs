@@ -69,9 +69,14 @@
         <div style="padding-left: 65px" >
         <div>
             <div class="svg-wrapper">
-                <input type="button" class="button gray" id="jobtype" value="工作性质：" >
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="jobtype" value="工作性质：" >
+                    </div>
+                </svg>
             </div>
-
+            <!--start button, nothing above this is necessary -->
             <div class="svg-wrapper">
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                     <rect id="shape" height="40" width="150" />
@@ -110,9 +115,12 @@
 
         <div>
             <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
                     <div id="text">
                         <input type="button" class="button gray" id="catagory" value="工作职位：" >
                     </div>
+                </svg>
             </div>
             <!--start button, nothing above this is necessary -->
             <div class="svg-wrapper">
@@ -149,6 +157,46 @@
                     </div>
                 </svg>
             </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="产品经理" onclick="getCatagory()" value="产品经理" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="Java开发工程师" onclick="getCatagory()" value="Java开发工程师" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="市场" onclick="getCatagory()" value="市场" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="开发者" onclick="getCatagory()" value="开发者" >
+                    </div>
+                </svg>
+            </div>
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150" />
+                    <div id="text">
+                        <input type="button" class="button gray" id="设计者" onclick="getCatagory()" value="设计者" >
+                    </div>
+                </svg>
+            </div>
         </div>
         </div>
             <!--End button -->
@@ -165,7 +213,10 @@
             <!-- 依次填入左侧各个模块 -->
             <!-- 职位列表 -->
             <div class="s_position_list " id="s_position_list">
-                <div>
+                <div class="hot_posHotPosition position_list init_joblist"
+                     data-lg-tj-track-code="index_hotjob"
+                     data-lg-tj-track-type="1">
+                    <!-- 切换分站 -->
                     <ul id="list" class="clearfix position_list_ul" style="display: block;">
                         <script>getList()</script>
                     </ul>
