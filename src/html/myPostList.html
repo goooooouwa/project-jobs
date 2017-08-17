@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myPostList</title>
+
+    <script type="text/javascript" src="../public/jquery.min.js"></script>
+    <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="../css/myPostList.css">
+    <script type="text/javascript" src="../js/myPostList.js"></script>
+    <script src="../js/postjob.js"></script>
+
+    <link rel="stylesheet" href="../public/bootstrap-table-master/dist/bootstrap-table.css"></link>
+    <script type="text/javascript" src="../public/bootstrap-table-master/dist/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../public/bootstrap-table-master/dist/locale/bootstrap-table-zh-CN.js"></script>
+
+</head>
+<body>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">模态框</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade text-center" id="addModal " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="resetModal()">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    PostDetail
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="postInfo">
+                    <div class="form-group">
+                        <label for="jobTitle">Title</label>
+                        <input type="text" class="form-control" id="jobTitle" placeholder="job title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCompany">Company</label>
+                        <input type="text" class="form-control" id="jobCompany" placeholder="your company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDescription">job description</label>
+                        <input type="text" class="form-control" id="jobDescription" placeholder="this job description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobApply">how to apply</label>
+                        <input type="text" class="form-control" id="jobApply" placeholder="how to apply" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDate">expiry date</label>
+                        <input type="text" class="form-control" id="jobDate" placeholder="expiry date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">category</label>
+                        <input type="text" class="form-control" id="category" placeholder="job category" required>
+                        <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
+                            <option value="Development">Development</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-type">job type</label>
+                        <input type="text" class="form-control" id="job-type" placeholder="job type" required>
+                        <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
+                            <option value="Volunteer">Volunteer</option>
+                            <option value="Permanent">Permanent</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobTags">tags</label>
+                        <input type="text" class="form-control" id="jobTags" placeholder="job tags">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCity">city</label>
+                        <input type="text" class="form-control" id="jobCity" placeholder="job City">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">job country</label>
+                        <input type="text" class="form-control" id="country" placeholder="job country">
+                        <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
+                            <option value="China">China</option>
+                            <option value="America">America</option>
+                            <option value="Japan">Japan</option>
+                            <option value="England">England</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">关闭</button>
+                <button type="submit" class="btn btn-primary" onclick="saveOrUpdatePost()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="margin-left: 300px">
+
+    <a tabindex="0" class="btn btn-lg btn-info" role="button" data-toggle="popover" data-placement="left"
+       data-trigger="focus" title="Dismissible popover"
+       data-content="
+       <table id='table' class='table table-bordered table-hover text-center ' style='width=500px'>
+    <thead>
+    <tr class='body' >
+        <td >属性</td>
+        <td >内容</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td >title</td>
+            <td >title</td>
+        </tr>
+        <tr>
+            <td >description</td>
+            <td >description</td>
+        </tr>
+        <tr>
+            <td >tags</td>
+            <td >tags</td>
+        </tr>
+        <tr>
+            <td >how to apply</td>
+            <td >how to apply</td>
+        </tr>
+    </tbody>
+    </table>
+        <div style='width:60px;margin-left: auto;
+            margin-right: auto;'>
+            <button  class='btn btn-danger' data-toggle='modal' data-target='#addModal'  onclick=‘alterOne(${})’>编辑</button>
+        </div>
+             ">Detail</a>
+</div>
+
+<div id="rightSideWindow" >
+    <div id="pageControl">
+
+    </div>
+</div>
+<!--<script type="text/javascript">
+    showMyPostList();
+</script>-->
+<script>
+
+    $(function() { $("[data-toggle='popover']").popover({ html : true }); });
+
+</script>
+</body>
+</html>

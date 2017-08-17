@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>
+        Coding Girls Club
+    </title>
+    <script src="../jquery-3.2.1/jquery-3.2.1/jquery-3.2.1.js"></script>
+    <script src="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../js/personal information.js"></script>
+    <script src="../js/security%20center.js"></script>
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
+    <link  rel="stylesheet" href="../bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="JW3B8KwX8nkLOGSuPmMMlF3Uk2KYd5tmXWN0dapUhsg39W8F2WwPc9lm2JaybcEnhJ7E19X7QM81df0K02Qj+Q==" />
+    <link rel="stylesheet" media="all" href="../css/application-22ed159c0ab50e964fb361699343d8a1dcc8a7c3df1562c35ddcd9e563909ce5.css" data-turbolinks-track="reload" />
+    <script src="../js/application-d1fabe1a07110a00cd62ce48e3acf9ab07bda399762f0defe2a4842b92c5c6a9.js" data-turbolinks-track="reload"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--MyPostList-->
+    <link rel="stylesheet" href="../css/myPostList.css">
+    <script type="text/javascript" src="../js/myPostList.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+</head>
+<body>
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="resetModal()">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    PostDetail
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="postInfo">
+                    <div class="form-group">
+                        <label for="jobTitle">Title</label>
+                        <input type="text" class="form-control" id="jobTitle" placeholder="job title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCompany">Company</label>
+                        <input type="text" class="form-control" id="jobCompany" placeholder="your company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDescription">job description</label>
+                        <input type="text" class="form-control" id="jobDescription" placeholder="this job description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobApply">how to apply</label>
+                        <input type="text" class="form-control" id="jobApply" placeholder="how to apply" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDate">expiry date</label>
+                        <input type="text" class="form-control" id="jobDate" placeholder="expiry date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">category</label>
+                        <input type="text" class="form-control" id="category" placeholder="job category" required>
+                        <select class="select-controlcommon" onchange="A()" id="SS" name="SS">
+                            <option value="Development">Development</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-type">job type</label>
+                        <input type="text" class="form-control" id="job-type" placeholder="job type" required>
+                        <select class="select-controlcommon" onchange="B()" id="job-typess" name="job-typess">
+                            <option value="Volunteer">Volunteer</option>
+                            <option value="Permanent">Permanent</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Product Manager">Product Manager</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobTags">tags</label>
+                        <input type="text" class="form-control" id="jobTags" placeholder="job tags">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCity">city</label>
+                        <input type="text" class="form-control" id="jobCity" placeholder="job City">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">job country</label>
+                        <input type="text" class="form-control" id="country" placeholder="job country">
+                        <select class="select-controlcommon" onchange="C()" id="countryss" name="countryss">
+                            <option value="China">China</option>
+                            <option value="America">America</option>
+                            <option value="Japan">Japan</option>
+                            <option value="England">England</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="">关闭</button>
+                <button type="submit" class="btn btn-primary" onclick="saveOrUpdatePost()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-bar dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 hidden-xs">
+              <span>
+                <div id="my-modal" class="modal fade" aria-labelledby="my-modalLabel" aria-hidden="true" tabindex="-1" role="dialog" style="position:relative;left: 250px;z-index:999;">
+                  <div class="modal-dialog" data-dismiss="modal">
+                      <div class="modal-content" style="text-align: center;" >
+                          <div class="modal-body">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                              <img class="img-responsive" style="position: relative;left: 150px;top: 0px;" src="http://www.codingirls.club/assets/QR-wechat-cdf2a9af8ce5b2488413a54466e2a0b4fdf19e0558c5c328dd6c20844a60029a.jpg" alt="Qr wechat" />
+                              <strong>扫描二维码以关注公众号</strong>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <button id="show-img" type="button" class="btn btn-default" data-toggle="modal" data-target="#my-modal"><i class="fa fa-wechat"></i> 关注公众号</button>
+              </span>
+                <span>
+                <a href="mailto:info@codingirls.club"><i class="fa fa-envelope" ></i> info@codingirls.club</a>
+              </span>
+            </div>
+            <div class="col-sm-6 text-right">
+                <span><a><i class="fa fa-user"></i> User</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="page-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>PERSONAL CENTER</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+            </div>
+        </div>
+    </div>
+</div>
+<hr style="margin: 0px">
+
+<div class="container-fluid">
+    <div class="row" style="margin-left: -30px">
+        <div class="col-md-3" >
+        <div class="page-breadcrumb">
+            <div class="btn-group-vertical btn-group-lg" role="group" aria-label="...">
+                <button onclick="modifyPersonalInfo()" class="btn btn-default " style="background-color:transparent;color:white;text-align:left" type="submit">&nbsp;&nbsp;<i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Personal Information</button>
+                <br>
+                <br>
+                <button onclick="showMyPostList()" class="btn btn-default" style="background-color:transparent;color:white;text-align:left" type="submit">&nbsp;&nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;My Posts</button>
+                <br>
+                <br>
+                <button onclick="modifyPassword()" class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Security Center</button>
+                <br>
+                <br>
+                <button class="btn btn-default" style="background-color:transparent;color:white;text-align:left"type="submit">&nbsp;&nbsp;<i class="fa fa-cog " aria-hidden="true"></i>&nbsp;Other Setting</button>
+                <br>
+                <br>
+                <a href="http://www.codingirls.club/"><center><button class="btn btn-default" style="background-color:transparent;color:white"type="submit" data-toggle="tooltip" data-placement="bottom" title="Sign out">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out fa-5x " aria-hidden="true"></i></button></center>s</a>
+                <br>
+                <br>
+                <br>
+
+            </div>
+
+        </div>
+        </div>
+
+        <div class="col-md-9" id="rightSideWindow">
+            <br>
+            <form>
+            <div class="form-group">
+                <label for="InputEmail1">Email Address</label>
+                <input type="email" class="form-control" id="InputEmail1" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <label for="InputcompanyName">Company Name</label>
+                <input type="text" class="form-control" id="InputcompanyName" placeholder="Company Name">
+            </div>
+            <div class="form-group">
+                <label for="InputcompanyAddress">Company Address</label>
+                <input type="text" class="form-control" id="InputcompanyAddress" placeholder="Company Address">
+            </div>
+            <div class="form-group">
+                <label for="InputcompanyKind">Company Kind</label>
+                <input type="text" class="form-control" id="InputcompanyKind" placeholder="Company Kind">
+            </div>
+            <div class="checkbox" id="personalInfoCheckBox">
+                <label>
+                    <input type="checkbox" onchange="WhetherBan()"> Are you sure to change?
+                </label>
+            </div>
+                <button  id ="button" type="submit" class="btn btn-default btn-lg" disabled="disabled">Modify</button>
+
+        </form>
+        </div>
+
+    </div>
+</div>
+<div class="footer-bottom" style="background: rgb(68,68,68)">
+    <div class="container">
+      <span >&copy; Coding Girls Club Copyright 2016 - 2017. All Right Reserved.
+      </span>
+    </div>
+</div>
+</body>
+</html>
