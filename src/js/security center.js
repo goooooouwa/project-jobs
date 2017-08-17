@@ -115,7 +115,7 @@ function modifyPassword() {
         "            </div>\n" +
         `<div class="checkbox" >
                     <label>
-                        <input id="passwordOK" type="checkbox" onclick="finalJudge()"><h4>I have remember the new password</h4>
+                        <input id="passwordOK" type="checkbox" onclick="finalJudge()"><h4>I remember the new password</h4>
                     </label>
                 </div>`+
         "                <button  id =\"button\"  onmouseover='finalJudge()' disabled='disabled' type=\"submit\" class=\"btn btn-success  btn-lg\"  onclick=\"setNewPassword()\">Save changes</button>\n" +
