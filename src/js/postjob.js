@@ -106,110 +106,118 @@ function Revise(){
 }
 
 function  Save() {
-    var description=quill.container.firstChild.innerHTML;
-    var title=document.getElementById('Title').value;
-    var company=document.getElementById('company').value;
-    var apply=document.getElementById('apply').value;
-    var tags=document.getElementById('Tags').value;
-    var salary=document.getElementById('salary').value;
-    var category=document.getElementById('category').value;
-    var jobtype=document.getElementById('job-type').value;
-    var age=document.getElementById('age').value;
-    var city=document.getElementById('city').value;
-    var country=document.getElementById('country').value;
-    var number=document.getElementById('number').value;
-    var etime=document.getElementById('etime').value;
+    if(!$("#saveOnePost").hasClass("disabled")){
+        var description=quill.container.firstChild.innerHTML;
+        var title=document.getElementById('Title').value;
+        var company=document.getElementById('company').value;
+        var apply=document.getElementById('apply').value;
+        var tags=document.getElementById('Tags').value;
+        var salary=document.getElementById('salary').value;
+        var category=document.getElementById('category').value;
+        var jobtype=document.getElementById('job-type').value;
+        var age=document.getElementById('age').value;
+        var city=document.getElementById('city').value;
+        var country=document.getElementById('country').value;
+        var number=document.getElementById('number').value;
+        var etime=document.getElementById('etime').value;
 
-    jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
-    jobinformation=
-        {
-            title: title,
-            company: company,
-            apply: apply,
-            tags: tags,
-            salary: salary,
-            catagory: category,
-            jobtype: jobtype,
-            age: age,
-            city: city,
-            country: country,
-            number: parseInt(number),
-            duration: parseInt(etime),
-            description: description,
-            status:1,
-        };
+        jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
+        jobinformation=
+            {
+                title: title,
+                company: company,
+                apply: apply,
+                tags: tags,
+                salary: salary,
+                catagory: category,
+                jobtype: jobtype,
+                age: age,
+                city: city,
+                country: country,
+                number: parseInt(number),
+                duration: parseInt(etime),
+                description: description,
+                status:1,
+            };
 
-    if(isNull()==false){
-        alert("Please refine your infomation!");
+        if(isNull()==false){
+            alert("Please refine your infomation!");
+        }else {
+            $.ajax({
+                type: 'POST',
+                data: jobinformation,
+                url:  'http://47.93.200.205:8080/account/post',
+                crossDomain: true,
+                success: function (data) {
+                    postSuccess(data);
+                    showMyPostList();
+                }
+            })
+        }
+        console.log(jobinformation);
+        return jobinformation;
     }else {
-        $.ajax({
-            type: 'POST',
-            data: jobinformation,
-            url:  'http://47.93.200.205:8080/account/post',
-            crossDomain: true,
-            success: function (data) {
-                postSuccess(data);
-                showMyPostList();
-            }
-        })
+        return false;
     }
-    console.log(jobinformation);
-    return jobinformation;
+
 }
 
 function Release(){
+    if(!$("#release").hasClass("disabled")){
+        var description=quill.container.firstChild.innerHTML;
+        var title=document.getElementById('Title').value;
+        var company=document.getElementById('company').value;
+        var apply=document.getElementById('apply').value;
+        var tags=document.getElementById('Tags').value;
+        var salary=document.getElementById('salary').value;
+        var category=document.getElementById('category').value;
+        var jobtype=document.getElementById('job-type').value;
+        var age=document.getElementById('age').value;
+        var city=document.getElementById('city').value;
+        var country=document.getElementById('country').value;
+        var number=document.getElementById('number').value;
+        var etime=document.getElementById('etime').value;
+        jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
+        jobinformation=
+            {
+                title: title,
+                company: company,
+                apply: apply,
+                tags: tags,
+                salary: salary,
+                catagory: category,
+                jobtype: jobtype,
+                age: age,
+                city: city,
+                country: country,
+                number: parseInt(number),
+                duration: parseInt(etime),
+                description: description,
+                status:0,
+            };
 
-    var description=quill.container.firstChild.innerHTML;
-    var title=document.getElementById('Title').value;
-    var company=document.getElementById('company').value;
-    var apply=document.getElementById('apply').value;
-    var tags=document.getElementById('Tags').value;
-    var salary=document.getElementById('salary').value;
-    var category=document.getElementById('category').value;
-    var jobtype=document.getElementById('job-type').value;
-    var age=document.getElementById('age').value;
-    var city=document.getElementById('city').value;
-    var country=document.getElementById('country').value;
-    var number=document.getElementById('number').value;
-    var etime=document.getElementById('etime').value;
-    jobinfo=[title, company,apply, tags, salary, category, jobtype,age, city, country, number, etime,description]
-    jobinformation=
-        {
-            title: title,
-            company: company,
-            apply: apply,
-            tags: tags,
-            salary: salary,
-            catagory: category,
-            jobtype: jobtype,
-            age: age,
-            city: city,
-            country: country,
-            number: parseInt(number),
-            duration: parseInt(etime),
-            description: description,
-            status:0,
-        };
-
-    if(isNull()==false){
-        alert("Please refine your infomation!");
+        if(isNull()==false){
+            alert("Please refine your infomation!");
+        }else {
+            $.ajax({
+                type: 'POST',
+                data: jobinformation,
+                url:  'http://47.93.200.205:8080/account/post',
+                crossDomain: true,
+                success: function (data) {
+                    postSuccess(data);
+                    showMyPostList();
+                },
+                err:function () {
+                    alert('失败');
+                }
+            })
+        }
+        console.log(jobinformation);
+        return jobinformation;
     }else {
-        $.ajax({
-            type: 'POST',
-            data: jobinformation,
-            url:  'http://47.93.200.205:8080/account/post',
-            crossDomain: true,
-            success: function (data) {
-                postSuccess(data);
-                showMyPostList();
-            },
-            err:function () {
-                alert('失败');
-            }
-        })
+        return false;
     }
-    console.log(jobinformation);
-    return jobinformation;
 }
 function postSuccess(data) {
     alert(data.msg);
