@@ -164,14 +164,16 @@ function loadHotJobs(data) {
 
      let result=`
         <a href='detail.html?jobid=${job.id}' target="_blank">
-        <div class=" jobborder col-md-2 hotjobshadow" style="height: 200px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
-            <div style="padding-top: 5%">
-              <span style="font-size:150%;color: #209b60;">${job.title}</span>
-              <span style="color: #999999">${job.sdate}</span>
+        <div class=" jobborder col-md-2 hotjobshadow" style="height: 220px;width: 30%;margin: 30px 30px 0 0;cursor: pointer" >
+            <div style="padding-top: 5%; height: 30%">
+              <span style="font-size:1.4vw;color: #209b60;">${job.title}</span>
+              </div>
+              <div>
+              <span style="color: #999999;float: right">${job.sdate}</span>
             </div>
-            <hr style="height:1px;margin-top: 3%;margin-bottom:3%;border:none;border-top:1px solid #c0c0c0;" />
+            <hr style="height:1px;margin-top: 8%;margin-bottom:3%;border:none;border-top:1px solid #c0c0c0;" />
             <div style="font-size:18px; padding-bottom: 2px;color:orangered"><p>月薪: ${job.salary}</p ></div>
-            <div>
+            <div style=" height: 10%;margin-bottom: 12%">
                <span class="company_name" style="color: #999999;font-size: 18px"><p>${job.company}</p ></span>
             </div>
             <div style="font-size: 18px;color:#999999">

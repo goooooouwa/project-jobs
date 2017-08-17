@@ -146,7 +146,7 @@ h4.jobTitle{
     box-shadow: #666 0px 0px 10px;
     background: whitesmoke;
 }
-.viewMore{
+.getmorejobs{
     cursor: pointer;
     display: block;
     width: 20%;
@@ -156,9 +156,22 @@ h4.jobTitle{
     background: #FFF;
     border:1px solid #00B38A;
     font-size: 16px;
-    color:#00B38A;
     text-align: center;
+    --color: #00b38a;
+    --hover: #00b38a;
+    color: var(--color);
+    -webkit-transition: 0.5s;
+    transition: 0.5s
 }
+.getmorejobs:hover,
+.getmorejobs:focus {
+    box-shadow: inset 13em 0 0 0 var(--hover);
+}
+.getmorejobs:hover, .getmorejobs:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
 
 div.company1{
     padding-top: 8%;
@@ -195,7 +208,7 @@ div.company2{
 }
 .column{
     margin-bottom: 35px;
-    padding: 0px 80px;
+    padding: 0px 0px;
 
 }
 h4.title{
@@ -231,9 +244,9 @@ hr.style-one{
 }
 .skill a{
     padding: 2px 7px;
-    margin: 0 7px 7px 0;
+    margin: 10% 4%;
     color: #959595;
-    line-height: 1.5em;
+    line-height: 2em;
     border: 1px solid #4c4b4b;
 }
 .skill a:hover{
@@ -296,9 +309,10 @@ hr.style-one{
     cursor: pointer;
 }
 .sort{
-    margin-top: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 .bonus{

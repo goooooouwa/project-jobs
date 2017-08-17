@@ -136,7 +136,7 @@
 
             </div>
             <div class="viewMore">
-                <a class="getmorejobs" style="color: #00B38A; text-align: center;text-decoration: none">查看更多</a>
+                <a class="getmorejobs" style=" text-align: center;text-decoration: none">查看更多</a>
             </div>
         </div>
 
@@ -167,7 +167,7 @@
                     </span>
                         <span class="col-md-4 company1" >
                         <p><span class="datacolor">100%</span></p >
-                        <p >简历处理率</p >
+                        <p >简历处理</p >
                     </span>
                     </div>
                     </a>
@@ -193,7 +193,7 @@
                  </span>
                         <span class="col-md-4 company1" >
                     <p><span class="datacolor">20%</span></p >
-                    <p >简历处理率</p >
+                    <p >简历处理</p >
                     </span>
                     </div>
                     </a>
@@ -205,7 +205,7 @@
                         <p><img src="//static.lagou.com/thumbnail_160x160/i/image/M00/49/AA/CgqKkVeYHveAbvHsAADT2G1NbOc588.jpg"  alt="公司logo" width="80" height="80"></p >
                         <p>nestia</p >
                         <p style="color:darkgray"><span>移动互联网</span><span>/B轮</span></p >
-                        <p >全国TOP级创意动画视频定制服务商</p >
+                        <p >全国TOP级动画视频定制服务商</p >
                     </div>
                     <hr class="borderstyle" />
                     <div class="row">
@@ -219,7 +219,7 @@
         </span>
                         <span class="col-md-4 company1" >
             <p><span class="datacolor">100%</span></p >
-            <p >简历处理率</p >
+            <p >简历处理</p >
         </span>
                     </div>
                     </a>
@@ -230,8 +230,8 @@
                     <div  class="company1">
                         <p><img src="//static.lagou.com/thumbnail_160x160/i/image/M00/0D/97/CgpEMljl3DyAdc3uAABYs06HVcs977.png" alt="公司logo" width="80" height="80"></p >
                         <p>悸动画</p >
-                        <p style="color:darkgray"><span>文化娱乐/广告营销</span><span>/不需要融资</span></p >
-                        <p >全国TOP级创意动画视频定制服务商</p >
+                        <p style="color:darkgray"><span>文化娱乐/广告营销</span></p >
+                        <p >全国TOP级创意视频定制服务商</p >
                     </div>
                     <hr class="borderstyle" />
                     <div class="row">
@@ -245,7 +245,7 @@
         </span>
                         <span class="col-md-4 company1" >
             <p><span class="datacolor">50%</span></p >
-            <p >简历处理率</p >
+            <p >简历处理</p >
         </span>
                     </div>
                     </a>
@@ -265,89 +265,21 @@
         <!--分类-->
         <div class="sort">
             <!--工作性质分类-->
-            <div>
-                <div class="svg-wrapper">
-                    <input type="button" class="button gray" id="jobtype" value="工作性质：" >
+                <div class="buttons">
+                    <span><b>工作性质：　</b></span>
+                        <button class="slide" id="全职" onclick="getTag()">全职</button>
+                        <button class="slide" id="签约" onclick="getTag()">签约</button>
+                        <button class="slide" id="志愿者" onclick="getTag()">志愿者</button>
+                        <button class="slide" id="自由职业" onclick="getTag()">自由职业</button>
                 </div>
-
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="全职" onclick="getTag()" value="全职" >
-                        </div>
-                    </svg>
-                </div>
-
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="志愿者" onclick="getTag()" value="志愿者" >
-                        </div>
-                    </svg>
-                </div>
-
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="签约" onclick="getTag()" value="签约" >
-                        </div>
-                    </svg>
-                </div>
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="自由职业" onclick="getTag()" value="自由职业" >
-                        </div>
-                    </svg>
-                </div>
-            </div>
             <!--工作职位分类-->
-            <div>
-                <div class="svg-wrapper">
-                    <div id="text">
-                        <input type="button" class="button gray" id="catagory" value="工作职位：" >
-                    </div>
+            　　<div class="buttons">
+                    <span><b>工作职位：　</b></span>
+                    <button class="slide" id="开发者" onclick="getCatagory()">开发者</button>
+                    <button class="slide" id="设计者" onclick="getCatagory()">设计者</button>
+                    <button class="slide" id="市场" onclick="getCatagory()">市场</button>
+                    <button class="slide" id="产品经理" onclick="getCatagory()">产品经理</button>
                 </div>
-
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="开发者" onclick="getCatagory()" value="开发者" >
-                        </div>
-                    </svg>
-                </div>
-
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="设计者" onclick="getCatagory()" value="设计者" >
-                        </div>
-                    </svg>
-                </div>
-
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="市场" onclick="getCatagory()" value="市场" >
-                        </div>
-                    </svg>
-                </div>
-                <div class="svg-wrapper">
-                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                        <rect id="shape" height="40" width="150" />
-                        <div id="text">
-                            <input type="button" class="button gray" id="产品经理" onclick="getCatagory()" value='产品经理' >
-                        </div>
-                    </svg>
-                </div>
-            </div>
         </div>
         <!--呈现职位-->
         <div class="jobList container">
@@ -366,6 +298,9 @@
                         currentPage:1,
                         pageSize:20,
                         onPageChange: function (num, type) {
+                            $(document.body).animate({
+                                scrollTop: 0
+                            },0);
                             //$('#p1').text(type + '：' + num);
                             $.ajax({ 
                                 url:`http://47.93.200.205:8080/post/list?page=${num}`,
@@ -409,22 +344,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="column">
+                    <div class="column" >
                         <h4 class="title">友情链接</h4>
                         <div class="friend-links">
-                            <a href="https://www.thoughtworks.com/"  target="_blank" style="text-decoration: none">ThoughtWorks</a>
-                            <hr class="style-one">
                             <a href="https://www.thoughtworks.com/"  target="_blank" style="text-decoration: none">ThoughtWorks</a>
                             <hr class="style-one">
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="column">
+                    <div class="column" >
                         <h4 class="title">我们用到的技术</h4>
                         <div class="skill">
-                            <a href="https://www.bootcss.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none">Bootstrap</a>
-                            <a href="https://www.bootcss.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none">Bootstrap</a>
+                            <a href="http://www.bootcss.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none;margin: 10% 4%">Bootstrap</a>
+                            <a href="https://jquery.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none">Jquery</a>
+                            <a href="https://jquery.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none">Jquery</a>
+                            <a href="https://jquery.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none">Jquery</a>
+                            <a href="https://jquery.com/" title="Bootstrap中文网" target="_blank" style="text-decoration: none">Jquery</a>
                         </div>
                     </div>
                 </div>
